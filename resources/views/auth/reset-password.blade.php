@@ -1,147 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Recover Password</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0d6efd, #6f42c1);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .reset-card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .reset-card h2 {
-            text-align: center;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .reset-card p {
-            text-align: center;
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #842029;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        label {
-            font-weight: bold;
-            font-size: 14px;
-            color: #444;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        input:focus {
-            border-color: #0d6efd;
-            box-shadow: 0px 0px 5px rgba(13, 110, 253, 0.5);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-reset {
-            background: #0d6efd;
-            color: white;
-        }
-
-        .btn-reset:hover {
-            background: #084298;
-        }
-
-        .back-login {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 14px;
-        }
-
-        .back-login a {
-            text-decoration: none;
-            color: #0d6efd;
-            font-weight: bold;
-        }
-
-        .back-login a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href=""><b>Admin</b>LTE</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Recover your password now.</p>
 
-    <div class="reset-card">
-        <h2>Reset Password</h2>
+                <form action="{{ route('reset.password.post') }}" method="POST">
+                    @csrf
 
-        <p>Enter your email and set a new password.</p>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <input type="password" name="password"
+                                class="form-control @error('password') is-invalid @enderror" placeholder="Password" />
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
 
-        @if(session('error'))
-            <div class="alert-error">
-                {{ session('error') }}
+                        @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <input type="password" name="password_confirmation"
+                                class="form-control @error('password_confirmation') is-invalid @enderror"
+                                placeholder="Confirm Password" />
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Change password</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <div class="back-login">
+                    Back to <a href="{{ route('login') }}">Login</a>
+                </div>
             </div>
-        @endif
-
-        <form action="{{ route('reset.password.post') }}" method="POST">
-            @csrf
-
-            <input type="hidden" name="token" value="{{ $token }}">
-
-            <label>Email Address</label>
-            <input type="email" name="email" placeholder="Enter your email" required>
-
-            <label>New Password</label>
-            <input type="password" name="password" placeholder="Enter new password" required>
-
-            <label>Confirm Password</label>
-            <input type="password" name="password_confirmation" placeholder="Confirm password" required>
-
-            <button type="submit" class="btn btn-reset">Reset Password</button>
-        </form>
-
-        <div class="back-login">
-            Back to <a href="{{ route('login') }}">Login</a>
+            <!-- /.login-card-body -->
         </div>
     </div>
+    <!-- /.login-box -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 
 </body>
+
 </html>

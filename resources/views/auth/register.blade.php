@@ -1,180 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Registration Page</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0d6efd, #6f42c1);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .register-card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .register-card h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .alert-success {
-            background: #d1e7dd;
-            color: #0f5132;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #842029;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        label {
-            font-weight: bold;
-            font-size: 14px;
-            color: #444;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        input:focus {
-            border-color: #0d6efd;
-            box-shadow: 0px 0px 5px rgba(13, 110, 253, 0.5);
-        }
-
-        .error-text {
-            color: red;
-            font-size: 13px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-register {
-            background: #0d6efd;
-            color: white;
-        }
-
-        .btn-register:hover {
-            background: #084298;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 18px;
-            font-size: 14px;
-        }
-
-        .login-link a {
-            text-decoration: none;
-            color: #0d6efd;
-            font-weight: bold;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body>
-
-    <div class="register-card">
-        <h2>Create Account</h2>
-
-        {{-- Success Message --}}
-        @if(session('message'))
-            <div class="alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-
-        {{-- Validation Errors --}}
-        @if ($errors->any())
-            <div class="alert-error">
-                <ul style="margin:0; padding-left:18px;">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form method="POST" action="{{ route('register.store') }}">
-            @csrf
-
-            <label>Full Name</label>
-            <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter your name">
-
-            @error('name')
-                <span class="error-text">{{ $message }}</span>
-            @enderror
-
-            <label>Email Address</label>
-            <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter your email">
-
-            @error('email')
-                <span class="error-text">{{ $message }}</span>
-            @enderror
-            
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Enter password">
-
-            @error('password')
-                <span class="error-text">{{ $message }}</span>
-            @enderror
-
-            <label>Confirm Password</label>
-            <input type="password" name="password_confirmation" placeholder="Confirm password">
-
-            <button type="submit" class="btn btn-register">Register</button>
-        </form>
-
-        <div class="login-link">
-            Already have an account?
-            <a href="{{ route('login') }}">Login</a>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href=""><b>Admin</b>LTE</a>
         </div>
-    </div>
 
+        <div class="card">
+            <div class="card-body register-card-body">
+
+                <div class="register-card">
+                    <h2>Create Account</h2>
+
+                    {{-- Success Message --}}
+                    @if (session('message'))
+                        <div class="alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('register.store') }}">
+                        @csrf
+
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="name" name="name" value="{{ old('name') }}"
+                                    class="form-control @error('name') is-invalid @enderror" placeholder="Full Name" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-user"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="email" name="email" value="{{ old('email') }}"
+                                    class="form-control @error('email') is-invalid @enderror" placeholder="Email" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    placeholder="Password" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="password" name="password_confirmation"
+                                    class="form-control @error('password_confirmation') is-invalid @enderror"
+                                    placeholder="Confirm Password" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="login-link">
+                                    Have an account?
+                                    <a href="{{ route('login') }}">Login</a>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+
+                    <div class="social-auth-links text-center">
+                        <p>- OR -</p>
+                        <a href="#" class="btn btn-block btn-primary">
+                            <i class="fab fa-facebook mr-2"></i>
+                            Sign up using Facebook
+                        </a>
+                        <a href="#" class="btn btn-block btn-danger">
+                            <i class="fab fa-google-plus mr-2"></i>
+                            Sign up using Google+
+                        </a>
+                    </div>
+                </div>
+                <!-- /.form-box -->
+            </div><!-- /.card -->
+        </div>
+        <!-- /.register-box -->
+
+        <!-- jQuery -->
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 </body>
+
 </html>
