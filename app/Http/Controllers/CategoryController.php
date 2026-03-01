@@ -26,8 +26,8 @@ class CategoryController extends Controller
         if ($request->hasFile('image')) {
             $imageUrl = getImageUrl($request->image, 'uploads/images/');
         }
-        Category::created([
-            'name'              => $request->image,
+        Category::create([
+            'name'              => $request->name,
             'description'       => $request->description,
             'status'            => $request->status,
             'image'             => $imageUrl,
@@ -66,18 +66,18 @@ class CategoryController extends Controller
 
     public function status($id)
     {
-        $category = Category::where('id', $id)->first();
-        if ($category->status == 0) {
-            $category->update([
+        $categories = Category::where('id', $id)->first();
+        if ($categories->status == 0) {
+            $categories->update([
                 'status' => 1,
             ]);
         } else {
-            $category->update([
+            $categories->update([
                 'status' => 0,
             ]);
         }
 
-        if ($category) {
+        if ($categories) {
             return redirect()->route('category.index')->with('message', 'Category update Successfully.');
         } else {
             return back()->with('message', 'Category does not update.');
@@ -86,8 +86,8 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        $category = Category::where('id', $id)->delete();
-        if ($category) {
+        $categories = Category::where('id', $id)->delete();
+        if ($categories) {
             return redirect()->route('category.index')->with('message', 'Category delete Successfully.');
         } else {
             return back()->with('message', 'Category does not create.');

@@ -1,9 +1,8 @@
 <?php
 
-function getImageUrl($file, $path)
+function getImageUrl($image, $directory)
 {
-    $fileName = time() . '_' . $file->getClientOriginalName();
-    $file->move(public_path($path), $fileName);
-
-    return $path . $fileName;
+    $imageName = time() . '.' . $image->getClientOriginalExtension();
+    $image->move(public_path($directory), $imageName);
+    return $directory . $imageName;
 }
