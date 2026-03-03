@@ -14,20 +14,18 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}"
+                        class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Dashboard
-                        </p>
+                        <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a href="{{ route('category.index') }}"
+                        class="nav-link {{ request()->routeIs('category.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Widgets
-                        </p>
+                        <p>Manage Category</p>
                     </a>
                 </li>
             </ul>

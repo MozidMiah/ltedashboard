@@ -1,71 +1,127 @@
 @extends('admin.dashboard')
 
 @section('content')
-    <div class="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Category</h1>
-                </div><!-- /.col -->
+                    <h1>Add Category</h1>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Category</li>
+                        <li class="breadcrumb-item">
+                            <a href="{{ route('dashboard') }}">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Add Category</li>
                     </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-
-    <div class="col-md-12">
-        <!-- general form elements -->
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Add Category Form</h3>
+                </div>
             </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-            <h4 class="text-center text-success">{{ session('message') }}</h4>
-            <form class="form-horizontal p-t-20" action="{{ route('category.store') }}" method="POST"
-                enctype="multipart/form-data">
-                @csrf
-                <div class="form-group row">
-                    <label for="exampleInputuname3" class="col-sm-3 col-form-label">
-                        Category Name <span class="text-danger">*</span>
-                    </label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="name" id="exampleInputuname3"
-                            placeholder="Category Name">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputEmail3" class="col-sm-3 control-label">Category Description <span
-                            class="text-danger">*</span></label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" name="description" id="exampleInputEmail3" placeholder="Category Description"></textarea>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="form-label col-sm-3 control-label" for="web">Category Image</label>
-                    <div class="col-sm-9">
-                        <input type="file" name="image" id="input-file-now" class="dropify" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword4" class="col-sm-3 control-label">Publication Status</label>
-                    <div class="col-sm-9">
-                        <label class="me-3"><input type="radio" name="status" value="1" checked>
-                            Published</label>
-                        <label><input type="radio" name="status" value="2"> Unpublished</label>
-                    </div>
-                </div>
-                <div class="form-group row m-b-0">
-                    <div class="offset-sm-3 col-sm-9">
-                        <button type="submit" class="btn btn-success waves-effect waves-light text-white">Create
-                            New Category</button>
-                    </div>
-                </div>
-            </form>
         </div>
-    </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Category Form</h3>
+                        </div>
+
+                        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+                            <div class="card-body">
+
+                                {{-- Success Message --}}
+                                @if (session('message'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('message') }}
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <span>&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
+
+                                <!-- Category Name -->
+                                <div class="form-group">
+                                    <label>Category Name <span class="text-danger">*</span></label>
+                                    <input type="text" name="name" value="{{ old('name') }}"
+                                        class="form-control @error('name') is-invalid @enderror"
+                                        placeholder="Enter Category Name">
+
+                                    @error('name')
+                                        <span class="invalid-feedback d-block">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <!-- Description -->
+                                <div class="form-group">
+                                    <label>Category Description <span class="text-danger">*</span></label>
+                                    <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror"
+                                        placeholder="Enter Description">{{ old('description') }}</textarea>
+
+                                    @error('description')
+                                        <span class="invalid-feedback d-block">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <!-- Image -->
+                                <div class="form-group">
+                                    <label>Category Image</label>
+                                    <input type="file" name="image" class="form-control"
+                                        onchange="previewImage(event)">
+                                    <img id="preview" width="120" class="mt-2" />
+                                </div>
+
+                                <!-- Status -->
+                                <div class="form-group">
+                                    <label>Publication Status</label>
+
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="published" name="status"
+                                            value="1" checked>
+                                        <label for="published" class="custom-control-label">
+                                            Published
+                                        </label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" id="unpublished" name="status"
+                                            value="2">
+                                        <label for="unpublished" class="custom-control-label">
+                                            Unpublished
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer text-right">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Save Category
+                                </button>
+
+                                <a href="{{ route('category.index') }}" class="btn btn-secondary">
+                                    Cancel
+                                </a>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
 @endsection
