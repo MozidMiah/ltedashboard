@@ -43,7 +43,6 @@ class CategoryController extends Controller
                 })
 
                 ->addColumn('action', function ($row) {
-                    
                     $edit = '<a href="'.route('category.edit',$row->id).'" class="btn btn-sm btn-primary">Edit</a>';
 
                     $delete = '<a href="'.route('category.delete',$row->id).'" 
