@@ -2,95 +2,80 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Rules\Can;
+use App\Models\Category;
+use Yajra\DataTables\Facades\DataTables;
 
 class CategoryController extends Controller
 {
+    // Index page
     public function index()
     {
-        $categories = Category::get();
-        return view('admin.category.index', compact('categories'));
+        return view('admin.category.index');
     }
 
-    // showing create page
+    // Data for DataTable
+    public function getData(Request $request)
+    {
+        if ($request->ajax()) {
+            $categories = Category::select(['id', 'name', 'created_at']);
+
+            return DataTables::of($categories)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $edit = '<a href="'.route('category.edit', $row->id).'" class="btn btn-sm btn-primary">Edit</a>';
+                    $delete = '<form action="'.route('category.delete', $row->id).'" method="POST" style="display:inline;">
+                                '.csrf_field().method_field('DELETE').'
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm(\'Are you sure?\')">Delete</button>
+                               </form>';
+                    return $edit . ' ' . $delete;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    }
+
+    // Show create page
     public function create()
     {
         return view('admin.category.create');
     }
 
+    // Store category
     public function store(Request $request)
     {
-        if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request->image, 'uploads/images/');
-        }
-        Category::create([
-            'name'              => $request->name,
-            'description'       => $request->description,
-            'status'            => $request->status,
-            'image'             => $imageUrl,
+        $request->validate([
+            'name' => 'required|unique:categories,name',
         ]);
-        return redirect()->route('category.index')
-            ->with('message', 'Category Created Successfully.');
+
+        Category::create($request->only('name'));
+        return redirect()->route('category.index')->with('success', 'Category created successfully.');
     }
 
+    // Show edit page
     public function edit($id)
     {
-        $categories = Category::where('id', $id)->first();
-        return view('admin.category.edit', compact('categories'));
+        $category = Category::findOrFail($id);
+        return view('admin.category.edit', compact('category'));
     }
 
-    public function update(Request $request)
+    // Update category
+    public function update(Request $request, $id)
     {
-        $categories = Category::find($request->id);
-        if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request->image, 'uploads/images/');
-        } else {
-            $imageUrl = $categories->image;
-        }
-        $update = $categories->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status' => $request->status,
-            'image' => $imageUrl,
+        $request->validate([
+            'name' => 'required|unique:categories,name,'.$id,
         ]);
 
-        if ($update) {
-            return redirect()->route('category.index')->with('message', 'Category Updated Successfully.');
-        } else {
-            return back()->with('message', 'Category update failed.');
-        }
+        $category = Category::findOrFail($id);
+        $category->update($request->only('name'));
+
+        return redirect()->route('category.index')->with('success', 'Category updated successfully.');
     }
 
-    public function status($id)
+    // Delete category
+    public function destroy($id)
     {
-        $categories = Category::where('id', $id)->first();
-        if ($categories->status == 0) {
-            $categories->update([
-                'status' => 1,
-            ]);
-        } else {
-            $categories->update([
-                'status' => 0,
-            ]);
-        }
-
-        if ($categories) {
-            return redirect()->route('category.index')->with('message', 'Category update Successfully.');
-        } else {
-            return back()->with('message', 'Category does not update.');
-        }
-    }
-
-    public function delete($id)
-    {
-        $categories = Category::where('id', $id)->delete();
-        if ($categories) {
-            return redirect()->route('category.index')->with('message', 'Category delete Successfully.');
-        } else {
-            return back()->with('message', 'Category does not create.');
-        }
+        Category::findOrFail($id)->delete();
+        return redirect()->route('category.index')->with('success', 'Category deleted successfully.');
     }
 }

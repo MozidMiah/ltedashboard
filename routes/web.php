@@ -17,7 +17,7 @@ Route::post('/register-store', [AuthController::class, 'registerStore'])->name('
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login-check', [AuthController::class, 'loginCheck'])->name('login.check');
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -32,8 +32,20 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('status/{id}', [CategoryController::class, 'status'])->name('status');
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete');
+        Route::get('/category-data', [CategoryController::class, 'getData'])->name('data');
     });
 
+
+    // Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    // Route::get('/categories-data', [CategoryController::class, 'getData'])->name('categories.data');
+
+    // Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    // Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+
+    // Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    // Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+
+    // Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 });
 
 //For Forgot Password
