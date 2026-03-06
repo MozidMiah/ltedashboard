@@ -2,6 +2,7 @@
 <html>
 
 @include('admin.partials.style')
+@stack("styles")
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
