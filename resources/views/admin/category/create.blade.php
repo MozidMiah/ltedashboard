@@ -77,9 +77,7 @@
                                 <!-- Image -->
                                 <div class="form-group">
                                     <label>Category Image</label>
-                                    <input type="file" name="image" class="form-control"
-                                        onchange="previewImage(event)">
-                                    <img id="preview" width="120" class="mt-2" />
+                                    <input type="file" name="image" class="form-control form-control dropify" />
 
                                     @error('image')
                                         <span class="invalid-feedback d-block">
@@ -131,3 +129,9 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $('.dropify').dropify();
+    </script>
+@endpush
