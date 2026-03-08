@@ -80,6 +80,12 @@
                                     <input type="file" name="image" class="form-control"
                                         onchange="previewImage(event)">
                                     <img id="preview" width="120" class="mt-2" />
+
+                                    @error('image')
+                                        <span class="invalid-feedback d-block">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
 
                                 <!-- Status -->

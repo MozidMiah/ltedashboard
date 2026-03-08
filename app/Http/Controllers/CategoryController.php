@@ -73,8 +73,9 @@ class CategoryController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|unique:categories,name',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg',
+            'name'              => 'required|unique:categories,name',
+            'description'       => 'required',
+            'image'             => 'required|image|mimes:jpg,png,jpeg',
         ]);
 
         $imageUrl = null;
@@ -84,10 +85,10 @@ class CategoryController extends Controller
         }
 
         Category::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status' => $request->status,
-            'image' => $imageUrl,
+            'name'              => $request->name,
+            'description'       => $request->description,
+            'status'            => $request->status,
+            'image'             => $imageUrl,
         ]);
 
         return redirect()->route('category.index')
@@ -126,10 +127,10 @@ class CategoryController extends Controller
         }
 
         $category->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'status' => $request->status,
-            'image' => $imageUrl,
+            'name'              => $request->name,
+            'description'       => $request->description,
+            'status'            => $request->status,
+            'image'             => $imageUrl,
         ]);
 
         return redirect()->route('category.index')

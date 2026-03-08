@@ -114,3 +114,9 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+<script>
+$('.dropify').dropify();
+</script>
+@endpush
