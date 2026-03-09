@@ -108,7 +108,7 @@
                                         <input class="custom-control-input" type="radio" id="published" name="status"
                                             value="1" checked>
                                         <label for="published" class="custom-control-label">
-                                            Published
+                                            Active
                                         </label>
                                     </div>
 
@@ -116,7 +116,7 @@
                                         <input class="custom-control-input" type="radio" id="unpublished" name="status"
                                             value="2">
                                         <label for="unpublished" class="custom-control-label">
-                                            Unpublished
+                                            Inactive
                                         </label>
                                     </div>
                                 </div>

@@ -79,7 +79,7 @@
                                         <input type="radio" id="published" name="status" value="1"
                                             class="custom-control-input" {{ $category->status == 1 ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="published">
-                                            Published
+                                            Active
                                         </label>
                                     </div>
 
@@ -87,7 +87,7 @@
                                         <input type="radio" id="unpublished" name="status" value="0"
                                             class="custom-control-input" {{ $category->status == 0 ? 'checked' : '' }}>
                                         <label class="custom-control-label" for="unpublished">
-                                            Unpublished
+                                            Inactive
                                         </label>
                                     </div>
                                 </div>

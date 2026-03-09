@@ -19,7 +19,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <table class="table table-bordered" id="categoryTable">
+        <table class="table table-bordered" id="brandTable">
             <thead>
                 <tr>
                     <th>No</th>

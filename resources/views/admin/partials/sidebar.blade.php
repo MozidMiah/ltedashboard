@@ -28,6 +28,13 @@
                         <p>Manage Category</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('brand.index') }}"
+                        class="nav-link {{ request()->routeIs('brand.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>Manage Brand</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
