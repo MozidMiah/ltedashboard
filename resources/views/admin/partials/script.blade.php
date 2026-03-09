@@ -51,3 +51,17 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
+
+<script>
+$(document).ready(function () {
+    $('#name').keyup(function () {
+        let text = $(this).val()
+            .toLowerCase()
+            .replace(/ /g, '-')          // space → -
+            .replace(/[^\w-]+/g, '');    // remove special char
+
+        $('#slug').val(text);
+    });
+});
+</script>

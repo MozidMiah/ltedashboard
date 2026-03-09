@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -50,8 +50,10 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:brands,name',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'name'          => 'required|unique:brands,name',
+            'logo'          => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'slug'          => 'required',
+            'description'   => 'required',
         ]);
 
         $logoUrl = null;
@@ -63,11 +65,11 @@ class BrandController extends Controller
         }
 
         Brand::create([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description,
-            'status' => $request->status,
-            'logo' => $logoUrl
+            'name'          => $request->name,
+            'slug'          => Str::slug($request->name),
+            'description'   => $request->description,
+            'status'        => $request->status,
+            'logo'          => $logoUrl
         ]);
 
         return redirect()->route('brand.index')->with('success','Brand Created Successfully');
@@ -87,7 +89,9 @@ class BrandController extends Controller
 
         $request->validate([
             'name' => 'required|unique:brands,name,'.$brand->id,
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'logo'          => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'slug'          => 'required',
+            'description'   => 'required',
         ]);
 
         $logoUrl = $brand->logo;
