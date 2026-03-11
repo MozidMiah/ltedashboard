@@ -32,7 +32,7 @@ class CategoryController extends Controller
                 ->addIndexColumn()
 
                 ->addColumn('image', function ($row) {
-                    return '<img src="'.asset($row->image).'" width="50">';
+                    return '<img src="' . asset($row->image) . '" width="50">';
                 })
 
                 ->addColumn('status', function ($row) {
@@ -44,16 +44,16 @@ class CategoryController extends Controller
                 })
 
                 ->addColumn('action', function ($row) {
-                    $edit = '<a href="'.route('category.edit',$row->id).'" class="btn btn-sm btn-primary">Edit</a>';
+                    $edit = '<a href="' . route('category.edit', $row->id) . '" class="btn btn-sm btn-primary">Edit</a>';
 
-                    $delete = '<a href="'.route('category.delete',$row->id).'" 
+                    $delete = '<a href="' . route('category.delete', $row->id) . '" 
                                 onclick="return confirm(\'Are you sure?\')" 
                                 class="btn btn-sm btn-danger">Delete</a>';
 
-                    return $edit.' '.$delete;
+                    return $edit . ' ' . $delete;
                 })
 
-                ->rawColumns(['image','status','action'])
+                ->rawColumns(['image', 'status', 'action'])
 
                 ->make(true);
         }
@@ -83,7 +83,7 @@ class CategoryController extends Controller
         $imageUrl = null;
 
         if ($request->hasFile('image')) {
-            $imageUrl = getImageUrl($request->image,'uploads/images/');
+            $imageUrl = getImageUrl($request->image, 'uploads/images/');
         }
 
         Category::create([
@@ -95,7 +95,7 @@ class CategoryController extends Controller
         ]);
 
         return redirect()->route('category.index')
-                ->with('success','Category created successfully');
+            ->with('success', 'Category created successfully');
     }
 
     // =============================
@@ -105,7 +105,7 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
 
-        return view('admin.category.edit',compact('category'));
+        return view('admin.category.edit', compact('category'));
     }
 
     // =============================
@@ -117,13 +117,12 @@ class CategoryController extends Controller
         $category = Category::findOrFail($request->id);
 
         $request->validate([
-            'name' => 'required|unique:categories,name,'.$category->id,
+            'name' => 'required|unique:categories,name,' . $category->id,
         ]);
 
         if ($request->hasFile('image')) {
 
-            $imageUrl = getImageUrl($request->image,'uploads/images/');
-
+            $imageUrl = getImageUrl($request->image, 'uploads/images/');
         } else {
 
             $imageUrl = $category->image;
@@ -138,7 +137,7 @@ class CategoryController extends Controller
         ]);
 
         return redirect()->route('category.index')
-                ->with('success','Category updated successfully');
+            ->with('success', 'Category updated successfully');
     }
 
     // =============================
@@ -151,7 +150,6 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('category.index')
-                ->with('success','Category deleted successfully');
+            ->with('success', 'Category deleted successfully');
     }
-
 }

@@ -6,15 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Subcategory;
 use App\Models\Category;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class SubcategoryController extends Controller
 {
-
+    // =============================
+    // SubCategory List Page
+    // =============================
     public function index()
     {
         return view('admin.subcategory.index');
     }
 
+    // =============================
+    // Yajra DataTable Data
+    // =============================
     public function getData(Request $request)
     {
         if ($request->ajax()) {
@@ -25,67 +31,126 @@ class SubcategoryController extends Controller
                 ->addIndexColumn()
 
                 ->addColumn('image', function ($row) {
-                    return '<img src="' . asset($row->image) . '" width="50">';
+                    $image = $row->image ? asset($row->image) : asset('images/default.png');
+                    return '<img src="' . $image . '" width="50">';
                 })
 
                 ->addColumn('category', function ($row) {
-                    return $row->category->name;
+                    return $row->category ? $row->category->name : '-';
                 })
 
                 ->addColumn('status', function ($row) {
-
                     if ($row->status == 1) {
-                        return '<span class="badge bg-success">Active</span>
-                        <a href="' . route('subcategory.status', $row->id) . '" class="btn btn-success btn-sm">
-                        <i class="ti-arrow-up"></i></a>';
+                        return '<span class="badge bg-success">Active</span>';
                     } else {
-                        return '<span class="badge bg-danger">Inactive</span>
-                        <a href="' . route('subcategory.status', $row->id) . '" class="btn btn-warning btn-sm">
-                        <i class="ti-arrow-down"></i></a>';
+                        return '<span class="badge bg-danger">Inactive</span>';
                     }
                 })
 
                 ->addColumn('action', function ($row) {
-
                     $edit = '<a href="' . route('subcategory.edit', $row->id) . '" class="btn btn-primary btn-sm">Edit</a>';
-
                     $delete = '<a href="' . route('subcategory.delete', $row->id) . '" 
-                    onclick="return confirm(\'Are you sure?\')" 
-                    class="btn btn-danger btn-sm">Delete</a>';
-
+                                onclick="return confirm(\'Are you sure?\')" 
+                                class="btn btn-danger btn-sm">Delete</a>';
                     return $edit . ' ' . $delete;
                 })
 
                 ->rawColumns(['image', 'status', 'action'])
-
                 ->make(true);
         }
     }
 
+    // =============================
+    // Create Page
+    // =============================
     public function create()
     {
         $categories = Category::all();
         return view('admin.subcategory.create', compact('categories'));
     }
 
+    // =============================
+    // Store SubCategory
+    // =============================
     public function store(Request $request)
     {
-
         $request->validate([
             'category_id' => 'required',
-            'name' => 'required',
-            'slug' => 'required'
+            'name' => 'required|unique:subcategories,name',
+            'slug' => 'required|unique:subcategories,slug',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
+
+        $imageUrl = null;
+        if ($request->hasFile('image')) {
+            $imageUrl = getImageUrl($request->image, 'uploads/subcategories/');
+        }
 
         Subcategory::create([
             'category_id' => $request->category_id,
             'name' => $request->name,
-            'slug' => $request->slug,
+            'slug' => Str::slug($request->name),
             'description' => $request->description,
-            'status' => $request->status
+            'status' => $request->status ?? 1,
+            'image' => $imageUrl,
         ]);
 
         return redirect()->route('subcategory.index')
-            ->with('success', 'Subcategory Created');
+            ->with('success', 'SubCategory created successfully');
+    }
+
+    // =============================
+    // Edit Page
+    // =============================
+    public function edit($id)
+    {
+        $subcategory = Subcategory::findOrFail($id);
+        $categories = Category::all();
+        return view('admin.subcategory.edit', compact('subcategory', 'categories'));
+    }
+
+    // =============================
+    // Update SubCategory
+    // =============================
+    public function update(Request $request)
+    {
+        $subcategory = Subcategory::findOrFail($request->id);
+
+        $request->validate([
+            'category_id' => 'required',
+            'name' => 'required|unique:subcategories,name,' . $subcategory->id,
+            'slug' => 'required|unique:subcategories,slug,' . $subcategory->id,
+            'image' => 'nullable|image|mimes:jpg,jpeg,png',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageUrl = getImageUrl($request->image, 'uploads/subcategories/');
+        } else {
+            $imageUrl = $subcategory->image;
+        }
+
+        $subcategory->update([
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'description' => $request->description,
+            'status' => $request->status ?? 1,
+            'image' => $imageUrl,
+        ]);
+
+        return redirect()->route('subcategory.index')
+            ->with('success', 'SubCategory updated successfully');
+    }
+
+    // =============================
+    // Delete SubCategory
+    // =============================
+    public function delete($id)
+    {
+        $subcategory = Subcategory::findOrFail($id);
+        $subcategory->delete();
+
+        return redirect()->route('subcategory.index')
+            ->with('success', 'SubCategory deleted successfully');
     }
 }

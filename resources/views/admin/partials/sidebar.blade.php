@@ -21,17 +21,30 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('category.index') }}"
-                        class="nav-link {{ request()->routeIs('category.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>Manage Category</p>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list-alt"></i> <!-- Category icon -->
+                        <p>
+                            Manage Category
+                            <i class="right fas fa-angle-left"></i> <!-- Arrow icon for dropdown -->
+                        </p>
                     </a>
+
+                    <ul class="nav nav-treeview">
+                        <!-- SubCategory List (indented more) -->
+                        <li class="nav-item">
+                            <a href="{{ route('subcategory.index') }}" class="nav-link" style="padding-left: 30px;">
+                                <!-- increased padding -->
+                                <i class="far fa-dot-circle nav-icon"></i> <!-- smaller dot -->
+                                <p>Manage SubCategory</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('brand.index') }}"
                         class="nav-link {{ request()->routeIs('brand.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>Manage Brand</p>
                     </a>
                 </li>

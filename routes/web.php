@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // For SubCategoty
-    Route::prefix('subcategory')->name('subcategoty.')->group(function () {
+    Route::prefix('subcategory')->name('subcategory.')->group(function () {
         Route::get('', [SubCategoryController::class, 'index'])->name('index');
         Route::get('create', [SubcategoryController::class, 'create'])->name('create');
         Route::post('store', [SubcategoryController::class, 'store'])->name('store');
