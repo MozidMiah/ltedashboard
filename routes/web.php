@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -49,6 +50,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [BrandController::class, 'status'])->name('status');
         Route::get('delete/{id}', [BrandController::class, 'delete'])->name('delete');
         Route::get('/brand-data', [BrandController::class, 'getData'])->name('data');
+    });
+
+    // For SubCategoty
+    Route::prefix('subcategory')->name('subcategoty.')->group(function () {
+        Route::get('', [SubCategoryController::class, 'index'])->name('index');
+        Route::get('create', [SubcategoryController::class, 'create'])->name('create');
+        Route::post('store', [SubcategoryController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [SubcategoryController::class, 'edit'])->name('edit');
+        Route::post('update', [SubcategoryController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [SubcategoryController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [SubcategoryController::class, 'delete'])->name('delete');
+        Route::get('/brand-data', [SubcategoryController::class, 'getData'])->name('data');
     });
 });
 
