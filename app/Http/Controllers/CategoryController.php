@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -75,6 +76,7 @@ class CategoryController extends Controller
         $request->validate([
             'name'              => 'required|unique:categories,name',
             'description'       => 'required',
+            'slug'              => 'required',
             'image'             => 'required|image|mimes:jpg,png,jpeg',
         ]);
 
@@ -86,6 +88,7 @@ class CategoryController extends Controller
 
         Category::create([
             'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
             'description'       => $request->description,
             'status'            => $request->status,
             'image'             => $imageUrl,
@@ -128,6 +131,7 @@ class CategoryController extends Controller
 
         $category->update([
             'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
             'description'       => $request->description,
             'status'            => $request->status,
             'image'             => $imageUrl,

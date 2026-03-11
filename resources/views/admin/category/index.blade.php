@@ -26,6 +26,7 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Slug</th>
                     <th>status</th>
                     <th>Action</th>
                 </tr>
@@ -59,6 +60,10 @@
                     {
                         data: 'description',
                         name: 'description'
+                    },
+                    {
+                        data: 'slug',
+                        name: 'slug'
                     },
                     {
                         data: 'status',

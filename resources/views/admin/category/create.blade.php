@@ -50,7 +50,7 @@
                                 <!-- Category Name -->
                                 <div class="form-group">
                                     <label>Category Name <span class="text-danger">*</span></label>
-                                    <input type="text" name="name" value="{{ old('name') }}"
+                                    <input type="text" id="name" name="name" value="{{ old('name') }}"
                                         class="form-control @error('name') is-invalid @enderror"
                                         placeholder="Enter Category Name">
 
@@ -68,6 +68,20 @@
                                         placeholder="Enter Description">{{ old('description') }}</textarea>
 
                                     @error('description')
+                                        <span class="invalid-feedback d-block">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    
+                                    <label>Slug <span class="text-danger">*</span></label>
+                                    <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
+                                        class="form-control @error('slug') is-invalid @enderror"
+                                        placeholder="Enter slug">
+
+                                    @error('slug')
                                         <span class="invalid-feedback d-block">
                                             {{ $message }}
                                         </span>

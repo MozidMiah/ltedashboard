@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SubCategory;
+use App\Models\Subcategory;
 use App\Models\Category;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Str;
 
-class SubCategoryController extends Controller
+class SubcategoryController extends Controller
 {
 
     public function index()
@@ -16,45 +15,57 @@ class SubCategoryController extends Controller
         return view('admin.subcategory.index');
     }
 
-    public function getData()
+    public function getData(Request $request)
     {
-        $data = SubCategory::with('category')->latest()->get();
+        if ($request->ajax()) {
 
-        return DataTables::of($data)
+            $subcategories = Subcategory::with('category')->latest();
 
-            ->addIndexColumn()
+            return DataTables::of($subcategories)
+                ->addIndexColumn()
 
-            ->addColumn('category', function ($row) {
-                return $row->category->name;
-            })
+                ->addColumn('image', function ($row) {
+                    return '<img src="' . asset($row->image) . '" width="50">';
+                })
 
-            ->addColumn('status', function ($row) {
+                ->addColumn('category', function ($row) {
+                    return $row->category->name;
+                })
 
-                if ($row->status == 1) {
-                    return '<span class="badge badge-success">Active</span>';
-                } else {
-                    return '<span class="badge badge-danger">Inactive</span>';
-                }
-            })
+                ->addColumn('status', function ($row) {
 
-            ->addColumn('action', function ($row) {
+                    if ($row->status == 1) {
+                        return '<span class="badge bg-success">Active</span>
+                        <a href="' . route('subcategory.status', $row->id) . '" class="btn btn-success btn-sm">
+                        <i class="ti-arrow-up"></i></a>';
+                    } else {
+                        return '<span class="badge bg-danger">Inactive</span>
+                        <a href="' . route('subcategory.status', $row->id) . '" class="btn btn-warning btn-sm">
+                        <i class="ti-arrow-down"></i></a>';
+                    }
+                })
 
-                $edit = '<a href="'.route('subcategory.edit',$row->id).'" class="btn btn-primary btn-sm">Edit</a>';
+                ->addColumn('action', function ($row) {
 
-                $delete = '<a href="'.route('subcategory.delete',$row->id).'" class="btn btn-danger btn-sm">Delete</a>';
+                    $edit = '<a href="' . route('subcategory.edit', $row->id) . '" class="btn btn-primary btn-sm">Edit</a>';
 
-                return $edit.' '.$delete;
-            })
+                    $delete = '<a href="' . route('subcategory.delete', $row->id) . '" 
+                    onclick="return confirm(\'Are you sure?\')" 
+                    class="btn btn-danger btn-sm">Delete</a>';
 
-            ->rawColumns(['status','action'])
+                    return $edit . ' ' . $delete;
+                })
 
-            ->make(true);
+                ->rawColumns(['image', 'status', 'action'])
+
+                ->make(true);
+        }
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('admin.subcategory.create',compact('categories'));
+        return view('admin.subcategory.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -62,54 +73,19 @@ class SubCategoryController extends Controller
 
         $request->validate([
             'category_id' => 'required',
-            'name' => 'required|unique:sub_categories',
-        ]);
-
-        SubCategory::create([
-            'category_id' => $request->category_id,
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description,
-            'status' => $request->status ?? 1
-        ]);
-
-        return redirect()->route('subcategory.index')->with('success','SubCategory Added');
-    }
-
-    public function edit($id)
-    {
-        $subcategory = SubCategory::findOrFail($id);
-        $categories = Category::all();
-
-        return view('admin.subcategory.edit',compact('subcategory','categories'));
-    }
-
-    public function update(Request $request,$id)
-    {
-
-        $subcategory = SubCategory::findOrFail($id);
-
-        $request->validate([
-            'category_id' => 'required',
             'name' => 'required',
+            'slug' => 'required'
         ]);
 
-        $subcategory->update([
+        Subcategory::create([
             'category_id' => $request->category_id,
             'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'slug' => $request->slug,
             'description' => $request->description,
             'status' => $request->status
         ]);
 
-        return redirect()->route('subcategory.index')->with('success','Updated Successfully');
+        return redirect()->route('subcategory.index')
+            ->with('success', 'Subcategory Created');
     }
-
-    public function delete($id)
-    {
-        SubCategory::findOrFail($id)->delete();
-
-        return redirect()->back()->with('success','Deleted Successfully');
-    }
-
 }
