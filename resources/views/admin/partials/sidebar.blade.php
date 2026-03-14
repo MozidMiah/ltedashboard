@@ -21,28 +21,31 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-list-alt"></i> <!-- Category icon -->
+                <li
+                    class="nav-item has-treeview {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             Manage Category
-                            <i class="right fas fa-angle-left"></i> <!-- Arrow icon for dropdown -->
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-
                     <ul class="nav nav-treeview">
+                        <!-- Category -->
                         <li class="nav-item">
-                            <a href="{{ route('category.index') }}" class="nav-link" style="padding-left: 30px;">
-                                <!-- increased padding -->
-                                <i class="far fa-dot-circle nav-icon"></i> <!-- smaller dot -->
+                            <a href="{{ route('category.index') }}"
+                                class="nav-link {{ request()->routeIs('category.*') ? 'active' : '' }}"
+                                style="padding-left: 30px;">
+                                <i class="far fa-dot-circle nav-icon"></i>
                                 <p>Category</p>
                             </a>
                         </li>
-                        <!-- SubCategory List (indented more) -->
+                        <!-- SubCategory -->
                         <li class="nav-item">
-                            <a href="{{ route('subcategory.index') }}" class="nav-link" style="padding-left: 30px;">
-                                <!-- increased padding -->
-                                <i class="far fa-dot-circle nav-icon"></i> <!-- smaller dot -->
+                            <a href="{{ route('subcategory.index') }}"
+                                class="nav-link {{ request()->routeIs('subcategory.*') ? 'active' : '' }}"
+                                style="padding-left: 30px;">
+                                <i class="far fa-dot-circle nav-icon"></i>
                                 <p>Manage SubCategory</p>
                             </a>
                         </li>
@@ -53,6 +56,13 @@
                         class="nav-link {{ request()->routeIs('brand.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tags"></i>
                         <p>Manage Brand</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('color.index') }}"
+                        class="nav-link {{ request()->routeIs('color.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-palette"></i>
+                        <p>Color</p>
                     </a>
                 </li>
             </ul>
