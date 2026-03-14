@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -18,25 +19,39 @@ class BrandController extends Controller
     public function getData(Request $request)
     {
         $brands = Brand::latest()->get();
-
         return DataTables::of($brands)
             ->addIndexColumn()
-            ->addColumn('logo', function($row){
+            ->addColumn('logo', function ($row) {
                 $logo = $row->logo ? asset($row->logo) : 'https://via.placeholder.com/50';
-                return '<img src="'.$logo.'" width="50" height="50">';
+                return '<img src="' . $logo . '" width="50" height="50">';
             })
-            ->addColumn('status', function($row){
-                return $row->status ? '<span class="badge badge-success">Active</span>' :
-                                     '<span class="badge badge-danger">Inactive</span>';
-            })
-            ->addColumn('action', function($row){
-                $editUrl = route('brand.edit', $row->id);
-                $deleteUrl = route('brand.delete', $row->id);
+            ->addColumn('status', function ($row) {
 
-                return '<a href="'.$editUrl.'" class="btn btn-sm btn-primary mr-1"><i class="fas fa-edit"></i></a>
-                        <button data-url="'.$deleteUrl.'" class="btn btn-sm btn-danger deleteBtn"><i class="fas fa-trash"></i></button>';
+                $current = $row->status == 1 ? 'Active' : 'Inactive';
+
+                return '
+                    <select class="form-control form-control-sm statusDropdown text-center" 
+                            data-id="' . $row->id . '" 
+                            style="width:80px; padding:2px; font-size:15px;">
+                        <option value="' . $row->status . '" selected>' . $current . '</option>
+                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
+                    </select>
+                ';
             })
-            ->rawColumns(['logo','status','action'])
+            ->addColumn('action', function ($row) {
+                $edit = '<a href="' . route('brand.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>';
+
+                $delete = '<a href="' . route('brand.delete', $row->id) . '" 
+                                    onclick="return confirm(\'Are you sure?\')" 
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>';
+
+                return $edit . ' ' . $delete;
+            })
+            ->rawColumns(['logo', 'status', 'action'])
             ->make(true);
     }
 
@@ -57,11 +72,11 @@ class BrandController extends Controller
         ]);
 
         $logoUrl = null;
-        if($request->hasFile('logo')){
+        if ($request->hasFile('logo')) {
             $image = $request->file('logo');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/brand'), $imageName);
-            $logoUrl = 'uploads/brand/'.$imageName;
+            $logoUrl = 'uploads/brand/' . $imageName;
         }
 
         Brand::create([
@@ -72,7 +87,7 @@ class BrandController extends Controller
             'logo'          => $logoUrl
         ]);
 
-        return redirect()->route('brand.index')->with('success','Brand Created Successfully');
+        return redirect()->route('brand.index')->with('success', 'Brand Created Successfully');
     }
 
     // Edit Form
@@ -88,20 +103,20 @@ class BrandController extends Controller
         $brand = Brand::findOrFail($request->id);
 
         $request->validate([
-            'name' => 'required|unique:brands,name,'.$brand->id,
+            'name' => 'required|unique:brands,name,' . $brand->id,
         ]);
 
         $logoUrl = $brand->logo;
 
-        if($request->hasFile('logo')){
-            if($brand->logo && file_exists(public_path($brand->logo))){
+        if ($request->hasFile('logo')) {
+            if ($brand->logo && file_exists(public_path($brand->logo))) {
                 unlink(public_path($brand->logo));
             }
 
             $image = $request->file('logo');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/brand'), $imageName);
-            $logoUrl = 'uploads/brand/'.$imageName;
+            $logoUrl = 'uploads/brand/' . $imageName;
         }
 
         $brand->update([
@@ -112,20 +127,17 @@ class BrandController extends Controller
             'logo' => $logoUrl
         ]);
 
-        return redirect()->route('brand.index')->with('success','Brand Updated Successfully');
+        return redirect()->route('brand.index')->with('success', 'Brand Updated Successfully');
     }
 
     // Delete Brand
-    public function destroy($id)
+    public function delete($id)
     {
         $brand = Brand::findOrFail($id);
 
-        if($brand->logo && file_exists(public_path($brand->logo))){
-            unlink(public_path($brand->logo));
-        }
-
         $brand->delete();
 
-        return response()->json(['status'=>'success']);
+        return redirect()->route('brand.index')
+            ->with('success', 'Category deleted successfully');
     }
 }

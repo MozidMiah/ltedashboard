@@ -36,33 +36,31 @@ class ColorController extends Controller
 
             ->addColumn('status', function ($row) {
 
-                if ($row->status == 1) {
-                    return '<a href="' . route('color.status', $row->id) . '" 
-                    class="btn btn-success btn-sm">Active</a>';
-                } else {
-                    return '<a href="' . route('color.status', $row->id) . '" 
-                    class="btn btn-danger btn-sm">Inactive</a>';
-                }
+                $current = $row->status == 1 ? 'Active' : 'Inactive';
+
+                return '
+                    <select class="form-control form-control-sm statusDropdown text-center" 
+                            data-id="' . $row->id . '" 
+                            style="width:80px; padding:2px; font-size:15px;">
+                        <option value="' . $row->status . '" selected>' . $current . '</option>
+                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
+                    </select>
+                ';
             })
 
             ->addColumn('action', function ($row) {
+                    $edit = '<a href="' . route('color.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>';
 
-                $btn = '
+                    $delete = '<a href="' . route('color.delete', $row->id) . '" 
+                                    onclick="return confirm(\'Are you sure?\')" 
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>';
 
-                <a href="' . route('color.edit', $row->id) . '" 
-                class="btn btn-primary btn-sm">
-                <i class="fas fa-edit"></i>
-                </a>
-
-                <a href="' . route('color.delete', $row->id) . '" 
-                class="btn btn-danger btn-sm">
-                <i class="fas fa-trash"></i>
-                </a>
-
-                ';
-
-                return $btn;
-            })
+                    return $edit . ' ' . $delete;
+                })
 
             ->rawColumns(['color', 'status', 'action'])
             ->make(true);

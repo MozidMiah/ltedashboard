@@ -36,19 +36,29 @@ class CategoryController extends Controller
                 })
 
                 ->addColumn('status', function ($row) {
-                    if ($row->status == 1) {
-                        return '<span class="badge bg-success">Active</span>';
-                    } else {
-                        return '<span class="badge bg-danger">Inactive</span>';
-                    }
+
+                    $current = $row->status == 1 ? 'Active' : 'Inactive';
+
+                    return '
+                    <select class="form-control form-control-sm statusDropdown text-center" 
+                            data-id="' . $row->id . '" 
+                            style="width:80px; padding:2px; font-size:15px;">
+                        <option value="' . $row->status . '" selected>' . $current . '</option>
+                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
+                    </select>
+                ';
                 })
 
                 ->addColumn('action', function ($row) {
-                    $edit = '<a href="' . route('category.edit', $row->id) . '" class="btn btn-sm btn-primary">Edit</a>';
+                    $edit = '<a href="' . route('category.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>';
 
                     $delete = '<a href="' . route('category.delete', $row->id) . '" 
-                                onclick="return confirm(\'Are you sure?\')" 
-                                class="btn btn-sm btn-danger">Delete</a>';
+                                    onclick="return confirm(\'Are you sure?\')" 
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>';
 
                     return $edit . ' ' . $delete;
                 })
