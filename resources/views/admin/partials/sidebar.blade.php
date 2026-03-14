@@ -31,6 +31,13 @@
                     </a>
 
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('category.index') }}" class="nav-link" style="padding-left: 30px;">
+                                <!-- increased padding -->
+                                <i class="far fa-dot-circle nav-icon"></i> <!-- smaller dot -->
+                                <p>Category</p>
+                            </a>
+                        </li>
                         <!-- SubCategory List (indented more) -->
                         <li class="nav-item">
                             <a href="{{ route('subcategory.index') }}" class="nav-link" style="padding-left: 30px;">
