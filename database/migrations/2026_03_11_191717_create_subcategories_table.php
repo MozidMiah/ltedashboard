@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->tinyInteger('status')->default();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

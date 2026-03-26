@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -79,6 +80,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [ColorController::class, 'status'])->name('status');
         Route::get('delete/{id}', [ColorController::class, 'delete'])->name('delete');
         Route::get('/brand-data', [ColorController::class, 'getData'])->name('data');
+    });
+
+    //For Unit
+    Route::prefix('unit')->name('unit.')->group(function () {
+        Route::get('', [UnitController::class, 'index'])->name('index');
+        Route::get('create', [UnitController::class, 'create'])->name('create');
+        Route::post('store', [UnitController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [UnitController::class, 'edit'])->name('edit');
+        Route::post('update', [UnitController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [UnitController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [UnitController::class, 'delete'])->name('delete');
+        Route::get('/brand-data', [UnitController::class, 'getData'])->name('data');
     });
 });
 
