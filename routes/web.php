@@ -5,6 +5,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
@@ -94,6 +95,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [UnitController::class, 'status'])->name('status');
         Route::get('delete/{id}', [UnitController::class, 'delete'])->name('delete');
         Route::get('/brand-data', [UnitController::class, 'getData'])->name('data');
+    });
+
+    //For Size
+    Route::prefix('size')->name('size.')->group(function () {
+        Route::get('', [SizeController::class, 'index'])->name('index');
+        Route::get('create', [SizeController::class, 'create'])->name('create');
+        Route::post('store', [SizeController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [SizeController::class, 'edit'])->name('edit');
+        Route::post('update', [SizeController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [SizeController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [SizeController::class, 'delete'])->name('delete');
+        Route::get('/brand-data', [SizeController::class, 'getData'])->name('data');
     });
 });
 
