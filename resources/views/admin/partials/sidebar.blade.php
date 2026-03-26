@@ -73,6 +73,13 @@
                         <p>Unit</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('size.index') }}"
+                        class="nav-link {{ request()->routeIs('size.*') ? 'active' : '' }}">
+                        <i class="fas fa-list"></i>
+                        <p>Size</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

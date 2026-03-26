@@ -75,7 +75,7 @@ class SizeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:size,name'
+            'name' => 'required|unique:sizes,name'
         ]);
 
         Size::create([
@@ -105,7 +105,7 @@ class SizeController extends Controller
         $size = Size::findOrFail($request->id);
 
         $request->validate([
-            'name' => 'required|unique:size,name,' . $size->id
+            'name' => 'required|unique:sizes,name,' . $size->id
         ]);
 
         $size->update([
