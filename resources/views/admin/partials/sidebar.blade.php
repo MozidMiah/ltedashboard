@@ -23,7 +23,8 @@
                 </li>
                 <li
                     class="nav-item has-treeview {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'active' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             Manage Category
@@ -63,6 +64,13 @@
                         class="nav-link {{ request()->routeIs('color.*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-palette"></i>
                         <p>Color</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('unit.index') }}"
+                        class="nav-link {{ request()->routeIs('unit.*') ? 'active' : '' }}">
+                        <i class="fas fa-cube"></i>
+                        <p>Unit</p>
                     </a>
                 </li>
             </ul>

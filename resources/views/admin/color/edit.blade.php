@@ -26,10 +26,8 @@
     <!-- Main Content -->
     <section class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Edit Color Form</h3>
@@ -37,8 +35,8 @@
 
                         <form action="{{ route('color.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="id" value="{{ $color->id }}">
 
+                            <input type="hidden" name="id" value="{{ $color->id }}">
                             <div class="card-body">
 
                                 {{-- Success Message --}}
@@ -59,19 +57,14 @@
                                 </div>
                                 
                                 <div class="form-group">
-
                                     <label>Select Color</label>
-
                                     <input type="color" name="color" id="colorPicker" class="form-control"
                                         value="#ff0000">
-
                                 </div>
 
-                                
                                 <!-- Status -->
                                 <div class="form-group">
                                     <label>Publication Status</label>
-
                                     <div class="custom-control custom-radio">
                                         <input type="radio" id="published" name="status" value="1"
                                             class="custom-control-input" {{ $color->status == 1 ? 'checked' : '' }}>
@@ -88,7 +81,6 @@
                                         </label>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="card-footer text-right">
@@ -100,14 +92,10 @@
                                     Cancel
                                 </a>
                             </div>
-
                         </form>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 @endsection
