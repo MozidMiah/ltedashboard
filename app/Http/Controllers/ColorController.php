@@ -81,14 +81,14 @@ class ColorController extends Controller
     {
 
         $request->validate([
-            'name'  => 'required|unique:colors,name',
-            'color' => 'required'
+            'name'          => 'required|unique:colors,name',
+            'color'         => 'required'
         ]);
 
         Color::create([
-            'name'   => $request->name,
-            'color'  => $request->color,
-            'status' => 1
+            'name'          => $request->name,
+            'color'         => $request->color,
+            'status'        => 1
         ]);
 
         return redirect()->route('color.index')
@@ -113,13 +113,13 @@ class ColorController extends Controller
         $color = Color::findOrFail($request->id);
 
         $request->validate([
-            'name' => 'required|unique:colors,name,' . $color->id,
-            'color' => 'required'
+            'name'          => 'required|unique:colors,name,' . $color->id,
+            'color'         => 'required'
         ]);
 
         $color->update([
-            'name'  => $request->name,
-            'color' => $request->color
+            'name'          => $request->name,
+            'color'         => $request->color
         ]);
 
         return redirect()->route('color.index')

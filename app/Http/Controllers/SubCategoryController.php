@@ -83,10 +83,10 @@ class SubcategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'category_id' => 'required',
-            'name' => 'required|unique:subcategories,name',
-            'slug' => 'required|unique:subcategories,slug',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png',
+            'category_id'       => 'required',
+            'name'              => 'required|unique:subcategories,name',
+            'slug'              => 'required|unique:subcategories,slug',
+            'image'             => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
         $imageUrl = null;
@@ -95,12 +95,12 @@ class SubcategoryController extends Controller
         }
 
         Subcategory::create([
-            'category_id' => $request->category_id,
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description,
-            'status' => $request->status ?? 1,
-            'image' => $imageUrl,
+            'category_id'       => $request->category_id,
+            'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
+            'description'       => $request->description,
+            'status'            => $request->status ?? 1,
+            'image'             => $imageUrl,
         ]);
 
         return redirect()->route('subcategory.index')
@@ -125,10 +125,10 @@ class SubcategoryController extends Controller
         $subcategory = Subcategory::findOrFail($request->id);
 
         $request->validate([
-            'category_id' => 'required',
-            'name' => 'required|unique:subcategories,name,' . $subcategory->id,
-            'slug' => 'required|unique:subcategories,slug,' . $subcategory->id,
-            'image' => 'nullable|image|mimes:jpg,jpeg,png',
+            'category_id'       => 'required',
+            'name'              => 'required|unique:subcategories,name,' . $subcategory->id,
+            'slug'              => 'required|unique:subcategories,slug,' . $subcategory->id,
+            'image'             => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
 
         if ($request->hasFile('image')) {
@@ -138,12 +138,12 @@ class SubcategoryController extends Controller
         }
 
         $subcategory->update([
-            'category_id' => $request->category_id,
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'description' => $request->description,
-            'status' => $request->status ?? 1,
-            'image' => $imageUrl,
+            'category_id'       => $request->category_id,
+            'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
+            'description'       => $request->description,
+            'status'            => $request->status ?? 1,
+            'image'             => $imageUrl,
         ]);
 
         return redirect()->route('subcategory.index')
