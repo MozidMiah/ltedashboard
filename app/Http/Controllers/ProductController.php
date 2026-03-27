@@ -54,17 +54,17 @@ class ProductController extends Controller
     public function create()
     {
         return view('admin.product.create', [
-            'categories' => Category::all(),
-            'subcategories' => SubCategory::all(),
-            'brands' => Brand::all(),
+            'categories'        => Category::all(),
+            'subcategories'     => SubCategory::all(),
+            'brands'            => Brand::all(),
         ]);
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'price' => 'required',
+            'name'      => 'required',
+            'price'     => 'required',
         ]);
 
         $imagePath = null;
@@ -77,16 +77,16 @@ class ProductController extends Controller
         }
 
         Product::create([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
-            'brand_id' => $request->brand_id,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'image' => $imagePath,
-            'description' => $request->description,
-            'status' => $request->status ?? 1,
+            'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
+            'category_id'       => $request->category_id,
+            'subcategory_id'    => $request->subcategory_id,
+            'brand_id'          => $request->brand_id,
+            'price'             => $request->price,
+            'quantity'          => $request->quantity,
+            'image'             => $imagePath,
+            'description'       => $request->description,
+            'status'            => $request->status ?? 1,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product Added');
@@ -97,10 +97,10 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         return view('admin.product.edit', [
-            'product' => $product,
-            'categories' => Category::all(),
-            'subcategories' => SubCategory::all(),
-            'brands' => Brand::all(),
+            'product'           => $product,
+            'categories'        => Category::all(),
+            'subcategories'     => SubCategory::all(),
+            'brands'            => Brand::all(),
         ]);
     }
 
@@ -109,8 +109,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($request->id);
 
         $request->validate([
-            'name' => 'required',
-            'price' => 'required'
+            'name'      => 'required',
+            'price'     => 'required'
         ]);
 
         if ($request->hasFile('image')) {
@@ -127,15 +127,15 @@ class ProductController extends Controller
         }
 
         $product->update([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
-            'category_id' => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
-            'brand_id' => $request->brand_id,
-            'price' => $request->price,
-            'quantity' => $request->quantity,
-            'description' => $request->description,
-            'status' => $request->status ?? 1,
+            'name'              => $request->name,
+            'slug'              => Str::slug($request->name),
+            'category_id'       => $request->category_id,
+            'subcategory_id'    => $request->subcategory_id,
+            'brand_id'          => $request->brand_id,
+            'price'             => $request->price,
+            'quantity'          => $request->quantity,
+            'description'       => $request->description,
+            'status'            => $request->status ?? 1,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product Updated');
