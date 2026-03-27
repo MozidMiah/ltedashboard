@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->integer('quantity')->default(0);
             $table->string('image')->nullable();
-            $table->text('description')->nullable();
+            $table->text('discount_price')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });
