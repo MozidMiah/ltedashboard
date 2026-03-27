@@ -128,18 +128,12 @@
                                     <i class="fas fa-save"></i> Save Category
                                 </button>
 
-                                <a href="{{ route('category.index') }}" class="btn btn-secondary">
-                                    Cancel
-                                </a>
+                                <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
                             </div>
-
                         </form>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 @endsection

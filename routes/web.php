@@ -114,15 +114,16 @@ Route::middleware(['auth'])->group(function () {
 
     //For Product
     Route::prefix('product')->name('product.')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('index');
-        Route::get('/data', [ProductController::class, 'getData'])->name('data');
+        Route::get('', [ProductController::class, 'index'])->name('index');
+        Route::get('create', [ProductController::class, 'create'])->name('create');
+        Route::post('store', [ProductController::class, 'store'])->name('store');
 
-        Route::get('/create', [ProductController::class, 'create'])->name('create');
-        Route::post('/store', [ProductController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('edit');
+        Route::post('update', [ProductController::class, 'update'])->name('update');
 
-        Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
-        Route::post('/update', [ProductController::class, 'update'])->name('update');
-        Route::get('/delete/{id}', [ProductController::class, 'delete'])->name('delete');
+        Route::get('status/{id}', [ProductController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [ProductController::class, 'delete'])->name('delete');
+        Route::get('/brand-data', [ProductController::class, 'getData'])->name('data');
     });
 });
 

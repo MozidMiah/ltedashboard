@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\SubCategory;
+use App\Models\Subcategory;
 use App\Models\Brand;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
@@ -55,7 +55,7 @@ class ProductController extends Controller
     {
         return view('admin.product.create', [
             'categories'        => Category::all(),
-            'subcategories'     => SubCategory::all(),
+            'subcategories'     => Subcategory::all(),
             'brands'            => Brand::all(),
         ]);
     }
@@ -63,33 +63,45 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'      => 'required',
-            'price'     => 'required',
+            'name'          => 'required|string|max:255',
+            'category_id'   => 'required|integer',
+            'subcategory_id' => 'required|integer',
+            'brand_id'      => 'required|integer',
+            'price'         => 'required|numeric',
+            'quantity'      => 'required|integer',
+            'image'         => 'required|image|mimes:jpg,jpeg,png,gif',
         ]);
 
+        // Handle Image Upload
         $imagePath = null;
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($file = $request->file('image')) {
             $name = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/products'), $name);
             $imagePath = 'uploads/products/' . $name;
         }
 
+        // Generate unique slug
+        $slug = Str::slug($request->name);
+        $count = Product::where('slug', 'LIKE', "$slug%")->count();
+        if ($count > 0) {
+            $slug .= '-' . ($count + 1);
+        }
+
+        // Create Product
         Product::create([
-            'name'              => $request->name,
-            'slug'              => Str::slug($request->name),
-            'category_id'       => $request->category_id,
-            'subcategory_id'    => $request->subcategory_id,
-            'brand_id'          => $request->brand_id,
-            'price'             => $request->price,
-            'quantity'          => $request->quantity,
-            'image'             => $imagePath,
-            'description'       => $request->description,
-            'status'            => $request->status ?? 1,
+            'name'           => $request->name,
+            'slug'           => $slug,
+            'category_id'    => $request->category_id,
+            'subcategory_id' => $request->subcategory_id,
+            'brand_id'       => $request->brand_id,
+            'price'          => $request->price,
+            'quantity'       => $request->quantity,
+            'image'          => $imagePath,
+            'description'    => $request->description,
+            'status'         => $request->status ?? 1,
         ]);
 
-        return redirect()->route('product.index')->with('success', 'Product Added');
+        return redirect()->route('product.index')->with('success', 'Product created successfully!');
     }
 
     public function edit($id)
@@ -99,7 +111,7 @@ class ProductController extends Controller
         return view('admin.product.edit', [
             'product'           => $product,
             'categories'        => Category::all(),
-            'subcategories'     => SubCategory::all(),
+            'subcategories'     => Subcategory::all(),
             'brands'            => Brand::all(),
         ]);
     }
@@ -145,12 +157,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        if (file_exists(public_path($product->image))) {
-            unlink(public_path($product->image));
-        }
-
         $product->delete();
 
-        return redirect()->back()->with('success', 'Deleted');
+        return redirect()->route('product.index')
+            ->with('success', 'Product deleted successfully');
     }
 }
