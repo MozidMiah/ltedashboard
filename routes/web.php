@@ -123,7 +123,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('status/{id}', [ProductController::class, 'status'])->name('status');
         Route::get('delete/{id}', [ProductController::class, 'delete'])->name('delete');
-        Route::get('/brand-data', [ProductController::class, 'getData'])->name('data');
+        Route::get('data', [ProductController::class, 'getData'])->name('data');
     });
 });
 

@@ -19,11 +19,14 @@ class ProductController extends Controller
 
     public function getData()
     {
-        $products = Product::with(['category', 'subcategory', 'brand'])->latest();
+        $products = Product::with('category','subcategory','brand')->latest();
 
         return DataTables::of($products)
             ->addIndexColumn()
 
+            ->addColumn('category_name', function ($row) {
+                return $row->category->name;
+            })
             ->addColumn('image', function ($row) {
                 return '<img src="' . asset($row->image) . '" width="50">';
             })
@@ -97,7 +100,7 @@ class ProductController extends Controller
             'price'          => $request->price,
             'quantity'       => $request->quantity,
             'image'          => $imagePath,
-            'description'    => $request->description,
+            'discount_price'    => $request->discount_price,
             'status'         => $request->status ?? 1,
         ]);
 
@@ -146,7 +149,7 @@ class ProductController extends Controller
             'brand_id'          => $request->brand_id,
             'price'             => $request->price,
             'quantity'          => $request->quantity,
-            'description'       => $request->description,
+            'discount_price'       => $request->discount_price,
             'status'            => $request->status ?? 1,
         ]);
 

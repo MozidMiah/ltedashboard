@@ -24,6 +24,7 @@
                 <tr>
                     <th>No</th>
                     <th>Image</th>
+                    <th>Category Name</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Discount_Price</th>
@@ -44,11 +45,18 @@
                 serverSide: true,
                 ajax: "{{ route('product.data') }}",
                 columns: [{
-                        data: 'DT_RowIndex'
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex',
+                        orderable: false,
+                        searchable: false
                     },
                     {
                         data: 'image',
                         name: 'image'
+                    },
+                    {
+                        data: 'category_name',
+                        name: 'category_name'
                     },
                     {
                         data: 'name',
