@@ -7,6 +7,9 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Brand;
+use App\Models\Color;
+use App\Models\Size;
+use App\Models\Unit;
 use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -19,7 +22,7 @@ class ProductController extends Controller
 
     public function getData()
     {
-        $products = Product::with('category','subcategory','brand')->latest();
+        $products = Product::with('category', 'subcategory', 'brand')->latest();
 
         return DataTables::of($products)
             ->addIndexColumn()
@@ -58,21 +61,25 @@ class ProductController extends Controller
     {
         return view('admin.product.create', [
             'categories'        => Category::all(),
-            'subcategories'     => Subcategory::all(),
+            'subcategories'     => SubCategory::all(),
             'brands'            => Brand::all(),
+            'colors'            => Color::all(),
+            'units'             => Unit::all(),
+            'sizes'             => Size::all(),
         ]);
     }
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'name'          => 'required|string|max:255',
-            'category_id'   => 'required|integer',
-            'subcategory_id' => 'required|integer',
-            'brand_id'      => 'required|integer',
-            'price'         => 'required|numeric',
-            'quantity'      => 'required|integer',
-            'image'         => 'required|image|mimes:jpg,jpeg,png,gif',
+            'name'              => 'required|string|max:255',
+            'category_id'       => 'required|integer',
+            'subcategory_id'    => 'required|integer',
+            'brand_id'          => 'required|integer',
+            'price'             => 'required|numeric',
+            'quantity'          => 'required|integer',
+            'image'             => 'required|image|mimes:jpg,jpeg,png,gif',
         ]);
 
         // Handle Image Upload
@@ -92,16 +99,20 @@ class ProductController extends Controller
 
         // Create Product
         Product::create([
-            'name'           => $request->name,
-            'slug'           => $slug,
-            'category_id'    => $request->category_id,
-            'subcategory_id' => $request->subcategory_id,
-            'brand_id'       => $request->brand_id,
-            'price'          => $request->price,
-            'quantity'       => $request->quantity,
-            'image'          => $imagePath,
+            'name'              => $request->name,
+            'slug'              => $slug,
+            'category_id'       => $request->category_id,
+            'subcategory_id'    => $request->subcategory_id,
+            'brand_id'          => $request->brand_id,
+            'price'             => $request->price,
+            'quantity'          => $request->quantity,
+            'image'             => $imagePath,
             'discount_price'    => $request->discount_price,
-            'status'         => $request->status ?? 1,
+            'color_id'          => $request->color_id,
+            'unit_id'           => $request->unit_id,
+            'size_id'           => $request->size_id,
+            'sku'               => $request->sku,
+            'status'            => $request->status ?? 1,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product created successfully!');
@@ -149,7 +160,7 @@ class ProductController extends Controller
             'brand_id'          => $request->brand_id,
             'price'             => $request->price,
             'quantity'          => $request->quantity,
-            'discount_price'       => $request->discount_price,
+            'discount_price'    => $request->discount_price,
             'status'            => $request->status ?? 1,
         ]);
 
