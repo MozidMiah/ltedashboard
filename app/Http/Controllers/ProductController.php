@@ -122,10 +122,13 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         return view('admin.product.edit', [
-            'product'           => $product,
-            'categories'        => Category::all(),
-            'subcategories'     => Subcategory::all(),
-            'brands'            => Brand::all(),
+            'product'       => $product,
+            'categories'    => Category::all(),
+            'subcategories' => Subcategory::all(),
+            'brands'        => Brand::all(),
+            'colors'        => Color::all(),
+            'units'         => Unit::all(),
+            'sizes'         => Size::all(),
         ]);
     }
 
@@ -134,39 +137,45 @@ class ProductController extends Controller
         $product = Product::findOrFail($request->id);
 
         $request->validate([
-            'name'      => 'required',
-            'price'     => 'required'
+            'name'          => 'required|string|max:255',
+            'buying_price'  => 'required|numeric',
+            'selling_price' => 'required|numeric',
+            'stock_qty'     => 'required|integer',
+            'sku'           => 'required|unique:products,sku,' . $product->id,
         ]);
 
+        // Handle Image
         if ($request->hasFile('image')) {
-            // old image delete
-            if (file_exists(public_path($product->image))) {
+            if ($product->image && file_exists(public_path($product->image))) {
                 unlink(public_path($product->image));
             }
-
             $file = $request->file('image');
             $name = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/products'), $name);
-
             $product->image = 'uploads/products/' . $name;
         }
 
         $product->update([
             'name'              => $request->name,
             'slug'              => Str::slug($request->name),
+            'short_description' => $request->short_description,
+            'description'       => $request->description,
             'category_id'       => $request->category_id,
             'subcategory_id'    => $request->subcategory_id,
             'brand_id'          => $request->brand_id,
-
+            'color_id'          => $request->color_id,
+            'unit_id'           => $request->unit_id,
+            'size_id'           => $request->size_id,
+            'sku'               => $request->sku,
             'buying_price'      => $request->buying_price,
             'selling_price'     => $request->selling_price,
             'discount_price'    => $request->discount_price,
-
             'stock_qty'         => $request->stock_qty,
             'min_qty'           => $request->min_qty,
+            'status'            => $request->status ?? 1,
         ]);
 
-        return redirect()->route('product.index')->with('success', 'Product Updated');
+        return redirect()->route('product.index')->with('success', 'Product Updated Successfully');
     }
 
     public function delete($id)
