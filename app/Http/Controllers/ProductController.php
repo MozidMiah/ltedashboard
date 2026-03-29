@@ -30,14 +30,8 @@ class ProductController extends Controller
             ->addColumn('category_name', function ($row) {
                 return $row->category->name;
             })
-            ->addColumn('image', function ($row) {
-                return '<img src="' . asset($row->image) . '" width="50">';
-            })
-
-            ->addColumn('status', function ($row) {
-                return $row->status
-                    ? '<span class="badge badge-success">Active</span>'
-                    : '<span class="badge badge-danger">Inactive</span>';
+            ->addColumn('selling_price', function ($row) {
+                return $row->selling_price;
             })
 
             ->addColumn('action', function ($row) {
@@ -53,7 +47,7 @@ class ProductController extends Controller
                 ';
             })
 
-            ->rawColumns(['image', 'status', 'action'])
+            ->rawColumns(['action'])
             ->make(true);
     }
 
@@ -61,7 +55,7 @@ class ProductController extends Controller
     {
         return view('admin.product.create', [
             'categories'        => Category::all(),
-            'subcategories'     => SubCategory::all(),
+            'subcategories'     => Subcategory::all(),
             'brands'            => Brand::all(),
             'colors'            => Color::all(),
             'units'             => Unit::all(),
@@ -71,51 +65,56 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
-            'name'              => 'required|string|max:255',
-            'category_id'       => 'required|integer',
-            'subcategory_id'    => 'required|integer',
-            'brand_id'          => 'required|integer',
-            'price'             => 'required|numeric',
-            'quantity'          => 'required|integer',
-            'image'             => 'required|image|mimes:jpg,jpeg,png,gif',
+            'name'              => 'required',
+            'category_id'       => 'required',
+            'buying_price'      => 'required|numeric',
+            'selling_price'     => 'required|numeric',
+            'stock_qty'         => 'required|integer',
+            'sku'               => 'required|unique:products,sku',
         ]);
 
-        // Handle Image Upload
+        // Image upload
         $imagePath = null;
-        if ($file = $request->file('image')) {
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
             $name = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/products'), $name);
             $imagePath = 'uploads/products/' . $name;
         }
 
-        // Generate unique slug
+        // Slug generate
         $slug = Str::slug($request->name);
         $count = Product::where('slug', 'LIKE', "$slug%")->count();
         if ($count > 0) {
             $slug .= '-' . ($count + 1);
         }
 
-        // Create Product
         Product::create([
             'name'              => $request->name,
             'slug'              => $slug,
+            'sku'               => $request->sku,
+
+            'short_description' => $request->short_description,
+            'description'       => $request->description,
+
             'category_id'       => $request->category_id,
             'subcategory_id'    => $request->subcategory_id,
             'brand_id'          => $request->brand_id,
-            'price'             => $request->price,
-            'quantity'          => $request->quantity,
-            'image'             => $imagePath,
-            'discount_price'    => $request->discount_price,
+
             'color_id'          => $request->color_id,
             'unit_id'           => $request->unit_id,
             'size_id'           => $request->size_id,
-            'sku'               => $request->sku,
-            'status'            => $request->status ?? 1,
+
+            'buying_price'      => $request->buying_price,
+            'selling_price'     => $request->selling_price,
+            'discount_price'    => $request->discount_price,
+
+            'stock_qty'         => $request->stock_qty,
+            'min_qty'           => $request->min_qty,
         ]);
 
-        return redirect()->route('product.index')->with('success', 'Product created successfully!');
+        return redirect()->route('product.index')->with('success', 'Product Created Successfully');
     }
 
     public function edit($id)
@@ -158,10 +157,13 @@ class ProductController extends Controller
             'category_id'       => $request->category_id,
             'subcategory_id'    => $request->subcategory_id,
             'brand_id'          => $request->brand_id,
-            'price'             => $request->price,
-            'quantity'          => $request->quantity,
+
+            'buying_price'      => $request->buying_price,
+            'selling_price'     => $request->selling_price,
             'discount_price'    => $request->discount_price,
-            'status'            => $request->status ?? 1,
+
+            'stock_qty'         => $request->stock_qty,
+            'min_qty'           => $request->min_qty,
         ]);
 
         return redirect()->route('product.index')->with('success', 'Product Updated');

@@ -44,10 +44,10 @@
 
                             <div class="col-md-4 mb-3">
                                 <label>Short Description<span class="text-danger">*</span></label>
-                                <input type="text" name="description" value="{{ old('description') }}"
-                                    class="form-control @error('description') is-invalid @enderror"
+                                <input type="text" name="short_description" value="{{ old('short_description') }}"
+                                    class="form-control @error('short_description') is-invalid @enderror"
                                     placeholder="Enter Short Description">
-                                @error('description')
+                                @error('short_description')
                                     <span class="invalid-feedback d-block">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -152,28 +152,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-
-
-                                <!-- Image -->
-                                {{-- <div class="form-group">
-                                    <label>Product Image</label>
-                                    <input type="file" name="image" class="form-control dropify" />
-                                </div> --}}
-
-                                <!-- Status -->
-                                {{-- <div class="col-md-4 mb-3">
-                                    <label>Status</label>
-                                    <div class="custom-control custom-radio">
-                                        <input class="custom-control-input" type="radio" name="status" id="active"
-                                            value="1" checked>
-                                        <label class="custom-control-label" for="active">Active</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input class="custom-control-input" type="radio" name="status" id="inactive"
-                                            value="0">
-                                        <label class="custom-control-label" for="inactive">Inactive</label>
-                                    </div>
-                                </div> --}}
+                                
                                 <!-- SKU -->
                                 <div class="col-md-6 mb-3">
                                     <label>Product SKU *</label>

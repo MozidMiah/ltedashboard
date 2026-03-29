@@ -23,13 +23,11 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Image</th>
                     <th>Category Name</th>
-                    <th>Name</th>
+                    <th>Product Name</th>
                     <th>Price</th>
                     <th>Discount_Price</th>
                     <th>Qty</th>
-                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -51,10 +49,6 @@
                         searchable: false
                     },
                     {
-                        data: 'image',
-                        name: 'image'
-                    },
-                    {
                         data: 'category_name',
                         name: 'category_name'
                     },
@@ -63,20 +57,16 @@
                         name: 'name'
                     },
                     {
-                        data: 'price',
-                        name: 'price'
+                        data: 'selling_price',
+                        name: 'selling_price'
                     },
                     {
                         data: 'discount_price',
                         name: 'discount_price'
                     },
                     {
-                        data: 'quantity',
-                        name: 'quantity'
-                    },
-                    {
-                        data: 'status',
-                        name: 'status'
+                        data: 'stock_qty',
+                        name: 'stock_qty'
                     },
                     {
                         data: 'action',
