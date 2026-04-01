@@ -72,7 +72,7 @@ class FlashSaleController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('flashsale.index')->with('success', 'Created!');
+        return redirect()->route('flash-sale.index')->with('success', 'Created!');
     }
 
     public function edit($id)
@@ -100,7 +100,7 @@ class FlashSaleController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->route('flashsale.index');
+        return redirect()->route('flash-sale.index');
     }
 
     public function delete($id)
