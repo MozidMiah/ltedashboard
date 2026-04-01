@@ -72,16 +72,17 @@ class ProductController extends Controller
             'selling_price'     => 'required|numeric',
             'stock_qty'         => 'required|integer',
             'sku'               => 'required|unique:products,sku',
+            
         ]);
 
-        // Image upload
-        $imagePath = null;
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $name = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/products'), $name);
-            $imagePath = 'uploads/products/' . $name;
-        }
+        // // Image upload
+        // $imagePath = null;
+        // if ($request->hasFile('image')) {
+        //     $file = $request->file('image');
+        //     $name = time() . '.' . $file->getClientOriginalExtension();
+        //     $file->move(public_path('uploads/products'), $name);
+        //     $imagePath = 'uploads/products/' . $name;
+        // }
 
         // Slug generate
         $slug = Str::slug($request->name);
