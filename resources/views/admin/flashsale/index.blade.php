@@ -25,10 +25,10 @@
                     <th>No</th>
                     <th>Thumbnail</th>
                     <th>Name</th>
+                    <th>Description</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>status</th>
-                    <th>Description</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -59,6 +59,10 @@
                         name: 'name'
                     },
                     {
+                        data: 'description',
+                        name: 'description'
+                    },
+                    {
                         data: 'start_date',
                         name: 'start_date'
                     },
@@ -69,10 +73,6 @@
                     {
                         data: 'status',
                         name: 'status'
-                    },
-                    {
-                        data: 'description',
-                        name: 'description'
                     },
                     {
                         data: 'action',

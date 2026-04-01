@@ -50,6 +50,18 @@
                                     @enderror
                                 </div>
 
+                                <!-- Thumbnail -->
+                                <div class="form-group">
+                                    <label>Thumbnail</label>
+                                    <input type="file" name="thumbnail" class="form-control form-control dropify" />
+
+                                    @error('thumbnail')
+                                        <span class="invalid-feedback d-block">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
+                                </div>
+
                                 <!-- Description -->
                                 <div class="form-group">
                                     <label>Description <span class="text-danger">*</span></label>
@@ -57,18 +69,6 @@
                                         placeholder="Enter Description">{{ old('description') }}</textarea>
 
                                     @error('description')
-                                        <span class="invalid-feedback d-block">
-                                            {{ $message }}
-                                        </span>
-                                    @enderror
-                                </div>
-
-                                <!-- Thumbnail -->
-                                <div class="form-group">
-                                    <label>Thumbnail</label>
-                                    <input type="file" name="thumbnail" class="form-control form-control dropify" />
-
-                                    @error('thumbnail')
                                         <span class="invalid-feedback d-block">
                                             {{ $message }}
                                         </span>
@@ -110,15 +110,19 @@
                                     <label>Status</label>
 
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="active" name="status" value="active"
-                                            class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="active">Active</label>
+                                        <input class="custom-control-input" type="radio" id="published" name="status"
+                                            value="1" checked>
+                                        <label for="published" class="custom-control-label">
+                                            Active
+                                        </label>
                                     </div>
 
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="inactive" name="status" value="inactive"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="inactive">Inactive</label>
+                                        <input class="custom-control-input" type="radio" id="unpublished" name="status"
+                                            value="2">
+                                        <label for="unpublished" class="custom-control-label">
+                                            Inactive
+                                        </label>
                                     </div>
                                 </div>
 
