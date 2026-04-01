@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -124,6 +125,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [ProductController::class, 'status'])->name('status');
         Route::get('delete/{id}', [ProductController::class, 'delete'])->name('delete');
         Route::get('data', [ProductController::class, 'getData'])->name('data');
+    });
+
+    //For Flash Sales
+    Route::prefix('flash-sale')->name('flash-sale.')->group(function () {
+        Route::get('', [FlashSaleController::class, 'index'])->name('index');
+        Route::get('create', [FlashSaleController::class, 'create'])->name('create');
+        Route::post('store', [FlashSaleController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [FlashSaleController::class, 'edit'])->name('edit');
+        Route::post('update', [FlashSaleController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [FlashSaleController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [FlashSaleController::class, 'delete'])->name('delete');
+        Route::get('data', [FlashSaleController::class, 'getData'])->name('data');
     });
 });
 
