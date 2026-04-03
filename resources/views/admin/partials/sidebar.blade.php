@@ -24,7 +24,7 @@
                 <li class="nav-item">
                     <a href="{{ route('banner.index') }}"
                         class="nav-link {{ request()->routeIs('banner.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tags"></i>
+                        <i class="fas fa-image"></i>
                         <p>Banner</p>
                     </a>
                 </li>
@@ -90,14 +90,14 @@
                 <li class="nav-item">
                     <a href="{{ route('product.index') }}"
                         class="nav-link {{ request()->routeIs('product.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="fas fa-box"></i>
                         <p>Products</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('flash-sale.index') }}"
                         class="nav-link {{ request()->routeIs('flash-sale.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="fas fa-bolt"></i>
                         <p>Flash Sales</p>
                     </a>
                 </li>

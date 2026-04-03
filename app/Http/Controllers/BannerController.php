@@ -104,14 +104,14 @@ class BannerController extends Controller
     {
         $banner = Banner::findOrFail($request->id);
 
-        $request->validate([
-            'title' => 'required|unique:banners,title,' . $banner->id,
-        ]);
+        $banner->title = $request->banner;
+        $banner->status = $request->status;
 
-        $imagePath = $banner->thumbnail;
+        $thumbnailUrl = $banner->thumbnail;
 
+        // old image delete optional
         if ($request->hasFile('thumbnail')) {
-
+            // old image delete korar jonno
             if ($banner->thumbnail && file_exists(public_path($banner->thumbnail))) {
                 unlink(public_path($banner->thumbnail));
             }
@@ -119,16 +119,16 @@ class BannerController extends Controller
             $image = $request->file('thumbnail');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/banner'), $imageName);
-            $imagePath = 'uploads/banner/' . $imageName;
+            $thumbnailUrl = 'uploads/brand/' . $imageName;
         }
 
         $banner->update([
-            'title'     => $request->title,
-            'status'    => $request->status,
-            'thumbnail' => $imagePath,
+            // 'title' => $request->title,
+            'status' => $request->status,
+            'thumbnail' => $thumbnailUrl
         ]);
 
-        return redirect()->route('banner.index')->with('success', 'Banner Updated Successfully');
+        return redirect()->route('banner.index')->with('message', 'Banner updated successfully!');
     }
 
     // ================= DELETE =================

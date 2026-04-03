@@ -75,11 +75,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    
                                     <label>Slug <span class="text-danger">*</span></label>
                                     <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
-                                        class="form-control @error('slug') is-invalid @enderror"
-                                        placeholder="Enter slug">
+                                        class="form-control @error('slug') is-invalid @enderror" placeholder="Enter slug">
 
                                     @error('slug')
                                         <span class="invalid-feedback d-block">
@@ -120,9 +118,7 @@
                                         </label>
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="card-footer text-right">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fas fa-save"></i> Save Brand
@@ -132,14 +128,10 @@
                                     Cancel
                                 </a>
                             </div>
-
                         </form>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 @endsection

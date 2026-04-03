@@ -48,12 +48,12 @@
                         searchable: false
                     },
                     {
-                        data: 'Thumbnail',
-                        name: 'Thumbnail'
+                        data: 'thumbnail',
+                        name: 'thumbnail'
                     },
                     {
-                        data: 'Title',
-                        name: 'Title'
+                        data: 'title',
+                        name: 'title'
                     },
                     {
                         data: 'status',
