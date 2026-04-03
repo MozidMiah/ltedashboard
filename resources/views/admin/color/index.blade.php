@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('content')
-<div class="container">
+<div class="container mt-3">
     <div class="col-sm-12">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
@@ -10,7 +10,7 @@
     </div>
 
     <h2>Color List</h2>
-    <a href="{{ route('color.create') }}" class="btn btn-success btn-sm mb-2">Add New Color</a>
+    <a href="{{ route('color.create') }}" class="btn btn-success btn-sm mb-2">Add New</a>
 
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

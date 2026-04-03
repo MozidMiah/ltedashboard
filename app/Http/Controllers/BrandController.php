@@ -134,10 +134,7 @@ class BrandController extends Controller
     public function delete($id)
     {
         $brand = Brand::findOrFail($id);
-
         $brand->delete();
-
-        return redirect()->route('brand.index')
-            ->with('success', 'Category deleted successfully');
+        return redirect()->route('brand.index')->with('success', 'Category deleted successfully');
     }
 }

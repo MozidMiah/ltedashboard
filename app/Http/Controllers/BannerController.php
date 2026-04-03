@@ -2,105 +2,140 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Banner;
+use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
 class BannerController extends Controller
 {
+    // ================= INDEX =================
     public function index()
     {
         return view('admin.banner.index');
     }
 
-    public function data()
+    // ================= DATATABLE =================
+    public function getData(Request $request)
     {
-        $data = Banner::latest();
+        $banners = Banner::latest()->get();
 
-        return DataTables::of($data)
+        return DataTables::of($banners)
             ->addIndexColumn()
 
             ->addColumn('thumbnail', function ($row) {
-                return '<img src="/uploads/banner/'.$row->thumbnail.'" width="70">';
+                $img = $row->thumbnail ? asset($row->thumbnail) : 'https://via.placeholder.com/50';
+                return '<img src="' . $img . '" width="60" height="50">';
             })
 
             ->addColumn('status', function ($row) {
-                $checked = $row->status ? 'checked' : '';
-                return '<input type="checkbox" class="statusToggle" data-id="'.$row->id.'" '.$checked.'>';
-            })
 
-            ->addColumn('action', function ($row) {
+                $current = $row->status == 1 ? 'Active' : 'Inactive';
+
                 return '
-                <a href="'.route('banner.edit',$row->id).'" class="btn btn-sm btn-primary">Edit</a>
-                <button class="btn btn-sm btn-danger deleteBtn" data-id="'.$row->id.'">Delete</button>
+                    <select class="form-control form-control-sm statusDropdown text-center" 
+                            data-id="' . $row->id . '" 
+                            style="width:80px;">
+                        <option value="' . $row->status . '" selected>' . $current . '</option>
+                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
+                    </select>
                 ';
             })
 
-            ->rawColumns(['thumbnail','status','action'])
+            ->addColumn('action', function ($row) {
+
+                $edit = '<a href="' . route('banner.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                            <i class="fas fa-edit"></i>
+                         </a>';
+
+                $delete = '<a href="' . route('banner.delete', $row->id) . '" 
+                                onclick="return confirm(\'Are you sure?\')" 
+                                class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                           </a>';
+
+                return $edit . ' ' . $delete;
+            })
+
+            ->rawColumns(['thumbnail', 'status', 'action'])
             ->make(true);
     }
 
+    // ================= CREATE =================
     public function create()
     {
         return view('admin.banner.create');
     }
 
+    // ================= STORE =================
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>'required',
-            'thumbnail'=>'required|image'
+            'title'     => 'required|unique:banners,title',
+            'thumbnail' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        $image = $request->file('thumbnail');
-        $name = time().'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('uploads/banner'), $name);
+        $imagePath = null;
+
+        if ($request->hasFile('thumbnail')) {
+            $image = $request->file('thumbnail');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/banner'), $imageName);
+            $imagePath = 'uploads/banner/' . $imageName;
+        }
 
         Banner::create([
-            'title'=>$request->title,
-            'thumbnail'=>$name,
-            'status'=>1
+            'title'     => $request->title,
+            'thumbnail' => $imagePath,
+            'status'    => $request->status ?? 1,
         ]);
 
-        return redirect()->route('banner.index')->with('success','Banner Added');
+        return redirect()->route('banner.index')->with('success', 'Banner Created Successfully');
     }
 
+    // ================= EDIT =================
     public function edit($id)
     {
         $banner = Banner::findOrFail($id);
         return view('admin.banner.edit', compact('banner'));
     }
 
-    public function update(Request $request, $id)
+    // ================= UPDATE =================
+    public function update(Request $request)
     {
-        $banner = Banner::findOrFail($id);
+        $banner = Banner::findOrFail($request->id);
 
-        if($request->hasFile('thumbnail')){
+        $request->validate([
+            'title' => 'required|unique:banners,title,' . $banner->id,
+        ]);
+
+        $imagePath = $banner->thumbnail;
+
+        if ($request->hasFile('thumbnail')) {
+
+            if ($banner->thumbnail && file_exists(public_path($banner->thumbnail))) {
+                unlink(public_path($banner->thumbnail));
+            }
+
             $image = $request->file('thumbnail');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('uploads/banner'), $name);
-
-            $banner->thumbnail = $name;
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/banner'), $imageName);
+            $imagePath = 'uploads/banner/' . $imageName;
         }
 
-        $banner->title = $request->title;
-        $banner->save();
+        $banner->update([
+            'title'     => $request->title,
+            'status'    => $request->status,
+            'thumbnail' => $imagePath,
+        ]);
 
-        return redirect()->route('banner.index')->with('success','Updated');
+        return redirect()->route('banner.index')->with('success', 'Banner Updated Successfully');
     }
 
+    // ================= DELETE =================
     public function delete($id)
     {
-        Banner::findOrFail($id)->delete();
-        return response()->json(['success'=>true]);
-    }
-
-    public function status(Request $request)
-    {
-        $banner = Banner::find($request->id);
-        $banner->status = $request->status;
-        $banner->save();
-
-        return response()->json(['success'=>true]);
+        $banner = Banner::findOrFail($id);
+        $banner->delete();
+        return redirect()->route('banner.index')->with('success', 'Banner deleted successfully');
     }
 }

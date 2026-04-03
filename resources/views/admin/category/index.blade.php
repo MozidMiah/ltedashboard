@@ -1,7 +1,7 @@
 @extends('admin.dashboard')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-3">
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item">
@@ -13,7 +13,7 @@
             </ol>
         </div>
         <h2>Category List</h2>
-        <a href="{{ route('category.create') }}" class="btn btn-success btn-sm mb-2">Add New Category</a>
+        <a href="{{ route('category.create') }}" class="btn btn-success btn-sm mb-2">Add New</a>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

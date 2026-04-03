@@ -21,6 +21,13 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('banner.index') }}"
+                        class="nav-link {{ request()->routeIs('banner.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tags"></i>
+                        <p>Banner</p>
+                    </a>
+                </li>
                 <li
                     class="nav-item has-treeview {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'menu-open' : '' }}">
                     <a href="#"
