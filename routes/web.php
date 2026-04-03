@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
@@ -139,6 +140,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [FlashSaleController::class, 'status'])->name('status');
         Route::get('delete/{id}', [FlashSaleController::class, 'delete'])->name('delete');
         Route::get('data', [FlashSaleController::class, 'getData'])->name('data');
+    });
+
+    //For Banner
+    Route::prefix('banner')->name('banner.')->group(function () {
+        Route::get('', [BannerController::class, 'index'])->name('index');
+        Route::get('create', [BannerController::class, 'create'])->name('create');
+        Route::post('store', [BannerController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [BannerController::class, 'edit'])->name('edit');
+        Route::post('update', [BannerController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [BannerController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [BannerController::class, 'delete'])->name('delete');
+        Route::get('data', [BannerController::class, 'getData'])->name('data');
     });
 });
 
