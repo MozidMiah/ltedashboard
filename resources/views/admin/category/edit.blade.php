@@ -26,10 +26,8 @@
     <!-- Main Content -->
     <section class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Edit Category Form</h3>
@@ -40,7 +38,6 @@
                             <input type="hidden" name="id" value="{{ $category->id }}">
 
                             <div class="card-body">
-
                                 {{-- Success Message --}}
                                 @if (session('message'))
                                     <div class="alert alert-success alert-dismissible fade show">
@@ -91,7 +88,6 @@
                                         </label>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="card-footer text-right">
@@ -103,20 +99,16 @@
                                     Cancel
                                 </a>
                             </div>
-
                         </form>
-
                     </div>
-
                 </div>
             </div>
-
         </div>
     </section>
 @endsection
 
 @push('scripts')
-<script>
-$('.dropify').dropify();
-</script>
+    <script>
+        $('.dropify').dropify();
+    </script>
 @endpush

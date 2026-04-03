@@ -60,8 +60,8 @@
                                 <!-- Image -->
                                 <div class="form-group">
                                     <label>Thumbnail</label>
-                                    <input type="file" name="title" class="form-control dropify"
-                                        data-default-file="{{ $banner->thumbnail ? asset($banner->thumbnail) : '' }}">
+                                    <input type="file" name="thumbnail" class="form-control dropify"
+                                        data-default-file="{{ asset($banner->thumbnail) }}">
                                 </div>
 
 
