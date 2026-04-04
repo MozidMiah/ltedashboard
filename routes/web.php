@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BrandController;
@@ -154,6 +155,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [BannerController::class, 'status'])->name('status');
         Route::get('delete/{id}', [BannerController::class, 'delete'])->name('delete');
         Route::get('data', [BannerController::class, 'getData'])->name('data');
+    });
+
+    //For Ad
+    Route::prefix('ads')->name('ads.')->group(function () {
+        Route::get('', [AdController::class, 'index'])->name('index');
+        Route::get('create', [AdController::class, 'create'])->name('create');
+        Route::post('store', [AdController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [AdController::class, 'edit'])->name('edit');
+        Route::post('update', [AdController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [AdController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [AdController::class, 'delete'])->name('delete');
+        Route::get('data', [AdController::class, 'getData'])->name('data');
     });
 });
 
