@@ -5,25 +5,23 @@
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item active">Products</li>
+                <li class="breadcrumb-item active">Ads</li>
             </ol>
         </div>
-        <h2>Product List</h2>
-        <a href="{{ route('product.create') }}" class="btn btn-success btn-sm mb-2">Add New Product</a>
+        <h2>Ads List</h2>
+        <a href="{{ route('ads.create') }}" class="btn btn-success btn-sm mb-2">Add New</a>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <table class="table table-bordered" id="productTable">
+        <table class="table table-bordered" id="adsTable">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Category Name</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Discount_Price</th>
-                    <th>Qty</th>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,11 +31,12 @@
 
 @push('scripts')
     <script>
-        $(function() {
-            $('#productTable').DataTable({
+        $(document).ready(function() {
+            $('#adsTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('product.data') }}",
+                pagingType: "numbers",
+                ajax: "{{ route('ads.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',
@@ -45,31 +44,22 @@
                         searchable: false
                     },
                     {
-                        data: 'category_name',
-                        name: 'category_name'
+                        data: 'thumbnail',
+                        name: 'thumbnail'
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'title',
+                        name: 'title'
                     },
                     {
-                        data: 'selling_price',
-                        name: 'selling_price'
-                    },
-                    {
-                        data: 'discount_price',
-                        name: 'discount_price'
-                    },
-                    {
-                        data: 'stock_qty',
-                        name: 'stock_qty'
+                        data: 'status',
+                        name: 'status'
                     },
                     {
                         data: 'action',
                         name: 'action',
                         orderable: false,
                         searchable: false
-
                     },
                 ]
             });

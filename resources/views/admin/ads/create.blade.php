@@ -6,14 +6,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Add Category</h1>
+                    <h1>Add Ads</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="{{ route('dashboard') }}">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">Add Category</li>
+                        <li class="breadcrumb-item active">Add Ads</li>
                     </ol>
                 </div>
             </div>
@@ -23,16 +23,14 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Category Form</h3>
+                            <h3 class="card-title">Ads Form</h3>
                         </div>
 
-                        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('ads.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="card-body">
@@ -49,38 +47,12 @@
 
                                 <!-- Category Name -->
                                 <div class="form-group">
-                                    <label>Category Name <span class="text-danger">*</span></label>
-                                    <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                        class="form-control @error('name') is-invalid @enderror"
-                                        placeholder="Enter Category Name">
+                                    <label>Title <span class="text-danger">*</span></label>
+                                    <input type="text" id="title" name="title" value="{{ old('title') }}"
+                                        class="form-control @error('title') is-invalid @enderror"
+                                        placeholder="Enter Ads Title">
 
-                                    @error('name')
-                                        <span class="invalid-feedback d-block">
-                                            {{ $message }}
-                                        </span>
-                                    @enderror
-                                </div>
-
-                                <!-- Description -->
-                                <div class="form-group">
-                                    <label>Category Description <span class="text-danger">*</span></label>
-                                    <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror"
-                                        placeholder="Enter Description">{{ old('description') }}</textarea>
-
-                                    @error('description')
-                                        <span class="invalid-feedback d-block">
-                                            {{ $message }}
-                                        </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label>Slug <span class="text-danger">*</span></label>
-                                    <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
-                                        class="form-control @error('slug') is-invalid @enderror" placeholder="Enter slug">
-
-                                    @error('slug')
+                                    @error('title')
                                         <span class="invalid-feedback d-block">
                                             {{ $message }}
                                         </span>
@@ -89,10 +61,10 @@
 
                                 <!-- Image -->
                                 <div class="form-group">
-                                    <label>Category Image</label>
-                                    <input type="file" name="image" class="form-control form-control dropify" />
+                                    <label>Thumbnail <span class="text-danger">*</span></label>
+                                    <input type="file" name="thumbnail" class="form-control form-control dropify" />
 
-                                    @error('image')
+                                    @error('thumbnail')
                                         <span class="invalid-feedback d-block">
                                             {{ $message }}
                                         </span>
@@ -119,15 +91,15 @@
                                         </label>
                                     </div>
                                 </div>
-
                             </div>
-
                             <div class="card-footer text-right">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> Save Category
+                                    <i class="fas fa-save"></i> Save Ads
                                 </button>
 
-                                <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
+                                <a href="{{ route('ads.index') }}" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>

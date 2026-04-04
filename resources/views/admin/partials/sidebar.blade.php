@@ -28,6 +28,13 @@
                         <p>Banner</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('ads.index') }}"
+                        class="nav-link {{ request()->routeIs('ads.*') ? 'active' : '' }}">
+                        <i class="fas fa-image"></i>
+                        <p>Ads</p>
+                    </a>
+                </li>
                 <li
                     class="nav-item has-treeview {{ request()->routeIs('category.*') || request()->routeIs('subcategory.*') ? 'menu-open' : '' }}">
                     <a href="#"
@@ -62,7 +69,7 @@
                 <li class="nav-item">
                     <a href="{{ route('brand.index') }}"
                         class="nav-link {{ request()->routeIs('brand.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tags"></i>
+                        <i class="nav-icon fas fa-palette"></i>
                         <p>Manage Brand</p>
                     </a>
                 </li>

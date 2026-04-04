@@ -4,12 +4,8 @@
     <div class="container mt-3">
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item">
-                    <a href="{{ route('dashboard') }}">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{ route('flash-sale.index') }}">Flashsale</a>
-                </li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item active">Flashsales</li>
             </ol>
         </div>
         <h2>Flash Sale List</h2>

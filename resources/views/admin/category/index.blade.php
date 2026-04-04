@@ -4,12 +4,8 @@
     <div class="container mt-3">
         <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item">
-                    <a href="{{ route('dashboard') }}">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                    <a href="{{ route('category.index') }}">Category</a>
-                </li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item active">Category</li>
             </ol>
         </div>
         <h2>Category List</h2>

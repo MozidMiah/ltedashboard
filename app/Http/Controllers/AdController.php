@@ -13,93 +13,79 @@ class AdController extends Controller
         return view('admin.ads.index');
     }
 
-    public function getData(Request $request)
+    public function getData()
     {
-        if ($request->ajax()) {
+        return DataTables::of(Ad::latest())
+            ->addIndexColumn()
 
-            $ads = Ad::latest();
+            ->addColumn('thumbnail', function ($row) {
+                $img = $row->thumbnail ? asset($row->thumbnail) : 'https://via.placeholder.com/50';
+                return '<img src="' . $img . '" width="60">';
+            })
 
-            return DataTables::of($ads)
+            ->addColumn('status', function ($row) {
+                return $row->status == 1
+                    ? '<span class="badge badge-success">Active</span>'
+                    : '<span class="badge badge-danger">Inactive</span>';
+            })
 
-                ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                return '
+                <a href="' . route('ads.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="' . route('ads.delete', $row->id) . '" onclick="return confirm(\'Are you sure?\')" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                </a>
+            ';
+            })
 
-                ->addColumn('thumbnail', function ($row) {
-
-                    $img = $row->thumbnail
-                        ? asset($row->thumbnail)
-                        : 'https://via.placeholder.com/50';
-
-                    return '<img src="' . $img . '" width="60">';
-                })
-
-                ->addColumn('status', function ($row) {
-
-                    $current = $row->status == 1 ? 'Active' : 'Inactive';
-
-                    return '
-                    <select class="form-control form-control-sm statusDropdown text-center" 
-                            data-id="' . $row->id . '" 
-                            style="width:80px; padding:2px;">
-                        <option value="' . $row->status . '" selected>' . $current . '</option>
-                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
-                    </select>
-                ';
-                })
-
-                ->addColumn('action', function ($row) {
-
-                    $edit = '<a href="' . route('ads.edit', $row->id) . '" class="btn btn-primary btn-sm">
-                                <i class="fas fa-edit"></i>
-                             </a>';
-
-                    $delete = '<a href="' . route('ads.delete', $row->id) . '" 
-                                    onclick="return confirm(\'Are you sure?\')" 
-                                    class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
-                               </a>';
-
-                    return $edit . ' ' . $delete;
-                })
-
-                ->rawColumns(['thumbnail', 'status', 'action'])
-
-                ->make(true);
-        }
+            ->rawColumns(['thumbnail', 'status', 'action'])
+            ->make(true);
     }
 
+    // =============================
+    // Create Page
+    // =============================
     public function create()
     {
         return view('admin.ads.create');
     }
 
+    // =============================
+    // Store Ad
+    // =============================
     public function store(Request $request)
     {
+
         $request->validate([
             'title'     => 'required|unique:ads,title',
-            'thumbnail' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'thumbnail' => 'required|image|mimes:jpg,png,jpeg',
         ]);
 
-        $imagePath = null;
+        $imageUrl = null;
 
         if ($request->hasFile('thumbnail')) {
-
             $image = $request->file('thumbnail');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/ads'), $imageName);
 
-            $imagePath = 'uploads/ads/' . $imageName;
+            $imageUrl = 'uploads/ads/' . $imageName;
         }
 
         Ad::create([
             'title'     => $request->title,
-            'thumbnail' => $imagePath,
             'status'    => $request->status,
+            'thumbnail' => $imageUrl,
         ]);
 
         return redirect()->route('ads.index')
             ->with('success', 'Ad created successfully');
     }
 
+    // =============================
+    // Edit Page
+    // =============================
     public function edit($id)
     {
         $ad = Ad::findOrFail($id);
@@ -107,8 +93,12 @@ class AdController extends Controller
         return view('admin.ads.edit', compact('ad'));
     }
 
+    // =============================
+    // Update Ad
+    // =============================
     public function update(Request $request)
     {
+
         $ad = Ad::findOrFail($request->id);
 
         $request->validate([
@@ -126,34 +116,30 @@ class AdController extends Controller
             $imageName = time() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('uploads/ads'), $imageName);
 
-            $imagePath = 'uploads/ads/' . $imageName;
+            $imageUrl = 'uploads/ads/' . $imageName;
         } else {
 
-            $imagePath = $ad->thumbnail;
+            $imageUrl = $ad->thumbnail;
         }
 
         $ad->update([
             'title'     => $request->title,
             'status'    => $request->status,
-            'thumbnail' => $imagePath,
+            'thumbnail' => $imageUrl,
         ]);
 
         return redirect()->route('ads.index')
             ->with('success', 'Ad updated successfully');
     }
 
+    // =============================
+    // Delete Ad
+    // =============================
     public function delete($id)
     {
         $ad = Ad::findOrFail($id);
-
-        // image delete
-        if ($ad->thumbnail && file_exists(public_path($ad->thumbnail))) {
-            unlink(public_path($ad->thumbnail));
-        }
-
         $ad->delete();
 
-        return redirect()->route('ads.index')
-            ->with('success', 'Ad deleted successfully');
+        return redirect()->route('ads.index')->with('success', 'Ad deleted successfully');
     }
 }
