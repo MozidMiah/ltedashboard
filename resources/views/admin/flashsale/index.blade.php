@@ -38,7 +38,7 @@
             $('#flash-saleTable').DataTable({
                 processing: true,
                 serverSide: true,
-                pagingType: "numbers",
+                // pagingType: "numbers",
                 ajax: "{{ route('flash-sale.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',

@@ -37,7 +37,7 @@
             $('#brandTable').DataTable({
                 processing: true,
                 serverSide: true,
-                pagingType: "numbers",
+                // pagingType: "numbers",
                 ajax: "{{ route('brand.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',

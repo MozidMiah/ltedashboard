@@ -35,7 +35,7 @@ $(document).ready(function() {
     $('#sizeTable').DataTable({
         processing: true,
         serverSide: true,
-        pagingType: "numbers",
+        // pagingType: "numbers",
         ajax: "{{ route('size.data') }}",
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },

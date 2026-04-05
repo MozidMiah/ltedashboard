@@ -37,7 +37,7 @@
             $('#categoryTable').DataTable({
                 processing: true,
                 serverSide: true,
-                pagingType: "numbers",
+                // pagingType: "numbers",
                 ajax: "{{ route('category.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',

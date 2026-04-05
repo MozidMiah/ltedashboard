@@ -35,7 +35,7 @@
             $('#bannerTable').DataTable({
                 processing: true,
                 serverSide: true,
-                pagingType: "numbers",
+                // pagingType: "numbers",
                 ajax: "{{ route('banner.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',

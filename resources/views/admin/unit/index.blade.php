@@ -35,7 +35,7 @@ $(document).ready(function() {
     $('#unitTable').DataTable({
         processing: true,
         serverSide: true,
-        pagingType: "numbers",
+        // pagingType: "numbers",
         ajax: "{{ route('unit.data') }}",
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },

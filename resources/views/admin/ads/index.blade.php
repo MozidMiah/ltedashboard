@@ -15,7 +15,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        <table class="table table-bordered" id="adsTable">
+        <table class="table table-bordered" id="adTable">
             <thead>
                 <tr>
                     <th>No</th>
@@ -32,10 +32,10 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#adsTable').DataTable({
+            $('#adTable').DataTable({
                 processing: true,
                 serverSide: true,
-                pagingType: "numbers",
+                // pagingType: "numbers",
                 ajax: "{{ route('ads.data') }}",
                 columns: [{
                         data: 'DT_RowIndex',
