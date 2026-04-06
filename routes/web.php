@@ -6,6 +6,7 @@ use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProductController;
@@ -169,6 +170,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [AdController::class, 'status'])->name('status');
         Route::get('delete/{id}', [AdController::class, 'delete'])->name('delete');
         Route::get('data', [AdController::class, 'getData'])->name('data');
+    });
+
+    //For Coupon
+    Route::prefix('coupon')->name('coupon.')->group(function () {
+        Route::get('', [CouponController::class, 'index'])->name('index');
+        Route::get('create', [CouponController::class, 'create'])->name('create');
+        Route::post('store', [CouponController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}', [CouponController::class, 'edit'])->name('edit');
+        Route::post('update', [CouponController::class, 'update'])->name('update');
+
+        Route::get('status/{id}', [CouponController::class, 'status'])->name('status');
+        Route::get('delete/{id}', [CouponController::class, 'delete'])->name('delete');
+        Route::get('data', [CouponController::class, 'getData'])->name('data');
     });
 });
 

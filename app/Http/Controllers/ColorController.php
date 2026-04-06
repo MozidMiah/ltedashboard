@@ -8,18 +8,11 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ColorController extends Controller
 {
-
-    // =============================
-    // Color List Page
-    // =============================
     public function index()
     {
         return view('admin.color.index');
     }
 
-    // =============================
-    // Yajra DataTable Data
-    // =============================
     public function getData(Request $request)
     {
         $colors = Color::latest()->get();
@@ -49,34 +42,28 @@ class ColorController extends Controller
             })
 
             ->addColumn('action', function ($row) {
-                    $edit = '<a href="' . route('color.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                $edit = '<a href="' . route('color.edit', $row->id) . '" class="btn btn-primary btn-sm">
                                 <i class="fas fa-edit"></i>
                             </a>';
 
-                    $delete = '<a href="' . route('color.delete', $row->id) . '" 
+                $delete = '<a href="' . route('color.delete', $row->id) . '" 
                                     onclick="return confirm(\'Are you sure?\')" 
                                     class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </a>';
 
-                    return $edit . ' ' . $delete;
-                })
+                return $edit . ' ' . $delete;
+            })
 
             ->rawColumns(['color', 'status', 'action'])
             ->make(true);
     }
 
-    // =============================
-    // Create Page
-    // =============================
     public function create()
     {
         return view('admin.color.create');
     }
 
-    // =============================
-    // Store Color
-    // =============================
     public function store(Request $request)
     {
 
@@ -95,9 +82,6 @@ class ColorController extends Controller
             ->with('success', 'Color Added Successfully');
     }
 
-    // =============================
-    // Edit Page
-    // =============================
     public function edit($id)
     {
         $color = Color::findOrFail($id);
@@ -105,9 +89,6 @@ class ColorController extends Controller
         return view('admin.color.edit', compact('color'));
     }
 
-    // =============================
-    // Update Color
-    // =============================
     public function update(Request $request)
     {
         $color = Color::findOrFail($request->id);
@@ -126,9 +107,6 @@ class ColorController extends Controller
             ->with('success', 'Color Updated Successfully');
     }
 
-    // =============================
-    // Status Toggle
-    // =============================
     public function status($id)
     {
         $color = Color::findOrFail($id);
@@ -144,9 +122,6 @@ class ColorController extends Controller
         return redirect()->back();
     }
 
-    // =============================
-    // Delete Color
-    // =============================
     public function delete($id)
     {
         Color::findOrFail($id)->delete();

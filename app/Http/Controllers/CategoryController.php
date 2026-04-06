@@ -9,18 +9,11 @@ use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-
-    // =============================
-    // Category List Page
-    // =============================
     public function index()
     {
         return view('admin.category.index');
     }
 
-    // =============================
-    // Yajra DataTable Data
-    // =============================
     public function getData(Request $request)
     {
         if ($request->ajax()) {
@@ -69,17 +62,11 @@ class CategoryController extends Controller
         }
     }
 
-    // =============================
-    // Create Page
-    // =============================
     public function create()
     {
         return view('admin.category.create');
     }
 
-    // =============================
-    // Store Category
-    // =============================
     public function store(Request $request)
     {
 
@@ -108,9 +95,6 @@ class CategoryController extends Controller
             ->with('success', 'Category created successfully');
     }
 
-    // =============================
-    // Edit Page
-    // =============================
     public function edit($id)
     {
         $category = Category::findOrFail($id);
@@ -118,9 +102,6 @@ class CategoryController extends Controller
         return view('admin.category.edit', compact('category'));
     }
 
-    // =============================
-    // Update Category
-    // =============================
     public function update(Request $request)
     {
 
@@ -150,9 +131,6 @@ class CategoryController extends Controller
             ->with('success', 'Category updated successfully');
     }
 
-    // =============================
-    // Delete Category
-    // =============================
     public function delete($id)
     {
         $category = Category::findOrFail($id);
