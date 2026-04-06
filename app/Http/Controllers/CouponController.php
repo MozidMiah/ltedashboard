@@ -9,17 +9,11 @@ use Carbon\Carbon;
 
 class CouponController extends Controller
 {
-    // =========================
-    // Coupon List Page
-    // =========================
     public function index()
     {
         return view('admin.coupon.index');
     }
 
-    // =========================
-    // DataTable AJAX
-    // =========================
     public function getData(Request $request)
     {
         $coupons = Coupon::latest()->get();
@@ -39,12 +33,10 @@ class CouponController extends Controller
             ->addColumn('status', function ($row) {
                 $current = $row->status == 1 ? 'Active' : 'Inactive';
                 return '
-                    <select class="form-control form-control-sm statusDropdown text-center" 
-                            data-id="' . $row->id . '" 
-                            style="width:90px; padding:2px; font-size:14px;">
-                        <option value="' . $row->status . '" selected>' . $current . '</option>
-                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
-                    </select>
+                <select class="form-control form-control-sm statusDropdown" data-id="' . $row->id . '" style="width:90px;">
+                    <option value="1" ' . ($row->status == 1 ? 'selected' : '') . '>Active</option>
+                    <option value="0" ' . ($row->status == 0 ? 'selected' : '') . '>Inactive</option>
+                </select>
                 ';
             })
             ->addColumn('action', function ($row) {
@@ -56,17 +48,11 @@ class CouponController extends Controller
             ->make(true);
     }
 
-    // =========================
-    // Create Coupon Page
-    // =========================
     public function create()
     {
         return view('admin.coupon.create');
     }
 
-    // =========================
-    // Store Coupon
-    // =========================
     public function store(Request $request)
     {
         $request->validate([
@@ -95,66 +81,60 @@ class CouponController extends Controller
             'status'        => 1,
         ]);
 
-        return redirect()->route('coupon.index')
-            ->with('success', 'Coupon Added Successfully');
+        return redirect()->route('coupon.index')->with('success', 'Coupon Added Successfully');
     }
 
-    // =========================
-    // Edit Coupon Page
-    // =========================
     public function edit($id)
     {
         $coupon = Coupon::findOrFail($id);
         return view('admin.coupon.edit', compact('coupon'));
     }
 
-    // =========================
-    // Update Coupon
-    // =========================
     public function update(Request $request, $id)
     {
         $coupon = Coupon::findOrFail($id);
 
         $request->validate([
             'code'         => 'required|unique:coupons,code,' . $coupon->id,
-            'discount_type' => 'required',
             'discount'     => 'required|numeric|min:1',
             'min_amount'   => 'nullable|numeric',
-            'user_limit'   => 'nullable|numeric',
-            'max_discount' => 'nullable|numeric',
-            'start_at'     => 'nullable|date',
-            'expire_at'    => 'nullable|date|after_or_equal:start_at',
+            'start_date'   => 'nullable|date',
+            'start_time'   => 'nullable',
+            'expire_date'  => 'nullable|date|after_or_equal:start_date',
+            'expire_time'  => 'nullable',
         ]);
+
+        $start_at = $request->start_date && $request->start_time
+            ? Carbon::parse($request->start_date . ' ' . $request->start_time)
+            : null;
+
+        $expire_at = $request->expire_date && $request->expire_time
+            ? Carbon::parse($request->expire_date . ' ' . $request->expire_time)
+            : null;
 
         $coupon->update([
-            'code'          => $request->code,
+            'code'         => $request->code,
             'discount_type' => $request->discount_type,
-            'discount'      => $request->discount,
-            'min_amount'    => $request->min_amount,
-            'user_limit'    => $request->user_limit,
-            'max_discount'  => $request->max_discount,
-            'start_at'      => $request->start_at ? Carbon::parse($request->start_at) : null,
-            'expire_at'     => $request->expire_at ? Carbon::parse($request->expire_at) : null,
+            'discount'     => $request->discount,
+            'min_amount'   => $request->min_amount,
+            'user_limit'   => $request->user_limit,
+            'max_discount' => $request->max_discount,
+            'start_at'     => $start_at,
+            'expire_at'    => $expire_at,
         ]);
 
-        return redirect()->route('coupon.index')
-            ->with('success', 'Coupon Updated Successfully');
+        return redirect()->route('coupon.index')->with('success', 'Coupon Updated Successfully');
     }
 
-    // =========================
-    // Change Status
-    // =========================
     public function status($id)
     {
         $coupon = Coupon::findOrFail($id);
         $coupon->status = $coupon->status == 1 ? 0 : 1;
         $coupon->save();
-        return redirect()->back();
+
+        return response()->json(['success' => 'Status updated successfully', 'status' => $coupon->status]);
     }
 
-    // =========================
-    // Delete Coupon
-    // =========================
     public function delete($id)
     {
         $coupon = Coupon::findOrFail($id);

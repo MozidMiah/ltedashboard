@@ -53,15 +53,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 
 <script>
-$(document).ready(function () {
-    $('#name').keyup(function () {
-        let text = $(this).val()
-            .toLowerCase()
-            .replace(/ /g, '-')          // space → -
-            .replace(/[^\w-]+/g, '');    // remove special char
+    $(document).ready(function() {
+        $('#name').keyup(function() {
+            let text = $(this).val()
+                .toLowerCase()
+                .replace(/ /g, '-') // space → -
+                .replace(/[^\w-]+/g, ''); // remove special char
 
-        $('#slug').val(text);
+            $('#slug').val(text);
+        });
     });
-});
-</script>
 
+    $(document).on('change', '.statusDropdown', function() {
+        var status = $(this).val();
+        var id = $(this).data('id');
+
+        $.ajax({
+            url: '/coupon/status/' + id,
+            type: 'GET',
+            success: function(response) {
+                if (response.status == 1) {
+                    alert('Coupon is now Active');
+                } else {
+                    alert('Coupon is now Inactive');
+                }
+            },
+            error: function() {
+                alert('Something went wrong!');
+            }
+        });
+    });
+</script>

@@ -142,6 +142,11 @@
                                             <span class="invalid-feedback d-block">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    <select name="status">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+
                                 </div>
                             </div>
 

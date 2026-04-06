@@ -119,6 +119,10 @@
                                             class="form-control @error('expire_time') is-invalid @enderror">
                                     </div>
                                 </div>
+                                <select name="status">
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
                             </div>
 
                             <!-- FOOTER -->

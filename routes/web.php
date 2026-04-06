@@ -179,7 +179,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('store', [CouponController::class, 'store'])->name('store');
 
         Route::get('edit/{id}', [CouponController::class, 'edit'])->name('edit');
-        Route::post('update', [CouponController::class, 'update'])->name('update');
+        Route::put('update/{id}', [CouponController::class, 'update'])->name('update');
 
         Route::get('status/{id}', [CouponController::class, 'status'])->name('status');
         Route::get('delete/{id}', [CouponController::class, 'delete'])->name('delete');
