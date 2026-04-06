@@ -69,13 +69,13 @@
         var id = $(this).data('id');
 
         $.ajax({
-            url: '/coupon/status/' + id,
+            // url: '/status/' + id,
             type: 'GET',
             success: function(response) {
                 if (response.status == 1) {
-                    alert('Coupon is now Active');
+                    alert('Active');
                 } else {
-                    alert('Coupon is now Inactive');
+                    alert('Inactive');
                 }
             },
             error: function() {

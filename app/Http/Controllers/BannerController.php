@@ -28,17 +28,13 @@ class BannerController extends Controller
             })
 
             ->addColumn('status', function ($row) {
-
                 $current = $row->status == 1 ? 'Active' : 'Inactive';
-
                 return '
-                    <select class="form-control form-control-sm statusDropdown text-center" 
-                            data-id="' . $row->id . '" 
-                            style="width:80px;">
-                        <option value="' . $row->status . '" selected>' . $current . '</option>
-                        <option value="' . ($row->status == 1 ? 0 : 1) . '">' . ($row->status == 1 ? 'Inactive' : 'Active') . '</option>
-                    </select>
-                ';
+        <select class="form-control form-control-sm statusDropdown" data-id="' . $row->id . '" style="width:90px;">
+            <option value="1" ' . ($row->status == 1 ? 'selected' : '') . '>Active</option>
+            <option value="0" ' . ($row->status == 0 ? 'selected' : '') . '>Inactive</option>
+        </select>
+    ';
             })
 
             ->addColumn('action', function ($row) {
@@ -129,6 +125,15 @@ class BannerController extends Controller
         ]);
 
         return redirect()->route('banner.index')->with('message', 'Banner updated successfully!');
+    }
+
+    public function status($id)
+    {
+        $banner = Banner::findOrFail($id);
+        $banner->status = $banner->status == 1 ? 0 : 1;
+        $banner->save();
+
+        return response()->json(['success' => 'Status updated successfully', 'status' => $banner->status]);
     }
 
     // ================= DELETE =================
