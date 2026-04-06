@@ -23,15 +23,10 @@ class CouponController extends Controller
             ->addIndexColumn()
 
             ->editColumn('start_at', function ($row) {
-                return $row->start_at
-                    ? Carbon::parse($row->start_at)->format('d M Y h:i A')
-                    : '-';
+                return $row->start_at ? Carbon::parse($row->start_at)->format('d M Y h:i A') : '-';
             })
-
             ->editColumn('expire_at', function ($row) {
-                return $row->expire_at
-                    ? Carbon::parse($row->expire_at)->format('d M Y h:i A')
-                    : '-';
+                return $row->expire_at ? Carbon::parse($row->expire_at)->format('d M Y h:i A') : '-';
             })
 
             ->addColumn('status', function ($row) {
@@ -82,13 +77,19 @@ class CouponController extends Controller
             'expire_at'    => 'nullable|date|after_or_equal:start_at',
         ]);
 
+        $start_at = $request->start_at ? Carbon::parse($request->start_at) : null;
+        $expire_at = $request->expire_at ? Carbon::parse($request->expire_at) : null;
+
         Coupon::create([
-            'code'        => $request->code,
-            'discount'    => $request->discount,
-            'min_amount'  => $request->min_amount,
-            'start_at'    => $request->start_at ? Carbon::parse($request->start_at) : null,
-            'expire_at'   => $request->expire_at ? Carbon::parse($request->expire_at) : null,
-            'status'      => 1
+            'code'            => $request->code,
+            'discount_type'   => $request->discount_type,
+            'discount'        => $request->discount,
+            'min_amount'      => $request->min_amount,
+            'user_limit'      => $request->user_limit,
+            'max_discount'    => $request->max_discount,
+            'start_at'        => $start_at,
+            'expire_at'       => $expire_at,
+            'status'          => 1,
         ]);
 
         return redirect()->route('coupon.index')

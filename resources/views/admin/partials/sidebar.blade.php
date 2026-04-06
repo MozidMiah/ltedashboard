@@ -24,15 +24,22 @@
                 <li class="nav-item">
                     <a href="{{ route('banner.index') }}"
                         class="nav-link {{ request()->routeIs('banner.*') ? 'active' : '' }}">
-                        <i class="fas fa-image"></i>
+                        <i class="nav-icon fas fa-image"></i>
                         <p>Banner</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('ads.index') }}"
                         class="nav-link {{ request()->routeIs('ads.*') ? 'active' : '' }}">
-                        <i class="fas fa-image"></i>
+                        <i class="nav-icon fas fa-bullhorn"></i>
                         <p>Ads</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('coupon.index') }}"
+                        class="nav-link {{ request()->routeIs('coupon.*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-ticket-alt"></i>
+                        <p>Coupon</p>
                     </a>
                 </li>
                 <li
@@ -69,7 +76,7 @@
                 <li class="nav-item">
                     <a href="{{ route('brand.index') }}"
                         class="nav-link {{ request()->routeIs('brand.*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-palette"></i>
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>Manage Brand</p>
                     </a>
                 </li>
