@@ -68,9 +68,7 @@
                     },
                     {
                         data: 'status',
-                        name: 'status',
-                        orderable: false,
-                        searchable: false
+                        name: 'status'
                     },
                     {
                         data: 'action',

@@ -16,37 +16,36 @@ class CouponController extends Controller
 
     public function getData(Request $request)
     {
-        $coupons = Coupon::latest()->get();
+        $coupons = Coupon::latest();
 
         return DataTables::of($coupons)
             ->addIndexColumn()
-            ->editColumn('start_at', function ($row) {
-                return $row->start_at
-                    ? Carbon::parse($row->start_at)->format('d M Y h:i A')
-                    : '-';
+            ->addColumn('start_at', function ($row) {
+                return $row->start_at ? $row->start_at->format('d F, Y') : '';
             })
-            ->editColumn('expire_at', function ($row) {
-                return $row->expire_at
-                    ? Carbon::parse($row->expire_at)->format('d M Y h:i A')
-                    : '-';
+            ->addColumn('expire_at', function ($row) {
+                return $row->expire_at ? $row->expire_at->format('d F, Y') : '';
             })
             ->addColumn('status', function ($row) {
-                $current = $row->status == 1 ? 'Active' : 'Inactive';
-                return '
-                <select class="form-control form-control-sm statusDropdown" data-id="' . $row->id . '" style="width:90px;">
-                    <option value="1" ' . ($row->status == 1 ? 'selected' : '') . '>Active</option>
-                    <option value="0" ' . ($row->status == 0 ? 'selected' : '') . '>Inactive</option>
-                </select>
-                ';
+                return $row->status ? 'Active' : 'Inactive';
             })
             ->addColumn('action', function ($row) {
-                $edit = '<a href="' . route('coupon.edit', $row->id) . '" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>';
-                $delete = '<a href="' . route('coupon.delete', $row->id) . '" onclick="return confirm(\'Are you sure?\')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>';
+                $edit = '<a href="' . route('coupon.edit', $row->id) . '" class="btn btn-primary btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>';
+
+                $delete = '<a href="' . route('coupon.delete', $row->id) . '" 
+                                    onclick="return confirm(\'Are you sure?\')" 
+                                    class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>';
+
                 return $edit . ' ' . $delete;
             })
-            ->rawColumns(['status', 'action'])
+            ->rawColumns(['action'])
             ->make(true);
     }
+
 
     public function create()
     {
