@@ -27,7 +27,11 @@ class CouponController extends Controller
                 return $row->expire_at ? $row->expire_at->format('d F, Y') : '';
             })
             ->addColumn('status', function ($row) {
-                return $row->status ? 'Active' : 'Inactive';
+                if ($row->status == 1) {
+                    return '<span class="badge badge-success">Active</span>';
+                } else {
+                    return '<span class="badge badge-danger">Inactive</span>';
+                }
             })
             ->addColumn('action', function ($row) {
                 $edit = '<a href="' . route('coupon.edit', $row->id) . '" class="btn btn-primary btn-sm">
@@ -42,10 +46,21 @@ class CouponController extends Controller
 
                 return $edit . ' ' . $delete;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['status', 'action'])
             ->make(true);
     }
 
+    public function changeStatus(Request $request)
+    {
+        $coupon = Coupon::findOrFail($request->id);
+        $coupon->status = !$coupon->status;
+        $coupon->save();
+
+        return response()->json([
+            'success' => true,
+            'status' => $coupon->status
+        ]);
+    }
 
     public function create()
     {
@@ -55,18 +70,22 @@ class CouponController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code'         => 'required|unique:coupons,code',
-            'discount_type' => 'required',
-            'discount'     => 'required|numeric|min:1',
-            'min_amount'   => 'nullable|numeric',
-            'user_limit'   => 'nullable|numeric',
-            'max_discount' => 'nullable|numeric',
-            'start_at'     => 'nullable|date',
-            'expire_at'    => 'nullable|date|after_or_equal:start_at',
+            'code'           => 'required|unique:coupons,code',
+            'discount_type'  => 'required',
+            'discount'       => 'required|numeric|min:1',
+            'min_amount'     => 'nullable|numeric',
+            'user_limit'     => 'nullable|numeric',
+            'max_discount'   => 'nullable|numeric',
+
+            'start_date'     => 'required|date',
+            'start_time'     => 'required',
+            'expire_date'    => 'required|date',
+            'expire_time'    => 'required',
         ]);
 
-        $start_at = $request->start_at ? Carbon::parse($request->start_at) : null;
-        $expire_at = $request->expire_at ? Carbon::parse($request->expire_at) : null;
+        // ================= Combine Date + Time =================
+        $start_at = Carbon::parse($request->start_date . ' ' . $request->start_time);
+        $expire_at = Carbon::parse($request->expire_date . ' ' . $request->expire_time);
 
         Coupon::create([
             'code'          => $request->code,
@@ -77,7 +96,7 @@ class CouponController extends Controller
             'max_discount'  => $request->max_discount,
             'start_at'      => $start_at,
             'expire_at'     => $expire_at,
-            'status'        => 1,
+            'status'        => $request->status ?? 1,
         ]);
 
         return redirect()->route('coupon.index')->with('success', 'Coupon Added Successfully');

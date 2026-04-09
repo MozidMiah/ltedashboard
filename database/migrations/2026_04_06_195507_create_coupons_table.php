@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('min_amount')->nullable();
             $table->timestamp('start_at')->nullable();
             $table->timestamp('expire_at')->nullable();
-            $table->boolean('status')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

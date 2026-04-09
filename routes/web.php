@@ -184,6 +184,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [CouponController::class, 'status'])->name('status');
         Route::get('delete/{id}', [CouponController::class, 'delete'])->name('delete');
         Route::get('data', [CouponController::class, 'getData'])->name('data');
+        Route::post('status-change', [CouponController::class, 'changeStatus'])
+            ->name('status.change');
     });
 });
 
