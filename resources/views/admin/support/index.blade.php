@@ -10,11 +10,6 @@
     </div>
 
     <h2>Support Message</h2>
-    {{-- <a href="{{ route('size.create') }}" class="btn btn-success btn-sm mb-2">Add New Size</a> --}}
-
-    {{-- @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif --}}
 
     <table class="table table-bordered" id="sizeTable">
         <thead>
