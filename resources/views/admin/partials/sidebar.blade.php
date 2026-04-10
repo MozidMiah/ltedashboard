@@ -115,6 +115,13 @@
                         <p>Flash Sales</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('support.index') }}"
+                        class="nav-link {{ request()->routeIs('support.*') ? 'active' : '' }}">
+                        <i class="fas fa-bolt"></i>
+                        <p>Support Messages</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

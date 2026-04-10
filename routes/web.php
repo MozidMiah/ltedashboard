@@ -12,6 +12,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\SupportMessageController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
@@ -184,8 +185,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('status/{id}', [CouponController::class, 'status'])->name('status');
         Route::get('delete/{id}', [CouponController::class, 'delete'])->name('delete');
         Route::get('data', [CouponController::class, 'getData'])->name('data');
-        Route::post('status-change', [CouponController::class, 'changeStatus'])
-            ->name('status.change');
+        Route::post('status-change', [CouponController::class, 'changeStatus'])->name('status.change');
+    });
+
+    //For Support
+    Route::prefix('support')->name('support.')->group(function () {
+        Route::get('/', [SupportMessageController::class, 'index'])->name('index');
+        Route::get('/data', [SupportMessageController::class, 'getData'])->name('data');
+        Route::post('/store', [SupportMessageController::class, 'store'])->name('store');
+        Route::delete('/delete/{id}', [SupportMessageController::class, 'destroy'])->name('delete');
     });
 });
 
