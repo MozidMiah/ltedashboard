@@ -25,7 +25,7 @@
                     }
                 }">
                     <div class="banner banner-fixed intro-slide intro-slide1"
-                        style="background-image: url(assets/images/demos/demo1/sliders/slide-1.jpg); background-color: #ebeef2;">
+                        style="background-image: url(front/assets/images/demos/demo1/sliders/slide-1.jpg); background-color: #ebeef2;">
                         <div class="container">
                             <figure class="slide-image skrollable slide-animate">
                                 <img src="{{ asset('front/assets/images/demos/demo1/sliders/shoes.png') }}"
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="banner banner-fixed intro-slide intro-slide1"
-                        style="background-image: url(assets/images/demos/demo1/sliders/slide-2.jpg); background-color: #ebeef2;">
+                        style="background-image: url(front/assets/images/demos/demo1/sliders/slide-2.jpg); background-color: #ebeef2;">
                         <div class="container">
                             <figure class="slide-image skrollable slide-animate">
                                 <img src="{{ asset('front/assets/images/demos/demo1/sliders/men.png') }}" alt="Banner"
@@ -1830,7 +1830,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- End of Category Cosmetic Lifestyle -->
 
                 <div class="product-wrapper-1 appear-animate mb-5">
                     <div class="title-link-wrapper pb-1 mb-4">
@@ -1841,7 +1840,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm"
-                                style="background-image: url(assets/images/demos/demo1/banners/2.jpg); 
+                                style="background-image: url(front/assets/images/demos/demo1/banners/2.jpg); 
                                 background-color: #ebeced;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle font-weight-normal mb-2">Weekend Sale</h5>
@@ -2196,7 +2195,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm"
-                                style="background-image: url(assets/images/demos/demo1/banners/3.jpg); 
+                                style="background-image: url(front/assets/images/demos/demo1/banners/3.jpg); 
                             background-color: #252525;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle text-white font-weight-normal mb-2">New Collection</h5>
@@ -2552,7 +2551,7 @@
                 <!-- End of Product Wrapper 1 -->
 
                 <div class="banner banner-fashion appear-animate br-sm mb-9"
-                    style="background-image: url(assets/images/demos/demo1/banners/4.jpg);
+                    style="background-image: url(front/assets/images/demos/demo1/banners/4.jpg);
                     background-color: #383839;">
                     <div class="banner-content align-items-center">
                         <div class="content-left d-flex align-items-center mb-3">
@@ -2591,7 +2590,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-sm-4 mb-4">
                             <div class="banner h-100 br-sm"
-                                style="background-image: url(assets/images/demos/demo1/banners/5.jpg); 
+                                style="background-image: url(front/assets/images/demos/demo1/banners/5.jpg); 
                             background-color: #EAEFF3;">
                                 <div class="banner-content content-top">
                                     <h5 class="banner-subtitle font-weight-normal mb-2">Deals And Promotions</h5>
@@ -3271,22 +3270,15 @@
                             </h4>
                         </div>
                     </div>
-                    <!-- End of Product Wrap -->
                 </div>
-                <!-- End of Reviewed Producs -->
             </div>
-            <!--End of Catainer -->
         </main>
-        <!-- End of Main -->
 
         @include('front.partials.footer')
 
-        <!-- Start of Scroll Top -->
         <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i
                 class="fas fa-chevron-up"></i></a>
-        <!-- End of Scroll Top -->
 
-        <!-- Start of Mobile Menu -->
         <div class="mobile-menu-wrapper">
             <div class="mobile-menu-overlay"></div>
             <!-- End of .mobile-menu-overlay -->
@@ -3749,9 +3741,7 @@
                 </div>
             </div>
         </div>
-        <!-- End of Mobile Menu -->
 
-        <!-- Start of Quick View -->
         <div class="product product-single product-popup">
             <div class="row gutter-lg">
                 <div class="col-md-6 mb-4 mb-md-0">
@@ -3823,9 +3813,7 @@
                         </div>
 
                         <hr class="product-divider">
-
                         <div class="product-price">$40.00</div>
-
                         <div class="ratings-container">
                             <div class="ratings-full">
                                 <span class="ratings" style="width: 80%;"></span>
@@ -3905,8 +3893,6 @@
                 </div>
             </div>
         </div>
-        <!-- End of Quick view -->
-
         @include('front.partials.script')
 </body>
 
