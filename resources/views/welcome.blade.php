@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('front.partials.style')
+@include('front.layouts.partials.style')
 
 <body class="">
     <div class="page-wrapper">
         <!-- Start of Header -->
-        @include('front.partials.header')
+        @include('front.layouts.partials.header')
         <!-- End of Header -->
 
         <!-- Start of Main-->
@@ -3288,7 +3288,7 @@
             </div>
         </main>
 
-        @include('front.partials.footer')
+        @include('front.layouts.partials.footer')
 
         <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i
                 class="fas fa-chevron-up"></i></a>
@@ -3907,7 +3907,7 @@
                 </div>
             </div>
         </div>
-        @include('front.partials.script')
+        @include('front.layouts.partials.script')
 </body>
 
 </html>

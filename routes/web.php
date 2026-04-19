@@ -21,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/', [WelcomeController::class, 'index']);
+
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 
