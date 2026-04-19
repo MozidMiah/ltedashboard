@@ -9,6 +9,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
@@ -20,6 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//wishlist Routes
+Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 
 //For Login
 Route::get('/register', [AuthController::class, 'register'])->name('register');
