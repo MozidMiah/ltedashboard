@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('front.layouts.app')
 
 @section('content')
     <!-- Start of Main -->
