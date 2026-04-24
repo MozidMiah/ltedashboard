@@ -9,6 +9,8 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
@@ -28,6 +30,12 @@ Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.ind
 
 //Compare Routes
 Route::get('compare', [CompareController::class, 'index'])->name('compare.index');
+
+//Cart Routes
+Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+
+//Checkout Routes
+Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 //For Login
 Route::get('/register', [AuthController::class, 'register'])->name('register');

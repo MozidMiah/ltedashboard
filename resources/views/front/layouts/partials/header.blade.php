@@ -157,8 +157,8 @@
                                 </div>
 
                                 <div class="cart-action">
-                                    <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
-                                    <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                    <a href="{{ route('checkout.index') }}" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
                         </div>
@@ -573,7 +573,7 @@
                             <nav class="main-nav">
                                 <ul class="menu active-underline">
                                     <li class="active">
-                                        <a href="demo1.html">Home</a>
+                                        <a href="{{url('/')}}">Home</a>
                                     </li>
                                     <li>
                                         <a href="shop-banner-sidebar.html">Shop</a>
@@ -716,8 +716,8 @@
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li>
                                             <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="{{ route('cart.index') }}">Cart</a></li>
+                                            <li><a href="{{ route('checkout.index') }}">Checkout</a></li>
                                             <li><a href="my-account.html">My Account</a></li>
                                             <li><a href="{{ route('compare.index') }}">Compare</a></li>
                                         </ul>
