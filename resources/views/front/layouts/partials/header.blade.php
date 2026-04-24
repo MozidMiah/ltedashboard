@@ -49,7 +49,7 @@
                     <div class="header-left mr-md-4">
                         <a href="#" class="mobile-menu-toggle  w-icon-hamburger">
                         </a>
-                        <a href="demo1.html" class="logo ml-lg-0">
+                        <a href="{{url('/')}}" class="logo ml-lg-0">
                             <img src="{{ asset('front/assets/images/logo.png') }}" alt="logo" width="144" height="45" />
                         </a>
                         <form method="get" action="#"
@@ -84,7 +84,7 @@
                                 <a href="tel:#" class="phone-number font-weight-bolder ls-50">0(800)123-456</a>
                             </div>
                         </div>
-                        <a class="wishlist label-down link d-xs-show" href="wishlist.html">
+                        <a class="wishlist label-down link d-xs-show" href="{{route('wishlist.index')}}">
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>

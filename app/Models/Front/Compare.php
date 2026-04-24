@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Models\Front;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Compare extends Model
+{
+    use HasFactory;
+    protected $fillable = ['product_id', 'user_id'];
+}

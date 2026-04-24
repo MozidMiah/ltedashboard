@@ -9,6 +9,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -21,10 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', [WelcomeController::class, 'index']);
 
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+
+//Compare Routes
+Route::get('compare', [CompareController::class, 'index'])->name('compare.index');
 
 //For Login
 Route::get('/register', [AuthController::class, 'register'])->name('register');
