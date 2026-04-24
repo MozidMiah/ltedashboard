@@ -8,7 +8,7 @@
         <!-- Start of Header -->
         @include('front.layouts.partials.header')
         <!-- End of Header -->
-
+        @yield('content')
         <!-- Start of Main-->
         <main class="main">
             <section class="intro-section">

@@ -88,7 +88,7 @@
                             <i class="w-icon-heart"></i>
                             <span class="wishlist-label d-lg-show">Wishlist</span>
                         </a>
-                        <a class="compare label-down link d-xs-show" href="compare.html">
+                        <a class="compare label-down link d-xs-show" href="{{route('compare.index')}}">
                             <i class="w-icon-compare"></i>
                             <span class="compare-label d-lg-show">Compare</span>
                         </a>
@@ -161,12 +161,10 @@
                                     <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>
-                            <!-- End of Dropdown Box -->
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End of Header Middle -->
 
             <div class="header-bottom sticky-content fix-top sticky-header has-dropdown">
                 <div class="container">
@@ -717,11 +715,11 @@
                                             <li><a href="faq.html">FAQs</a></li>
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
                                             <li><a href="cart.html">Cart</a></li>
                                             <li><a href="checkout.html">Checkout</a></li>
                                             <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="compare.html">Compare</a></li>
+                                            <li><a href="{{ route('compare.index') }}">Compare</a></li>
                                         </ul>
                                     </li>
                                     <li>

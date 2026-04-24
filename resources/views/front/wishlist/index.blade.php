@@ -1,13 +1,13 @@
 @extends('welcome')
 
 @section('content')
+    <!-- Start of Main -->
     <main class="main wishlist-page">
         <div class="page-header">
             <div class="container">
                 <h1 class="page-title mb-0">Wishlist</h1>
             </div>
         </div>
-
         <nav class="breadcrumb-nav mb-10">
             <div class="container">
                 <ul class="breadcrumb">
@@ -16,7 +16,6 @@
                 </ul>
             </div>
         </nav>
-
         <div class="page-content">
             <div class="container">
                 <h3 class="wishlist-title">My wishlist</h3>
@@ -36,8 +35,8 @@
                                 <div class="p-relative">
                                     <a href="product-default.html">
                                         <figure>
-                                            <img src="{{ asset('front/assets/images/shop/7-1.jpg') }}" alt="product"
-                                                width="300" height="338">
+                                            <img src="{{ asset('front/assets/images/shop/7-1.jpg') }}" alt="product" width="300"
+                                                height="338">
                                         </figure>
                                     </a>
                                     <button type="submit" class="btn btn-close"><i class="fas fa-times"></i></button>
@@ -69,8 +68,8 @@
                                 <div class="p-relative">
                                     <a href="product-default.html">
                                         <figure>
-                                            <img src="{{ asset('front/assets/images/shop/19-1.jpg') }}" alt="product"
-                                                width="300" height="338">
+                                            <img src="{{ asset('front/assets/images/shop/19-1.jpg') }}" alt="product" width="300"
+                                                height="338">
                                         </figure>
                                     </a>
                                     <button type="submit" class="btn btn-close"><i class="fas fa-times"></i></button>
@@ -100,8 +99,8 @@
                                 <div class="p-relative">
                                     <a href="product-default.html">
                                         <figure>
-                                            <img src="{{ asset('front/assets/images/shop/20.jpg') }}" alt="product"
-                                                width="300" height="338">
+                                            <img src="{{ asset('front/assets/images/shop/20.jpg') }}" alt="product" width="300"
+                                                height="338">
                                         </figure>
                                     </a>
                                     <button type="submit" class="btn btn-close"><i class="fas fa-times"></i></button>
