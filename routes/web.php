@@ -13,6 +13,7 @@ use App\Http\Controllers\Front\AboutUsController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\CompareController;
+use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -28,6 +29,8 @@ Route::get('/', function () {
 
 //Aboutus Routes
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
+//Contact-Us Routes
+Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us.index');
 
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');

@@ -33,7 +33,7 @@
                         <!-- End of Dropdown Menu -->
                         <span class="divider d-lg-show"></span>
                         <a href="blog.html" class="d-lg-show">Blog</a>
-                        <a href="contact-us.html" class="d-lg-show">Contact Us</a>
+                        <a href="{{ route('contact-us.index') }}" class="d-lg-show">Contact Us</a>
                         <a href="my-account.html" class="d-lg-show">My Account</a>
                         <a href="{{ asset('front/assets/ajax/login.html') }}" class="d-lg-show login sign-in"><i
                                 class="w-icon-account"></i>Sign In</a>
@@ -711,7 +711,7 @@
 
                                             <li><a href="{{ route('about-us.index') }}">About Us</a></li>
                                             <li><a href="become-a-vendor.html">Become A Vendor</a></li>
-                                            <li><a href="contact-us.html">Contact Us</a></li>
+                                            <li><a href="{{ route('contact-us.index') }}">Contact Us</a></li>
                                             <li><a href="faq.html">FAQs</a></li>
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li>
