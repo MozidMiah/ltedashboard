@@ -12,6 +12,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Front\AboutUsController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
+use App\Http\Controllers\Front\ComingsoonController;
 use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\ErrorController;
@@ -37,6 +38,8 @@ Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-u
 Route::get('faqs', [FAQsController::class, 'index'])->name('faqs.index');
 //Error Routes
 Route::get('error', [ErrorController::class, 'index'])->name('error.index');
+//Comingsoon Routes
+Route::get('comingsoon', [ComingsoonController::class, 'index'])->name('comingsoon.index');
 
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
