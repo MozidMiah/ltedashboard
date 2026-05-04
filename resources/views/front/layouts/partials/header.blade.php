@@ -712,7 +712,7 @@
                                             <li><a href="{{ route('about-us.index') }}">About Us</a></li>
                                             <li><a href="become-a-vendor.html">Become A Vendor</a></li>
                                             <li><a href="{{ route('contact-us.index') }}">Contact Us</a></li>
-                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
                                             <li><a href="error-404.html">Error 404</a></li>
                                             <li><a href="coming-soon.html">Coming Soon</a></li>
                                             <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
