@@ -709,7 +709,7 @@
                                         <a href="about-us.html">Pages</a>
                                         <ul>
 
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="{{ route('about-us.index') }}">About Us</a></li>
                                             <li><a href="become-a-vendor.html">Become A Vendor</a></li>
                                             <li><a href="contact-us.html">Contact Us</a></li>
                                             <li><a href="faq.html">FAQs</a></li>

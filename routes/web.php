@@ -9,6 +9,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Front\AboutUsController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\CompareController;
@@ -24,6 +25,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+//Aboutus Routes
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.index');
 
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
