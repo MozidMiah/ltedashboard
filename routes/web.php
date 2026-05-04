@@ -14,6 +14,7 @@ use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
+use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
@@ -34,6 +35,8 @@ Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us.inde
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us.index');
 //FAQs Routes
 Route::get('faqs', [FAQsController::class, 'index'])->name('faqs.index');
+//Error Routes
+Route::get('error', [ErrorController::class, 'index'])->name('error.index');
 
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
