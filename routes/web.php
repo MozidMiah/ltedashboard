@@ -42,7 +42,11 @@ Route::get('error', [ErrorController::class, 'index'])->name('error.index');
 //Comingsoon Routes
 Route::get('comingsoon', [ComingsoonController::class, 'index'])->name('comingsoon.index');
 //Blog Routes
-Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
+Route::prefix('blog')->name('blog.')->group(function () {
+        Route::get('', [BlogController::class, 'index'])->name('index');
+        Route::get('single', [BlogController::class, 'single'])->name('single');
+});
+
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 //Compare Routes

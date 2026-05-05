@@ -30,7 +30,7 @@
                     <div class="main-content">
                         <article class="post post-classic overlay-zoom mb-4">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/1.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -40,23 +40,23 @@
                                     <a href="#">Fashion</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">New found the men dress for summer</a>
+                                    <a href="{{ route('blog.single') }}">New found the men dress for summer</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    - <a href="#" class="post-date">03.05.2021</a>
+                                    by <a href="{{ route('blog.index') }}" class="post-author">John Doe</a>
+                                    - <a href="{{ route('blog.index') }}" class="post-date">03.05.2021</a>
                                 </div>
                             </div>
                         </article>
                         <article class="post post-classic overlay-zoom mb-4">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/2.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -67,23 +67,23 @@
                                     <a href="#">Technology</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Recognitory the needs is primary condition for design</a>
+                                    <a href="{{ route('blog.single') }}">Recognitory the needs is primary condition for design</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    - <a href="#" class="post-date">03.05.2021</a>
+                                    by <a href="{{ route('blog.index') }}" class="post-author">John Doe</a>
+                                    - <a href="{{ route('blog.index') }}" class="post-date">03.05.2021</a>
                                 </div>
                             </div>
                         </article>
                         <article class="post post-classic overlay-zoom mb-4">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/3.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -93,23 +93,23 @@
                                     <a href="#">Clothes</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">New found the women’s shirt for summer season</a>
+                                    <a href="{{ route('blog.single') }}">New found the women’s shirt for summer season</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    - <a href="#" class="post-date">03.05.2021</a>
+                                    by <a href="{{ route('blog.index') }}" class="post-author">John Doe</a>
+                                    - <a href="{{ route('blog.index') }}" class="post-date">03.05.2021</a>
                                 </div>
                             </div>
                         </article>
                         <article class="post post-classic overlay-zoom mb-4">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/4.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -119,14 +119,14 @@
                                     <a href="#">Lifestyle</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">We want to be different and fashion gives to me that
+                                    <a href="{{ route('blog.single') }}">We want to be different and fashion gives to me that
                                         outlet</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
                                     by <a href="#" class="post-author">John Doe</a>
@@ -136,7 +136,7 @@
                         </article>
                         <article class="post post-classic overlay-zoom mb-4">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/5.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -148,23 +148,23 @@
                                     <a href="#">Others</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Comes a cool blog post with Images</a>
+                                    <a href="{{ route('blog.single') }}">Comes a cool blog post with Images</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    - <a href="#" class="post-date">03.05.2021</a>
+                                    by <a href="{{ route('blog.index') }}" class="post-author">John Doe</a>
+                                    - <a href="{{ route('blog.index') }}" class="post-date">03.05.2021</a>
                                 </div>
                             </div>
                         </article>
                         <article class="post post-classic overlay-zoom mb-2">
                             <figure class="post-media br-sm">
-                                <a href="post-single.html">
+                                <a href="{{ route('blog.single') }}">
                                     <img src="{{ asset('front/assets/images/blog/classic/6.jpg') }}" width="930"
                                         height="500" alt="blog">
                                 </a>
@@ -175,17 +175,17 @@
                                     <a href="#">Technology</a>
                                 </div>
                                 <h4 class="post-title">
-                                    <a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                    <a href="{{ route('blog.single') }}">Fusce lacinia arcuet nulla</a>
                                 </h4>
                                 <div class="post-content">
                                     <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo,
                                         eget blandit nunc tortor eu nibh. Suspendisse potenti.Sed egstas, ant at
                                         vulputate volutpat, uctus metus libero eu augue, vitae luctus…</p>
-                                    <a href="post-single.html" class="btn btn-link btn-primary">(read more)</a>
+                                    <a href="{{ route('blog.single') }}" class="btn btn-link btn-primary">(read more)</a>
                                 </div>
                                 <div class="post-meta">
-                                    by <a href="#" class="post-author">John Doe</a>
-                                    - <a href="#" class="post-date">03.05.2021</a>
+                                    by <a href="{{ route('blog.index') }}" class="post-author">John Doe</a>
+                                    - <a href="{{ route('blog.index') }}" class="post-date">03.05.2021</a>
                                 </div>
                             </div>
                         </article>
@@ -232,13 +232,13 @@
                                 <div class="widget widget-categories">
                                     <h3 class="widget-title bb-no mb-0">Categories</h3>
                                     <ul class="widget-body filter-items search-ul">
-                                        <li><a href="blog.html">Clothes</a></li>
-                                        <li><a href="blog.html">Entertainment</a></li>
-                                        <li><a href="blog.html">Fashion</a></li>
-                                        <li><a href="blog.html">Lifestyle</a></li>
-                                        <li><a href="blog.html">Others</a></li>
-                                        <li><a href="blog.html">Shoes</a></li>
-                                        <li><a href="blog.html">Technology</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Clothes</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Entertainment</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Fashion</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Lifestyle</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Others</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Shoes</a></li>
+                                        <li><a href="{{ route('blog.index') }}">Technology</a></li>
                                     </ul>
                                 </div>
                                 <!-- End of Widget categories -->
@@ -259,10 +259,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 1, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 1, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">Fashion tells about who you are from
+                                                            <a href="{{ route('blog.single') }}">Fashion tells about who you are from
                                                                 external point</a>
                                                         </h4>
                                                     </div>
@@ -274,10 +274,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 5, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 5, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">New found the men dress for
+                                                            <a href="{{ route('blog.single') }}">New found the men dress for
                                                                 summer</a>
                                                         </h4>
                                                     </div>
@@ -289,10 +289,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 1, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 1, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">Cras ornare tristique elit</a>
+                                                            <a href="{{ route('blog.single') }}">Cras ornare tristique elit</a>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -305,10 +305,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 1, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 1, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">Vivamus vestibulum ntulla nec
+                                                            <a href="{{ route('blog.single') }}">Vivamus vestibulum ntulla nec
                                                                 ante</a>
                                                         </h4>
                                                     </div>
@@ -320,10 +320,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 5, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 5, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">Fusce lacinia arcuet nulla</a>
+                                                            <a href="{{ route('blog.single') }}">Fusce lacinia arcuet nulla</a>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -334,10 +334,10 @@
                                                     </figure>
                                                     <div class="post-details">
                                                         <div class="post-meta">
-                                                            <a href="#" class="post-date">March 1, 2021</a>
+                                                            <a href="{{ route('blog.single') }}" class="post-date">March 1, 2021</a>
                                                         </div>
                                                         <h4 class="post-title">
-                                                            <a href="post-single.html">Comes a cool blog post with
+                                                            <a href="{{ route('blog.single') }}">Comes a cool blog post with
                                                                 Images</a>
                                                         </h4>
                                                     </div>
