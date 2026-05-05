@@ -18,6 +18,7 @@ use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
+use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -45,6 +46,12 @@ Route::get('comingsoon', [ComingsoonController::class, 'index'])->name('comingso
 Route::prefix('blog')->name('blog.')->group(function () {
         Route::get('', [BlogController::class, 'index'])->name('index');
         Route::get('single', [BlogController::class, 'single'])->name('single');
+});
+
+//Shop Routes
+Route::prefix('shop')->name('shop.')->group(function () {
+        Route::get('', [ShopController::class, 'index'])->name('index');
+        // Route::get('single', [BlogController::class, 'single'])->name('single');
 });
 
 //wishlist Routes

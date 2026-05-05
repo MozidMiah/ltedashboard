@@ -535,14 +535,14 @@
                                 <a href="{{ url('/') }}">Home</a>
                             </li>
                             <li>
-                                <a href="shop-banner-sidebar.html">Shop</a>
+                                <a href="{{ route('shop.index') }}">Shop</a>
 
                                 <!-- Start of Megamenu -->
                                 <ul class="megamenu">
                                     <li>
                                         <h4 class="menu-title">Shop Pages</h4>
                                         <ul>
-                                            <li><a href="shop-banner-sidebar.html">Banner With Sidebar</a></li>
+                                            <li><a href="{{ route('shop.index') }}">Banner With Sidebar</a></li>
                                             <li><a href="shop-boxed-banner.html">Boxed Banner</a></li>
                                             <li><a href="shop-fullwidth-banner.html">Full Width Banner</a></li>
                                             <li><a href="shop-horizontal-filter.html">Horizontal Filter<span
@@ -631,38 +631,13 @@
                             </li>
                             <li>
                                 <a href="{{ route('blog.index') }}">Blog</a>
-                                {{-- <ul>
-                                    <li><a href="blog.html">Classic</a></li>
-                                    <li><a href="blog-listing.html">Listing</a></li>
+                                <ul>
+                                    <li><a href="{{ route('blog.index') }}">Classic</a></li>
+                                    
                                     <li>
-                                        <a href="blog-grid-3cols.html">Grid</a>
-                                        <ul>
-                                            <li><a href="blog-grid-2cols.html">Grid 2 columns</a></li>
-                                            <li><a href="blog-grid-3cols.html">Grid 3 columns</a></li>
-                                            <li><a href="blog-grid-4cols.html">Grid 4 columns</a></li>
-                                            <li><a href="blog-grid-sidebar.html">Grid sidebar</a></li>
-                                        </ul>
+                                        <a href="{{ route('blog.single') }}">Single Post</a>
                                     </li>
-                                    <li>
-                                        <a href="blog-masonry-3cols.html">Masonry</a>
-                                        <ul>
-                                            <li><a href="blog-masonry-2cols.html">Masonry 2 columns</a></li>
-                                            <li><a href="blog-masonry-3cols.html">Masonry 3 columns</a></li>
-                                            <li><a href="blog-masonry-4cols.html">Masonry 4 columns</a></li>
-                                            <li><a href="blog-masonry-sidebar.html">Masonry sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="blog-mask-grid.html">Mask</a>
-                                        <ul>
-                                            <li><a href="blog-mask-grid.html">Blog mask grid</a></li>
-                                            <li><a href="blog-mask-masonry.html">Blog mask masonry</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="post-single.html">Single Post</a>
-                                    </li>
-                                </ul> --}}
+                                </ul>
                             </li>
                             <li>
                                 <a href="about-us.html">Pages</a>
