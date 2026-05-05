@@ -10,4 +10,8 @@ class ShopController extends Controller
     public function index(){
         return view('front.shop.index');
     }
+
+    public function box(){
+        return view('front.shop.box');
+    }
 }

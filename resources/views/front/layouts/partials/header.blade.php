@@ -543,7 +543,7 @@
                                         <h4 class="menu-title">Shop Pages</h4>
                                         <ul>
                                             <li><a href="{{ route('shop.index') }}">Banner With Sidebar</a></li>
-                                            <li><a href="shop-boxed-banner.html">Boxed Banner</a></li>
+                                            <li><a href="{{ route('shop.box') }}">Boxed Banner</a></li>
                                             <li><a href="shop-fullwidth-banner.html">Full Width Banner</a></li>
                                             <li><a href="shop-horizontal-filter.html">Horizontal Filter<span
                                                         class="tip tip-hot">Hot</span></a></li>

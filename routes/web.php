@@ -42,18 +42,6 @@ Route::get('faqs', [FAQsController::class, 'index'])->name('faqs.index');
 Route::get('error', [ErrorController::class, 'index'])->name('error.index');
 //Comingsoon Routes
 Route::get('comingsoon', [ComingsoonController::class, 'index'])->name('comingsoon.index');
-//Blog Routes
-Route::prefix('blog')->name('blog.')->group(function () {
-        Route::get('', [BlogController::class, 'index'])->name('index');
-        Route::get('single', [BlogController::class, 'single'])->name('single');
-});
-
-//Shop Routes
-Route::prefix('shop')->name('shop.')->group(function () {
-        Route::get('', [ShopController::class, 'index'])->name('index');
-        // Route::get('single', [BlogController::class, 'single'])->name('single');
-});
-
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 //Compare Routes
@@ -62,6 +50,18 @@ Route::get('compare', [CompareController::class, 'index'])->name('compare.index'
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
 //Checkout Routes
 Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+
+//Blog Routes
+Route::prefix('blog')->name('blog.')->group(function () {
+    Route::get('', [BlogController::class, 'index'])->name('index');
+    Route::get('single', [BlogController::class, 'single'])->name('single');
+});
+
+//Shop Routes
+Route::prefix('shop')->name('shop.')->group(function () {
+    Route::get('', [ShopController::class, 'index'])->name('index');
+    Route::get('box', [ShopController::class, 'box'])->name('box');
+});
 
 
 //For Login

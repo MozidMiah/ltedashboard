@@ -3,8 +3,6 @@
 @section('content')
 <body class="">
     <div class="page-wrapper">
-        <!-- Start of Header -->
-        <!-- End of Header -->
 
         <!-- Start of Main-->
         <main class="main">
