@@ -10,6 +10,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FlashSaleController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Front\AboutUsController;
+use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ComingsoonController;
@@ -40,18 +41,17 @@ Route::get('faqs', [FAQsController::class, 'index'])->name('faqs.index');
 Route::get('error', [ErrorController::class, 'index'])->name('error.index');
 //Comingsoon Routes
 Route::get('comingsoon', [ComingsoonController::class, 'index'])->name('comingsoon.index');
-
+//Blog Routes
+Route::get('blog', [BlogController::class, 'index'])->name('blog.index');
 //wishlist Routes
 Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
-
 //Compare Routes
 Route::get('compare', [CompareController::class, 'index'])->name('compare.index');
-
 //Cart Routes
 Route::get('cart', [CartController::class, 'index'])->name('cart.index');
-
 //Checkout Routes
 Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+
 
 //For Login
 Route::get('/register', [AuthController::class, 'register'])->name('register');

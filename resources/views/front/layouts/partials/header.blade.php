@@ -338,54 +338,44 @@
                                             <h4 class="menu-title">Laptops &amp; Computers</h4>
                                             <hr class="divider">
                                             <ul>
-                                                <li><a href="shop-fullwidth-banner.html">Desktop
-                                                        Computers</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Desktop Computers</a></li>
                                                 <li><a href="shop-fullwidth-banner.html">Monitors</a></li>
                                                 <li><a href="shop-fullwidth-banner.html">Laptops</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Hard Drives &amp;
-                                                        Storage</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Computer
-                                                        Accessories</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Hard Drives &amp; Storage</a>
+                                                </li>
+                                                <li><a href="shop-fullwidth-banner.html">Computer Accessories</a></li>
                                             </ul>
 
                                             <h4 class="menu-title mt-1">TV &amp; Video</h4>
                                             <hr class="divider">
                                             <ul>
                                                 <li><a href="shop-fullwidth-banner.html">TVs</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Home Audio
-                                                        Speakers</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Home Audio Speakers</a></li>
                                                 <li><a href="shop-fullwidth-banner.html">Projectors</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Media Streaming
-                                                        Devices</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Media Streaming Devices</a>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li>
                                             <h4 class="menu-title">Digital Cameras</h4>
                                             <hr class="divider">
                                             <ul>
-                                                <li><a href="shop-fullwidth-banner.html">Digital SLR
-                                                        Cameras</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Sports & Action
-                                                        Cameras</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Camera Lenses</a>
+                                                <li><a href="shop-fullwidth-banner.html">Digital SLR Cameras</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Sports & Action Cameras</a>
                                                 </li>
-                                                <li><a href="shop-fullwidth-banner.html">Photo Printer</a>
-                                                </li>
-                                                <li><a href="shop-fullwidth-banner.html">Digital Memory
-                                                        Cards</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Camera Lenses</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Photo Printer</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Digital Memory Cards</a></li>
                                             </ul>
 
                                             <h4 class="menu-title mt-1">Cell Phones</h4>
                                             <hr class="divider">
                                             <ul>
-                                                <li><a href="shop-fullwidth-banner.html">Carrier Phones</a>
+                                                <li><a href="shop-fullwidth-banner.html">Carrier Phones</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Unlocked Phones</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Phone & Cellphone Cases</a>
                                                 </li>
-                                                <li><a href="shop-fullwidth-banner.html">Unlocked Phones</a>
-                                                </li>
-                                                <li><a href="shop-fullwidth-banner.html">Phone & Cellphone
-                                                        Cases</a></li>
-                                                <li><a href="shop-fullwidth-banner.html">Cellphone
-                                                        Chargers</a></li>
+                                                <li><a href="shop-fullwidth-banner.html">Cellphone Chargers</a></li>
                                             </ul>
                                         </li>
                                         <li>
@@ -395,10 +385,9 @@
                                                         alt="Menu Banner" width="235" height="433" />
                                                 </figure>
                                                 <div class="banner-content">
-                                                    <h4 class="banner-subtitle font-weight-normal">Deals Of The
-                                                        Week</h4>
-                                                    <h3 class="banner-title text-white">Save On Smart EarPhone
-                                                    </h3>
+                                                    <h4 class="banner-subtitle font-weight-normal">Deals Of The Week
+                                                    </h4>
+                                                    <h3 class="banner-title text-white">Save On Smart EarPhone</h3>
                                                     <div
                                                         class="banner-price-info text-secondary font-weight-bolder text-uppercase text-secondary">
                                                         20% Off</div>
@@ -420,44 +409,31 @@
                                                 <h4 class="menu-title">Furniture</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="shop-fullwidth-banner.html">Sofas &
-                                                            Couches</a>
-                                                    </li>
+                                                    <li><a href="shop-fullwidth-banner.html">Sofas & Couches</a></li>
                                                     <li><a href="shop-fullwidth-banner.html">Armchairs</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Bed Frames</a>
-                                                    </li>
-                                                    <li><a href="shop-fullwidth-banner.html">Beside Tables</a>
-                                                    </li>
-                                                    <li><a href="shop-fullwidth-banner.html">Dressing
-                                                            Tables</a>
-                                                    </li>
+                                                    <li><a href="shop-fullwidth-banner.html">Bed Frames</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Beside Tables</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">DressingTables</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-6">
                                                 <h4 class="menu-title">Lighting</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="shop-fullwidth-banner.html">Light Bulbs</a>
-                                                    </li>
+                                                    <li><a href="shop-fullwidth-banner.html">Light Bulbs</a></li>
                                                     <li><a href="shop-fullwidth-banner.html">Lamps</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Celling Lights</a>
-                                                    </li>
-                                                    <li><a href="shop-fullwidth-banner.html">Wall Lights</a>
-                                                    </li>
-                                                    <li><a href="shop-fullwidth-banner.html">Bathroom
-                                                            Lighting</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Celling Lights</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Wall Lights</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">BathroomLighting</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-md-3 col-lg-3 col-6">
                                                 <h4 class="menu-title">Home Accessories</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="shop-fullwidth-banner.html">Decorative
-                                                            Accessories</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Candals &
-                                                            Holders</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Home Fragrance</a>
-                                                    </li>
+                                                    <li><a href="shop-fullwidth-banner.html">Decorative Accessories</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Candals & Holders</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Home Fragrance</a></li>
                                                     <li><a href="shop-fullwidth-banner.html">Mirrors</a></li>
                                                     <li><a href="shop-fullwidth-banner.html">Clocks</a></li>
                                                 </ul>
@@ -466,16 +442,11 @@
                                                 <h4 class="menu-title">Garden & Outdoors</h4>
                                                 <hr class="divider" />
                                                 <ul>
-                                                    <li><a href="shop-fullwidth-banner.html">Garden
-                                                            Furniture</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Lawn Mowers</a>
-                                                    </li>
-                                                    <li><a href="shop-fullwidth-banner.html">Pressure
-                                                            Washers</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">All Garden
-                                                            Tools</a></li>
-                                                    <li><a href="shop-fullwidth-banner.html">Outdoor Dining</a>
-                                                    </li>
+                                                    <li><a href="shop-fullwidth-banner.html">Garden Furniture</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Lawn Mowers</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Pressure Washers</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">All Garden Tools</a></li>
+                                                    <li><a href="shop-fullwidth-banner.html">Outdoor Dining</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -488,12 +459,8 @@
                                                             style="background-color: #D2D2D2;" />
                                                     </figure>
                                                     <div class="banner-content text-right y-50">
-                                                        <h4
-                                                            class="banner-subtitle font-weight-normal text-default text-capitalize">
-                                                            New Arrivals</h4>
-                                                        <h3
-                                                            class="banner-title font-weight-bolder text-capitalize ls-normal">
-                                                            Amazing Sofa</h3>
+                                                        <h4 class="banner-subtitle font-weight-normal text-default text-capitalize">New Arrivals</h4>
+                                                        <h3 class="banner-title font-weight-bolder text-capitalize ls-normal">Amazing Sofa</h3>
                                                         <div class="banner-price-info font-weight-normal ls-normal">
                                                             Starting at <strong>$125.00</strong></div>
                                                     </div>
@@ -507,12 +474,8 @@
                                                             style="background-color: #9F9888;" />
                                                     </figure>
                                                     <div class="banner-content y-50">
-                                                        <h4
-                                                            class="banner-subtitle font-weight-normal text-white text-capitalize">
-                                                            Best Seller</h4>
-                                                        <h3
-                                                            class="banner-title font-weight-bolder text-capitalize text-white ls-normal">
-                                                            Chair &amp; Lamp</h3>
+                                                        <h4 class="banner-subtitle font-weight-normal text-white text-capitalize">Best Seller</h4>
+                                                        <h3 class="banner-title font-weight-bolder text-capitalize text-white ls-normal">Chair &amp; Lamp</h3>
                                                         <div
                                                             class="banner-price-info font-weight-normal ls-normal text-white">
                                                             From <strong>$165.00</strong></div>
@@ -667,8 +630,8 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="blog.html">Blog</a>
-                                <ul>
+                                <a href="{{ route('blog.index') }}">Blog</a>
+                                {{-- <ul>
                                     <li><a href="blog.html">Classic</a></li>
                                     <li><a href="blog-listing.html">Listing</a></li>
                                     <li>
@@ -699,7 +662,7 @@
                                     <li>
                                         <a href="post-single.html">Single Post</a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </li>
                             <li>
                                 <a href="about-us.html">Pages</a>

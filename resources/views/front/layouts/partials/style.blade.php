@@ -51,4 +51,6 @@
     <!-- Default CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/demo1.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('front/assets/css/style.min.css') }}">
+
 </head>
