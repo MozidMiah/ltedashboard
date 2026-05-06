@@ -60,10 +60,10 @@
                             <div class="widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul class="widget-body">
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="{{ route('about-us.index') }}">About Us</a></li>
                                     <li><a href="#">Team Member</a></li>
                                     <li><a href="#">Career</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
+                                    <li><a href="{{ route('contact-us.index') }}">Contact Us</a></li>
                                     <li><a href="#">Affilate</a></li>
                                     <li><a href="#">Order History</a></li>
                                 </ul>
@@ -74,10 +74,10 @@
                                 <h4 class="widget-title">My Account</h4>
                                 <ul class="widget-body">
                                     <li><a href="#">Track My Order</a></li>
-                                    <li><a href="cart.html">View Cart</a></li>
+                                    <li><a href="{{ route('cart.index') }}">View Cart</a></li>
                                     <li><a href="login.html">Sign In</a></li>
                                     <li><a href="#">Help</a></li>
-                                    <li><a href="wishlist.html">My Wishlist</a></li>
+                                    <li><a href="{{ route('wishlist.index') }}">My Wishlist</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>

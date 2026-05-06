@@ -380,7 +380,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/1.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -400,14 +400,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">3D Television</a>
+                                            <a href="{{ route('shop.product') }}">3D Television</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -420,7 +420,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/2-1.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                             <img src="{{ asset('front/assets/images/shop/2-2.jpg') }}" alt="Product" width="300"
@@ -448,14 +448,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Alarm Clock With Lamp</a>
+                                            <a href="{{ route('shop.product') }}">Alarm Clock With Lamp</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -468,7 +468,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/3.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -488,14 +488,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Apple Laptop</a>
+                                            <a href="{{ route('shop.product') }}">Apple Laptop</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -508,7 +508,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/4.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -528,14 +528,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Attachable Charge Alarm</a>
+                                            <a href="{{ route('shop.product') }}">Attachable Charge Alarm</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(7 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(7 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -548,7 +548,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/5.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -568,14 +568,14 @@
                                             <a href="{{ route('shop.index') }}">Fashion</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Best Travel Bag</a>
+                                            <a href="{{ route('shop.product') }}">Best Travel Bag</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -588,7 +588,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/6.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -608,14 +608,14 @@
                                             <a href="{{ route('shop.index') }}">Sports</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Black Stunt Motor</a>
+                                            <a href="{{ route('shop.product') }}">Black Stunt Motor</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(12 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(12 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -628,7 +628,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/7-1.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                             <img src="{{ asset('front/assets/images/shop/7-2.jpg') }}" alt="Product" width="300"
@@ -650,14 +650,14 @@
                                             <a href="{{ route('shop.index') }}">Fashion</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Blue Sky Trunk</a>
+                                            <a href="{{ route('shop.product') }}">Blue Sky Trunk</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(9 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -670,7 +670,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/8.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -690,14 +690,14 @@
                                             <a href="{{ route('shop.index') }}">Beauty</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Bodycare Smooth Powder</a>
+                                            <a href="{{ route('shop.product') }}">Bodycare Smooth Powder</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -710,7 +710,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/9.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -730,14 +730,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Bright Green IPhone</a>
+                                            <a href="{{ route('shop.product') }}">Bright Green IPhone</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -750,7 +750,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/10.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -770,14 +770,14 @@
                                             <a href="{{ route('shop.index') }}">Fashion</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Cavin Fashion Suede Handbag</a>
+                                            <a href="{{ route('shop.product') }}">Cavin Fashion Suede Handbag</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -790,7 +790,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/11-1.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                             <img src="{{ asset('front/assets/images/shop/11-2.jpg') }}" alt="Product" width="300"
@@ -812,14 +812,14 @@
                                             <a href="{{ route('shop.index') }}">Electronics</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Charming Design Watch</a>
+                                            <a href="{{ route('shop.product') }}">Charming Design Watch</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -832,7 +832,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/shop/12.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
@@ -852,14 +852,14 @@
                                             <a href="{{ route('shop.index') }}">Fashion</a>
                                         </div>
                                         <h3 class="product-name">
-                                            <a href="product-default.html">Classic Simple Backpack</a>
+                                            <a href="{{ route('shop.product') }}">Classic Simple Backpack</a>
                                         </h3>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(9 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">

@@ -16,23 +16,17 @@
 
         <div class="page-content mb-10">
             <div class="container">
-                <!-- Start of Shop Content -->
                 <div class="shop-content row gutter-lg">
-                    <!-- Start of Sidebar, Shop Sidebar -->
                     <aside class="sidebar shop-sidebar sticky-sidebar-wrapper sidebar-fixed">
-                        <!-- Start of Sidebar Overlay -->
                         <div class="sidebar-overlay"></div>
                         <a class="sidebar-close" href="#"><i class="close-icon"></i></a>
 
-                        <!-- Start of Sidebar Content -->
                         <div class="sidebar-content scrollable">
-                            <!-- Start of Sticky Sidebar -->
                             <div class="sticky-sidebar">
                                 <div class="filter-actions">
                                     <label>Filter :</label>
                                     <a href="#" class="btn btn-dark btn-link filter-clean">Clean All</a>
                                 </div>
-                                <!-- Start of Collapsible widget -->
                                 <div class="widget widget-collapsible">
                                     <h3 class="widget-title"><span>All Categories</span></h3>
                                     <ul class="widget-body filter-items search-ul">
