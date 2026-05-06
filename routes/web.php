@@ -61,6 +61,8 @@ Route::prefix('blog')->name('blog.')->group(function () {
 Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('', [ShopController::class, 'index'])->name('index');
     Route::get('box', [ShopController::class, 'box'])->name('box');
+    Route::get('banner', [ShopController::class, 'banner'])->name('banner');
+    Route::get('product', [ShopController::class, 'product'])->name('product');
 });
 
 

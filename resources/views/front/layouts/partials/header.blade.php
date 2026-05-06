@@ -32,7 +32,7 @@
                 </div>
                 <!-- End of Dropdown Menu -->
                 <span class="divider d-lg-show"></span>
-                <a href="blog.html" class="d-lg-show">Blog</a>
+                <a href="{{ route('blog.index') }}" class="d-lg-show">Blog</a>
                 <a href="{{ route('contact-us.index') }}" class="d-lg-show">Contact Us</a>
                 <a href="my-account.html" class="d-lg-show">My Account</a>
                 <a href="{{ asset('front/assets/ajax/login.html') }}" class="d-lg-show login sign-in"><i
@@ -544,7 +544,7 @@
                                         <ul>
                                             <li><a href="{{ route('shop.index') }}">Banner With Sidebar</a></li>
                                             <li><a href="{{ route('shop.box') }}">Boxed Banner</a></li>
-                                            <li><a href="shop-fullwidth-banner.html">Full Width Banner</a></li>
+                                            <li><a href="{{ route('shop.banner') }}">Full Width Banner</a></li>
                                             <li><a href="shop-horizontal-filter.html">Horizontal Filter<span
                                                         class="tip tip-hot">Hot</span></a></li>
                                             <li><a href="shop-off-canvas.html">Off Canvas Sidebar<span
@@ -587,8 +587,7 @@
                                     <li>
                                         <h4 class="menu-title">Product Layouts</h4>
                                         <ul>
-                                            <li><a href="product-default.html">Default<span
-                                                        class="tip tip-hot">Hot</span></a></li>
+                                            <li><a href="{{ route('shop.product') }}">Default<span class="tip tip-hot">Hot</span></a></li>
                                             <li><a href="product-vertical.html">Vertical Thumbs</a></li>
                                             <li><a href="product-grid.html">Grid Images</a></li>
                                             <li><a href="product-masonry.html">Masonry</a></li>

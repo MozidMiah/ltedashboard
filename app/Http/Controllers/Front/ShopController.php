@@ -14,4 +14,10 @@ class ShopController extends Controller
     public function box(){
         return view('front.shop.box');
     }
+    public function banner(){
+        return view('front.shop.banner');
+    }
+    public function product(){
+        return view('front.shop.product');
+    }
 }
