@@ -20,4 +20,7 @@ class ShopController extends Controller
     public function product(){
         return view('front.shop.product');
     }
+    public function filter(){
+        return view('front.shop.filter');
+    }
 }

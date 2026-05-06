@@ -29,7 +29,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
 
 
 //Aboutus Routes
@@ -63,6 +64,7 @@ Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('box', [ShopController::class, 'box'])->name('box');
     Route::get('banner', [ShopController::class, 'banner'])->name('banner');
     Route::get('product', [ShopController::class, 'product'])->name('product');
+    Route::get('filter', [ShopController::class, 'filter'])->name('filter');
 });
 
 
