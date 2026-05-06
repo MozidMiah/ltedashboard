@@ -735,7 +735,7 @@
                                                     <li class="comment">
                                                         <div class="comment-body">
                                                             <figure class="comment-avatar">
-                                                                <img src="assets/images/agents/1-100x100.png"
+                                                                <img src="{{ asset('front/assets/images/agents/1-100x100.png') }}"
                                                                     alt="Commenter Avatar" width="90" height="90">
                                                             </figure>
                                                             <div class="comment-content">
@@ -769,10 +769,10 @@
                                                                     <div class="review-image">
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-1.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-1.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-1.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-1.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                     </div>
@@ -783,7 +783,7 @@
                                                     <li class="comment">
                                                         <div class="comment-body">
                                                             <figure class="comment-avatar">
-                                                                <img src="assets/images/agents/2-100x100.png"
+                                                                <img src="{{ asset('front/assets/images/agents/2-100x100.png') }}"
                                                                     alt="Commenter Avatar" width="90" height="90">
                                                             </figure>
                                                             <div class="comment-content">
@@ -817,18 +817,18 @@
                                                                     <div class="review-image">
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-2.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-2.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-2-800x900.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-2-800x900.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-3.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-3.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-3-800x900.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                     </div>
@@ -843,7 +843,7 @@
                                                     <li class="comment">
                                                         <div class="comment-body">
                                                             <figure class="comment-avatar">
-                                                                <img src="assets/images/agents/3-100x100.png"
+                                                                <img src="{{ asset('front/assets/images/agents/3-100x100.png') }}"
                                                                     alt="Commenter Avatar" width="90" height="90">
                                                             </figure>
                                                             <div class="comment-content">
@@ -885,7 +885,7 @@
                                                     <li class="comment">
                                                         <div class="comment-body">
                                                             <figure class="comment-avatar">
-                                                                <img src="assets/images/agents/2-100x100.png"
+                                                                <img src="{{ asset('front/assets/images/agents/2-100x100.png') }}"
                                                                     alt="Commenter Avatar" width="90" height="90">
                                                             </figure>
                                                             <div class="comment-content">
@@ -919,18 +919,18 @@
                                                                     <div class="review-image">
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-2.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-2.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-2-800x900.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-2-800x900.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-3.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-3.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-3-800x900.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                     </div>
@@ -945,7 +945,7 @@
                                                     <li class="comment">
                                                         <div class="comment-body">
                                                             <figure class="comment-avatar">
-                                                                <img src="assets/images/agents/1-100x100.png"
+                                                                <img src="{{ asset('front/assets/images/agents/1-100x100.png') }}"
                                                                     alt="Commenter Avatar" width="90" height="90">
                                                             </figure>
                                                             <div class="comment-content">
@@ -979,10 +979,10 @@
                                                                     <div class="review-image">
                                                                         <a href="#">
                                                                             <figure>
-                                                                                <img src="assets/images/products/default/review-img-3.jpg"
+                                                                                <img src="{{ asset('front/assets/images/products/default/review-img-3.jpg') }}"
                                                                                     width="60" height="60"
                                                                                     alt="Attachment image of John Doe's review on Electronics Black Wrist Watch"
-                                                                                    data-zoom-image="assets/images/products/default/review-img-3-800x900.jpg" />
+                                                                                    data-zoom-image="{{ asset('front/assets/images/products/default/review-img-3-800x900.jpg') }}" />
                                                                             </figure>
                                                                         </a>
                                                                     </div>
@@ -1025,18 +1025,18 @@
                                 }">
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/1-1.jpg" alt="Product"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/1-1.jpg') }}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="assets/images/products/default/1-2.jpg" alt="Product"
+                                            <img src="{{ asset('front/assets/images/products/default/1-2.jpg') }}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1047,14 +1047,14 @@
                                     <div class="product-details">
                                         <div class="product-cat"><a href="shop-banner-sidebar.html">Accessories</a>
                                         </div>
-                                        <h4 class="product-name"><a href="product-default.html">Sticky Pencil</a>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Sticky Pencil</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">$20.00</div>
@@ -1063,16 +1063,16 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/2.jpg" alt="Product" width="300"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/2.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1083,14 +1083,14 @@
                                     <div class="product-details">
                                         <div class="product-cat"><a href="shop-banner-sidebar.html">Electronics</a>
                                         </div>
-                                        <h4 class="product-name"><a href="product-default.html">Mini
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Mini
                                                 Multi-Functional Cooker</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -1101,16 +1101,16 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/3.jpg" alt="Product" width="300"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/3.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1120,13 +1120,13 @@
                                     </figure>
                                     <div class="product-details">
                                         <div class="product-cat"><a href="shop-banner-sidebar.html">Sports</a></div>
-                                        <h4 class="product-name"><a href="product-default.html">Skate Pan</a></h4>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Skate Pan</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -1137,18 +1137,18 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/4-1.jpg" alt="Product"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/4-1.jpg') }}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="assets/images/products/default/4-2.jpg" alt="Product"
+                                            <img src="{{ asset('front/assets/images/products/default/4-2.jpg') }}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1203,16 +1203,16 @@
                                 }">
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/5.jpg" alt="Product" width="300"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/5.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1221,13 +1221,13 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Drone</a></h4>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Drone</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">$632.00</div>
@@ -1236,16 +1236,16 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/6.jpg" alt="Product" width="300"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/6.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1254,14 +1254,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Official Camera</a>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Official Camera</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">
@@ -1272,18 +1272,18 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/7-1.jpg" alt="Product"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/7-1.jpg') }}" alt="Product"
                                                 width="300" height="338" />
-                                            <img src="assets/images/products/default/7-2.jpg" alt="Product"
+                                            <img src="{{ asset('front/assets/images/products/default/7-2.jpg') }}" alt="Product"
                                                 width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1292,14 +1292,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Phone Charge Pad</a>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Phone Charge Pad</a>
                                         </h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">$23.00</div>
@@ -1308,16 +1308,16 @@
                                 </div>
                                 <div class="product">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
-                                            <img src="assets/images/products/default/8.jpg" alt="Product" width="300"
+                                        <a href="{{ route('shop.product') }}">
+                                            <img src="{{ asset('front/assets/images/products/default/8.jpg') }}" alt="Product" width="300"
                                                 height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-action">
@@ -1327,14 +1327,14 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Fashionalble
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Fashionalble
                                                 Pencil</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(9 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(9 reviews)</a>
                                         </div>
                                         <div class="product-pa-wrapper">
                                             <div class="product-price">$50.00</div>
@@ -1386,7 +1386,7 @@
                                 <div class="widget widget-banner mb-9">
                                     <div class="banner banner-fixed br-sm">
                                         <figure>
-                                            <img src="assets/images/shop/banner3.jpg" alt="Banner" width="266"
+                                            <img src="{{ asset('front/assets/images/shop/banner3.jpg') }}" alt="Banner" width="266"
                                                 height="220" style="background-color: #1D2D44;" />
                                         </figure>
                                         <div class="banner-content">
@@ -1417,7 +1417,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/13.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/13.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
@@ -1437,7 +1437,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/14.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/14.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
@@ -1457,7 +1457,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/15.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/15.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
@@ -1479,7 +1479,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/16.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/16.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
@@ -1499,7 +1499,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/17.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/17.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
@@ -1519,7 +1519,7 @@
                                             <div class="product product-widget">
                                                 <figure class="product-media">
                                                     <a href="#">
-                                                        <img src="assets/images/shop/18.jpg" alt="Product"
+                                                        <img src="{{ asset('front/assets/images/shop/18.jpg') }}" alt="Product"
                                                             width="100" height="113" />
                                                     </a>
                                                 </figure>
