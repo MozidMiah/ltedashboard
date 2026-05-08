@@ -11,7 +11,7 @@
         <nav class="breadcrumb-nav mb-10">
             <div class="container">
                 <ul class="breadcrumb">
-                    <li><a href="demo1.html">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li>Wishlist</li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@
                         <tr>
                             <td class="product-thumbnail">
                                 <div class="p-relative">
-                                    <a href="product-default.html">
+                                    <a href="{{ route('shop.product') }}">
                                         <figure>
                                             <img src="{{ asset('front/assets/images/shop/7-1.jpg') }}" alt="product" width="300"
                                                 height="338">
@@ -43,7 +43,7 @@
                                 </div>
                             </td>
                             <td class="product-name">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     Blue Sky Trunk
                                 </a>
                             </td>
@@ -58,7 +58,7 @@
                                     <a href="#"
                                         class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
                                         View</a>
-                                    <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
                                         cart</a>
                                 </div>
                             </td>
@@ -66,7 +66,7 @@
                         <tr>
                             <td class="product-thumbnail">
                                 <div class="p-relative">
-                                    <a href="product-default.html">
+                                    <a href="{{ route('shop.product') }}">
                                         <figure>
                                             <img src="{{ asset('front/assets/images/shop/19-1.jpg') }}" alt="product" width="300"
                                                 height="338">
@@ -76,7 +76,7 @@
                                 </div>
                             </td>
                             <td class="product-name">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     Handmade Ring
                                 </a>
                             </td>
@@ -89,7 +89,7 @@
                                     <a href="#"
                                         class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
                                         View</a>
-                                    <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
                                         cart</a>
                                 </div>
                             </td>
@@ -97,7 +97,7 @@
                         <tr>
                             <td class="product-thumbnail">
                                 <div class="p-relative">
-                                    <a href="product-default.html">
+                                    <a href="{{ route('shop.product') }}">
                                         <figure>
                                             <img src="{{ asset('front/assets/images/shop/20.jpg') }}" alt="product" width="300"
                                                 height="338">
@@ -107,7 +107,7 @@
                                 </div>
                             </td>
                             <td class="product-name">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     Pencil Case
                                 </a>
                             </td>
@@ -120,7 +120,7 @@
                                     <a href="#"
                                         class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
                                         View</a>
-                                    <a href="#" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
                                         cart</a>
                                 </div>
                             </td>

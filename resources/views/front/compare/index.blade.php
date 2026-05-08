@@ -25,7 +25,7 @@
                         <a href="#" class="btn remove-product"><i class="w-icon-times-solid"></i></a>
                         <div class="product text-center">
                             <figure class="product-media">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     <img src="{{ asset('front/assets/images/products/elements/1.jpg') }}" alt="Product" width="228"
                                         height="257" />
                                 </a>
@@ -35,7 +35,7 @@
                                 </div>
                             </figure>
                             <div class="product-details">
-                                <h3 class="product-name"><a href="product-default.html">Electronics Black Wrist
+                                <h3 class="product-name"><a href="{{ route('shop.product') }}">Electronics Black Wrist
                                         Watch</a></h3>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                         <a href="#" class="btn remove-product"><i class="w-icon-times-solid"></i></a>
                         <div class="product text-center">
                             <figure class="product-media">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     <img src="{{ asset('front/assets/images/products/elements/2.jpg') }}" alt="Product" width="228"
                                         height="257" />
                                 </a>
@@ -54,7 +54,7 @@
                                 </div>
                             </figure>
                             <div class="product-details">
-                                <h3 class="product-name"><a href="product-default.html">Summer Sport Shoes</a>
+                                <h3 class="product-name"><a href="{{ route('shop.product') }}">Summer Sport Shoes</a>
                                 </h3>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                         <a href="#" class="btn remove-product"><i class="w-icon-times-solid"></i></a>
                         <div class="product text-center">
                             <figure class="product-media">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     <img src="{{ asset('front/assets/images/products/elements/3.jpg') }}" alt="Product" width="228"
                                         height="257" />
                                 </a>
@@ -73,7 +73,7 @@
                                 </div>
                             </figure>
                             <div class="product-details">
-                                <h3 class="product-name"><a href="product-default.html">Charming Design
+                                <h3 class="product-name"><a href="{{ route('shop.product') }}">Charming Design
                                         Watch</a></h3>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                         <a href="#" class="btn remove-product"><i class="w-icon-times-solid"></i></a>
                         <div class="product text-center">
                             <figure class="product-media">
-                                <a href="product-default.html">
+                                <a href="{{ route('shop.product') }}">
                                     <img src="{{ asset('front/assets/images/products/elements/4-1.jpg') }}" alt="Product" width="228"
                                         height="257" />
                                 </a>
@@ -92,8 +92,7 @@
                                 </div>
                             </figure>
                             <div class="product-details">
-                                <h3 class="product-name"><a href="product-default.html">Populated Gaming
-                                        Mouse</a></h3>
+                                <h3 class="product-name"><a href="{{ route('shop.product') }}">Populated Gaming Mouse</a></h3>
                             </div>
                         </div>
                     </div>
