@@ -33,7 +33,7 @@
                                 <tr>
                                     <td class="product-thumbnail">
                                         <div class="p-relative">
-                                            <a href="product-default.html">
+                                            <a href="{{ route('shop.product') }}">
                                                 <figure>
                                                     <img src="{{ asset('front/assets/images/shop/12.jpg') }}" alt="product" width="300"
                                                         height="338">
@@ -44,7 +44,7 @@
                                         </div>
                                     </td>
                                     <td class="product-name">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             Classic Simple Backpack
                                         </a>
                                     </td>
@@ -64,7 +64,7 @@
                                 <tr>
                                     <td class="product-thumbnail">
                                         <div class="p-relative">
-                                            <a href="product-default.html">
+                                            <a href="{{ route('shop.product') }}">
                                                 <figure>
                                                     <img src="{{ asset('front/assets/images/shop/13.jpg') }}" alt="product" width="300"
                                                         height="338">
@@ -74,7 +74,7 @@
                                         </div>
                                     </td>
                                     <td class="product-name">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             Smart Watch
                                         </a>
                                     </td>

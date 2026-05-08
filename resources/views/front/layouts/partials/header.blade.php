@@ -95,7 +95,7 @@
                 </a>
                 <div class="dropdown cart-dropdown cart-offcanvas mr-0 mr-lg-2">
                     <div class="cart-overlay"></div>
-                    <a href="#" class="cart-toggle label-down link">
+                    <a href="{{ route('cart.index') }}" class="cart-toggle label-down link">
                         <i class="w-icon-cart">
                             <span class="cart-count">2</span>
                         </i>
@@ -1030,7 +1030,7 @@
                                 <!-- End of Megamenu -->
                             </li>
                             <li>
-                                <a href="vendor-dokan-store.html">Vendor</a>
+                                <a href="{{ route('vendor.index') }}">Vendor</a>
                                 <ul>
                                     <li>
                                         <a href="vendor-dokan-store-list.html">Store Listing</a>
@@ -1042,9 +1042,9 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="vendor-dokan-store.html">Vendor Store</a>
+                                        <a href="{{ route('vendor.index') }}">Vendor Store</a>
                                         <ul>
-                                            <li><a href="vendor-dokan-store.html">Vendor Store 1</a></li>
+                                            <li><a href="{{ route('vendor.index') }}">Vendor Store 1</a></li>
                                             <li><a href="vendor-wcfm-store-product-grid.html">Vendor Store
                                                     2</a>
                                             </li>
