@@ -6,9 +6,9 @@
         <nav class="breadcrumb-nav">
             <div class="container">
                 <ul class="breadcrumb shop-breadcrumb bb-no">
-                    <li class="active"><a href="cart.html">Shopping Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="order.html">Order Complete</a></li>
+                    <li class="active"><a href="{{ route('cart.index') }}">Shopping Cart</a></li>
+                    <li><a href="{{ route('checkout.index') }}">Checkout</a></li>
+                    <li><a href="{{ route('order.index') }}">Order Complete</a></li>
                 </ul>
             </div>
         </nav>

@@ -18,6 +18,7 @@ use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
+use App\Http\Controllers\Front\OrderController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\VendorController;
 use App\Http\Controllers\Front\WishlistController;
@@ -71,6 +72,11 @@ Route::prefix('shop')->name('shop.')->group(function () {
 //Vendor Routes
 Route::prefix('vendor')->name('vendor.')->group(function () {
     Route::get('', [VendorController::class, 'index'])->name('index');
+});
+
+//Order Routes
+Route::prefix('order')->name('order.')->group(function () {
+    Route::get('', [OrderController::class, 'index'])->name('index');
 });
 
 

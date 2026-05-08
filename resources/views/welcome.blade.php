@@ -229,68 +229,68 @@
                         }
                     }">
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-1.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Fashion</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-2.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Furniture</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-3.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Shoes</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-4.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Sports</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-5.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Games</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
                         <div class="category category-classic category-absolute overlay-zoom br-xs">
-                            <a href="shop-banner-sidebar.html" class="category-media">
+                            <a href="{{ route('shop.index') }}" class="category-media">
                                 <img src="{{ asset('front/assets/images/demos/demo1/categories/2-6.jpg') }}"
                                     alt="Category" width="130" height="130">
                             </a>
                             <div class="category-content">
                                 <h4 class="category-name">Computers</h4>
-                                <a href="shop-banner-sidebar.html" class="btn btn-primary btn-link btn-underline">Shop
+                                <a href="{{ route('shop.index') }}" class="btn btn-primary btn-link btn-underline">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -325,31 +325,31 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-1-1.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-1-2.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Classic Hat</a></h4>
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Classic Hat</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(1 Reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(1 Reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$53.00</ins>
@@ -360,30 +360,30 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-2.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Women’s White
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Women’s White
                                                 Handbag</a></h4>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width: 80%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.62</ins>
@@ -394,18 +394,18 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-3.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-label-group">
@@ -413,7 +413,7 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Multi Funtional
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi Funtional
                                                 Apple
                                                 iPhone</a></h4>
                                         <div class="ratings-container">
@@ -421,7 +421,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(5 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(5 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">136.26</ins>
@@ -433,25 +433,25 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-4-1.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-4-2.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Fashion Blue
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Fashion Blue
                                                 Towel</a>
                                         </h4>
                                         <div class="ratings-container">
@@ -459,7 +459,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(8 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(8 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$26.55 - $29.99</ins>
@@ -470,18 +470,18 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-5.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                         <div class="product-label-group">
@@ -489,7 +489,7 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Apple Super
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Apple Super
                                                 Notecom</a>
                                         </h4>
                                         <div class="ratings-container">
@@ -497,7 +497,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(4 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$243.30</ins>
@@ -509,25 +509,25 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-6-1.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-6-2.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Women’s
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Women’s
                                                 Comforter</a>
                                         </h4>
                                         <div class="ratings-container">
@@ -535,7 +535,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(10 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(10 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$32.00 - $33.26</ins>
@@ -546,23 +546,23 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-7.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
                                         <div class="product-action-vertical">
-                                            <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                            <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                 title="Add to cart"></a>
-                                            <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                            <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                 title="Add to wishlist"></a>
                                             <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                 title="Quickview"></a>
-                                            <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                            <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                 title="Add to Compare"></a>
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Multi-colorful
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi-colorful
                                                 Music</a>
                                         </h4>
                                         <div class="ratings-container">
@@ -570,7 +570,7 @@
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$260.59 - $297.83</ins>
@@ -581,7 +581,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-8-1.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-8-2.jpg') }}"
@@ -599,7 +599,7 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Comfortable
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Comfortable
                                                 Backpack</a>
                                         </h4>
                                         <div class="ratings-container">
@@ -607,7 +607,7 @@
                                                 <span class="ratings" style="width: 100%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(6 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(6 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <ins class="new-price">$45.90</ins>
@@ -618,7 +618,7 @@
                             <div class="product-wrap">
                                 <div class="product text-center">
                                     <figure class="product-media">
-                                        <a href="product-default.html">
+                                        <a href="{{ route('shop.product') }}">
                                             <img src="{{ asset('front/assets/images/demos/demo1/products/3-9.jpg') }}"
                                                 alt="Product" width="300" height="338" />
                                         </a>
@@ -634,7 +634,7 @@
                                         </div>
                                     </figure>
                                     <div class="product-details">
-                                        <h4 class="product-name"><a href="product-default.html">Data Transformer
+                                        <h4 class="product-name"><a href="{{ route('shop.product') }}">Data Transformer
                                                 Tool
                                             </a></h4>
                                         <div class="ratings-container">
@@ -642,7 +642,7 @@
                                                 <span class="ratings" style="width: 60%;"></span>
                                                 <span class="tooltiptext tooltip-top"></span>
                                             </div>
-                                            <a href="product-default.html" class="rating-reviews">(3 reviews)</a>
+                                            <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                         </div>
                                         <div class="product-price">
                                             <span class="price">$64.47</span>

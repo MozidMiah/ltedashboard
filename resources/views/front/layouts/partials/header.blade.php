@@ -965,7 +965,7 @@
                                 <ul>
 
                                     <li><a href="{{ route('about-us.index') }}">About Us</a></li>
-                                    <li><a href="become-a-vendor.html">Become A Vendor</a></li>
+                                    {{-- <li><a href="become-a-vendor.html">Become A Vendor</a></li> --}}
                                     <li><a href="{{ route('contact-us.index') }}">Contact Us</a></li>
                                     <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
                                     <li><a href="{{ route('error.index') }}">Error 404</a></li>
