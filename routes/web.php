@@ -19,6 +19,7 @@ use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
 use App\Http\Controllers\Front\ShopController;
+use App\Http\Controllers\Front\VendorController;
 use App\Http\Controllers\Front\WishlistController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SizeController;
@@ -65,6 +66,11 @@ Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('banner', [ShopController::class, 'banner'])->name('banner');
     Route::get('product', [ShopController::class, 'product'])->name('product');
     Route::get('filter', [ShopController::class, 'filter'])->name('filter');
+});
+
+//Vendor Routes
+Route::prefix('vendor')->name('vendor.')->group(function () {
+    Route::get('', [VendorController::class, 'index'])->name('index');
 });
 
 
