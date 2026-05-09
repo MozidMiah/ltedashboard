@@ -16,6 +16,7 @@ use App\Http\Controllers\Front\CheckoutController;
 use App\Http\Controllers\Front\ComingsoonController;
 use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
+use App\Http\Controllers\Front\ElementsController;
 use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
 use App\Http\Controllers\Front\MyAccountController;
@@ -85,6 +86,10 @@ Route::prefix('myaccount')->name('myaccount.')->group(function () {
     Route::get('', [MyAccountController::class, 'index'])->name('index');
 });
 
+//Elements Routes
+Route::prefix('elements')->name('elements.')->group(function () {
+    Route::get('', [ElementsController::class, 'index'])->name('index');
+});
 
 //For Login
 Route::get('/register', [AuthController::class, 'register'])->name('register');

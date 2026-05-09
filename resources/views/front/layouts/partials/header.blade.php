@@ -503,7 +503,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="shop-banner-sidebar.html"
+                                        <a href="{{ route('shop.banner') }}"
                                             class="font-weight-bold text-primary text-uppercase ls-25">
                                             View All Categories<i class="w-icon-angle-right"></i>
                                         </a>
@@ -978,7 +978,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="elements.html">Elements</a>
+                                <a href="{{ route('elements.index') }}">Elements</a>
                                 <ul>
                                     <li><a href="element-accordions.html">Accordions</a></li>
                                     <li><a href="element-alerts.html">Alert &amp; Notification</a></li>
