@@ -34,7 +34,7 @@
                 <span class="divider d-lg-show"></span>
                 <a href="{{ route('blog.index') }}" class="d-lg-show">Blog</a>
                 <a href="{{ route('contact-us.index') }}" class="d-lg-show">Contact Us</a>
-                <a href="my-account.html" class="d-lg-show">My Account</a>
+                <a href="{{ route('myaccount.index') }}" class="d-lg-show">My Account</a>
                 <a href="{{ asset('front/assets/ajax/login.html') }}" class="d-lg-show login sign-in"><i
                         class="w-icon-account"></i>Sign In</a>
                 <span class="delimiter d-lg-show">/</span>
@@ -973,7 +973,7 @@
                                     <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
                                     <li><a href="{{ route('cart.index') }}">Cart</a></li>
                                     <li><a href="{{ route('checkout.index') }}">Checkout</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="{{ route('myaccount.index') }}">My Account</a></li>
                                     <li><a href="{{ route('compare.index') }}">Compare</a></li>
                                 </ul>
                             </li>
