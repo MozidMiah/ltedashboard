@@ -18,6 +18,7 @@ use App\Http\Controllers\Front\CompareController;
 use App\Http\Controllers\Front\ContactUsController;
 use App\Http\Controllers\Front\ErrorController;
 use App\Http\Controllers\Front\FAQsController;
+use App\Http\Controllers\Front\MyAccountController;
 use App\Http\Controllers\Front\OrderController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\VendorController;
@@ -77,6 +78,11 @@ Route::prefix('vendor')->name('vendor.')->group(function () {
 //Order Routes
 Route::prefix('order')->name('order.')->group(function () {
     Route::get('', [OrderController::class, 'index'])->name('index');
+});
+
+//Myaccount Routes
+Route::prefix('myaccount')->name('myaccount.')->group(function () {
+    Route::get('', [MyAccountController::class, 'index'])->name('index');
 });
 
 
