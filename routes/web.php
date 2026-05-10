@@ -84,6 +84,7 @@ Route::prefix('order')->name('order.')->group(function () {
 //Myaccount Routes
 Route::prefix('myaccount')->name('myaccount.')->group(function () {
     Route::get('', [MyAccountController::class, 'index'])->name('index');
+    Route::get('login', [MyAccountController::class, 'login'])->name('login');
 });
 
 //Elements Routes

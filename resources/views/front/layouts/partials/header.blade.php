@@ -209,18 +209,14 @@
                                                 <h4 class="menu-title">Men</h4>
                                                 <hr class="divider">
                                                 <ul>
-                                                    <li><a href="{{ route('shop.banner') }}">New Arrivals</a>
-                                                    </li>
-                                                    <li><a href="{{ route('shop.banner') }}">Best Sellers</a>
-                                                    </li>
+                                                    <li><a href="{{ route('shop.banner') }}">New Arrivals</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Best Sellers</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Trending</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Clothing</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Shoes</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Bags</a></li>
-                                                    <li><a href="{{ route('shop.banner') }}">Accessories</a>
-                                                    </li>
-                                                    <li><a href="{{ route('shop.banner') }}">Jewlery &
-                                                            Watches</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Accessories</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Jewlery & Watches</a></li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -807,42 +803,42 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-heartbeat"></i>Healthy & Beauty
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-gift"></i>Gift Ideas
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-gamepad"></i>Toy & Games
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-ice-cream"></i>Cooking
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-ios"></i>Smart Phones
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-camera"></i>Cameras & Photo
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}">
+                                        <a href="{{ route('shop.banner') }}">
                                             <i class="w-icon-ruby"></i>Accessories
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('shop.product') }}"
+                                        <a href="{{ route('shop.banner') }}"
                                             class="font-weight-bold text-primary text-uppercase ls-25">
                                             View All Categories<i class="w-icon-angle-right"></i>
                                         </a>
