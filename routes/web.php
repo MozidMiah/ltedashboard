@@ -69,6 +69,7 @@ Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('banner', [ShopController::class, 'banner'])->name('banner');
     Route::get('product', [ShopController::class, 'product'])->name('product');
     Route::get('filter', [ShopController::class, 'filter'])->name('filter');
+    Route::get('list', [ShopController::class, 'list'])->name('list');
 });
 
 //Vendor Routes

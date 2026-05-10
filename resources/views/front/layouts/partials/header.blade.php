@@ -856,12 +856,9 @@
                                             <li><a href="{{ route('shop.index') }}">Banner With Sidebar</a></li>
                                             <li><a href="{{ route('shop.box') }}">Boxed Banner</a></li>
                                             <li><a href="{{ route('shop.banner') }}">Full Width Banner</a></li>
-                                            <li><a href="{{ route('shop.filter') }}">Horizontal Filter<span
-                                                        class="tip tip-hot">Hot</span></a></li>
-                                            <li><a href="shop-off-canvas.html">Off Canvas Sidebar<span
-                                                        class="tip tip-new">New</span></a></li>
-                                            <li><a href="shop-infinite-scroll.html">Infinite Ajax Scroll</a>
-                                            </li>
+                                            <li><a href="{{ route('shop.filter') }}">Horizontal Filter<span class="tip tip-hot">Hot</span></a></li>
+                                            <li><a href="shop-off-canvas.html">Off Canvas Sidebar<span class="tip tip-new">New</span></a></li>
+                                            <li><a href="shop-infinite-scroll.html">Infinite Ajax Scroll</a></li>
                                             <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
                                             <li><a href="shop-both-sidebar.html">Both Sidebar</a></li>
                                         </ul>
@@ -875,7 +872,7 @@
                                             <li><a href="shop-grid-6cols.html">6 Columns Mode</a></li>
                                             <li><a href="shop-grid-7cols.html">7 Columns Mode</a></li>
                                             <li><a href="shop-grid-8cols.html">8 Columns Mode</a></li>
-                                            <li><a href="shop-list.html">List Mode</a></li>
+                                            <li><a href="{{ route('shop.list') }}">List Mode</a></li>
                                             <li><a href="shop-list-sidebar.html">List Mode With Sidebar</a>
                                             </li>
                                         </ul>
