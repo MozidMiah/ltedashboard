@@ -56,10 +56,8 @@
                             <td class="wishlist-action">
                                 <div class="d-lg-flex">
                                     <a href="#"
-                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                        View</a>
-                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
-                                        cart</a>
+                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick View</a>
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to cart</a>
                                 </div>
                             </td>
                         </tr>
@@ -87,10 +85,8 @@
                             <td class="wishlist-action">
                                 <div class="d-lg-flex">
                                     <a href="#"
-                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                        View</a>
-                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
-                                        cart</a>
+                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick View</a>
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to cart</a>
                                 </div>
                             </td>
                         </tr>
@@ -118,10 +114,8 @@
                             <td class="wishlist-action">
                                 <div class="d-lg-flex">
                                     <a href="#"
-                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick
-                                        View</a>
-                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to
-                                        cart</a>
+                                        class="btn btn-quickview btn-outline btn-default btn-rounded btn-sm mb-2 mb-lg-0">Quick View</a>
+                                    <a href="{{ route('cart.index') }}" class="btn btn-dark btn-rounded btn-sm ml-lg-2 btn-cart">Add to cart</a>
                                 </div>
                             </td>
                         </tr>

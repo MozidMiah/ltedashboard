@@ -23,4 +23,7 @@ class ShopController extends Controller
     public function filter(){
         return view('front.shop.filter');
     }
+    public function list(){
+        return view('front.shop.list');
+    }
 }

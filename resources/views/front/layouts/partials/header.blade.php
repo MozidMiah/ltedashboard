@@ -35,9 +35,7 @@
                 <a href="{{ route('blog.index') }}" class="d-lg-show">Blog</a>
                 <a href="{{ route('contact-us.index') }}" class="d-lg-show">Contact Us</a>
                 <a href="{{ route('myaccount.index') }}" class="d-lg-show">My Account</a>
-                <a href="{{ asset('front/assets/ajax/login.html') }}" class="d-lg-show login sign-in"><i
-                        class="w-icon-account"></i>Sign In</a>
-                <span class="delimiter d-lg-show">/</span>
+                <a href="{{ asset('front/assets/ajax/login.html') }}" class="d-lg-show login sign-in"><i class="w-icon-account"></i>Sign In</a><span class="delimiter d-lg-show">/</span>
                 <a href="{{ asset('front/assets/ajax/login.html') }}" class="ml-0 d-lg-show login register">Register</a>
             </div>
         </div>
@@ -157,8 +155,7 @@
                         </div>
 
                         <div class="cart-action">
-                            <a href="{{ route('cart.index') }}" class="btn btn-dark btn-outline btn-rounded">View
-                                Cart</a>
+                            <a href="{{ route('cart.index') }}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                             <a href="{{ route('checkout.index') }}" class="btn btn-primary  btn-rounded">Checkout</a>
                         </div>
                     </div>
@@ -190,18 +187,14 @@
                                                 <h4 class="menu-title">Women</h4>
                                                 <hr class="divider">
                                                 <ul>
-                                                    <li><a href="{{ route('shop.banner') }}">New Arrivals</a>
-                                                    </li>
-                                                    <li><a href="{{ route('shop.banner') }}">Best Sellers</a>
-                                                    </li>
+                                                    <li><a href="{{ route('shop.banner') }}">New Arrivals</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Best Sellers</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Trending</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Clothing</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Shoes</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Bags</a></li>
-                                                    <li><a href="{{ route('shop.banner') }}">Accessories</a>
-                                                    </li>
-                                                    <li><a href="{{ route('shop.banner') }}">Jewlery &
-                                                            Watches</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Accessories</a></li>
+                                                    <li><a href="{{ route('shop.banner') }}">Jewlery & Watches</a></li>
                                                     <li><a href="{{ route('shop.banner') }}">Sale</a></li>
                                                 </ul>
                                             </li>

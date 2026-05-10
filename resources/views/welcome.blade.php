@@ -59,8 +59,7 @@
                                     'name': 'fadeInRightShorter',
                                     'duration': '1s',
                                     'delay': '.8s'
-                                }">SHOP
-                                    NOW<i class="w-icon-long-arrow-right"></i></a>
+                                }">SHOP NOW<i class="w-icon-long-arrow-right"></i></a>
 
                             </div>
                             <!-- End of .banner-content -->
