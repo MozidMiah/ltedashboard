@@ -44,7 +44,7 @@
                             <a href="{{ route('wishlist.index') }}">Wishlist</a>
                         </li>
                         <li class="link-item">
-                            <a href="login.html">Logout</a>
+                            <a href="{{ route('myaccount.login') }}">Logout</a>
                         </li>
                     </ul>
 
@@ -118,7 +118,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-4 col-xs-6 mb-4">
-                                    <a href="wishlist.html" class="link-to-tab">
+                                    <a href="{{ route('wishlist.index') }}" class="link-to-tab">
                                         <div class="icon-box text-center">
                                             <span class="icon-box-icon icon-wishlist">
                                                 <i class="w-icon-heart"></i>
@@ -220,8 +220,7 @@
                                 </tbody>
                             </table>
 
-                            <a href="{{ route('shop.index') }}" class="btn btn-dark btn-rounded btn-icon-right">Go
-                                Shop<i class="w-icon-long-arrow-right"></i></a>
+                            <a href="{{ route('shop.index') }}" class="btn btn-dark btn-rounded btn-icon-right">Go Shop<i class="w-icon-long-arrow-right"></i></a>
                         </div>
 
                         <div class="tab-pane" id="account-downloads">
@@ -234,8 +233,7 @@
                                 </div>
                             </div>
                             <p class="mb-4">No downloads available yet.</p>
-                            <a href="{{ route('shop.index') }}" class="btn btn-dark btn-rounded btn-icon-right">Go
-                                Shop<i class="w-icon-long-arrow-right"></i></a>
+                            <a href="{{ route('shop.index') }}" class="btn btn-dark btn-rounded btn-icon-right">Go Shop<i class="w-icon-long-arrow-right"></i></a>
                         </div>
 
                         <div class="tab-pane" id="account-addresses">
@@ -247,8 +245,7 @@
                                     <h4 class="icon-box-title mb-0 ls-normal">Addresses</h4>
                                 </div>
                             </div>
-                            <p>The following addresses will be used on the checkout page
-                                by default.</p>
+                            <p>The following addresses will be used on the checkout page by default.</p>
                             <div class="row">
                                 <div class="col-sm-6 mb-6">
                                     <div class="ecommerce-address billing-address pr-lg-8">
@@ -287,9 +284,7 @@
                                                 </tbody>
                                             </table>
                                         </address>
-                                        <a href="#"
-                                            class="btn btn-link btn-underline btn-icon-right text-primary">Edit
-                                            your billing address<i class="w-icon-long-arrow-right"></i></a>
+                                        <a href="#" class="btn btn-link btn-underline btn-icon-right text-primary">Edit your billing address<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 mb-6">
@@ -325,9 +320,7 @@
                                                 </tbody>
                                             </table>
                                         </address>
-                                        <a href="#"
-                                            class="btn btn-link btn-underline btn-icon-right text-primary">Edit your
-                                            shipping address<i class="w-icon-long-arrow-right"></i></a>
+                                        <a href="#" class="btn btn-link btn-underline btn-icon-right text-primary">Edit your shipping address<i class="w-icon-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -376,21 +369,18 @@
 
                                 <h4 class="title title-password ls-25 font-weight-bold">Password change</h4>
                                 <div class="form-group">
-                                    <label class="text-dark" for="cur-password">Current Password leave blank to leave
-                                        unchanged</label>
+                                    <label class="text-dark" for="cur-password">Current Password leave blank to leave unchanged</label>
                                     <input type="password" class="form-control form-control-md" id="cur-password"
                                         name="cur_password">
                                 </div>
                                 <div class="form-group">
-                                    <label class="text-dark" for="new-password">New Password leave blank to leave
-                                        unchanged</label>
+                                    <label class="text-dark" for="new-password">New Password leave blank to leave unchanged</label>
                                     <input type="password" class="form-control form-control-md" id="new-password"
                                         name="new_password">
                                 </div>
                                 <div class="form-group mb-10">
                                     <label class="text-dark" for="conf-password">Confirm Password</label>
-                                    <input type="password" class="form-control form-control-md" id="conf-password"
-                                        name="conf_password">
+                                    <input type="password" class="form-control form-control-md" id="conf-password" name="conf_password">
                                 </div>
                                 <button type="submit" class="btn btn-dark btn-rounded btn-sm mb-4">Save Changes</button>
                             </form>
