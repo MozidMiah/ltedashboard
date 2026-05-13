@@ -229,21 +229,18 @@
                             }
                         }
                     }">
-                    @foreach ($categories as $category)
-                        
-                    
-                            <div class="category category-classic category-absolute overlay-zoom br-xs">
-                                <a href="{{ route('shop.index') }}" class="category-media">
-                                    <img src="{{ $category->image }}"
-                                        alt="Category" width="130" height="130">
-                                </a>
-                                <div class="category-content">
-                                    <h4 class="category-name">{{ $category->name }}</h4>
-                                    <a href="{{ route('shop.index') }}"
-                                        class="btn btn-primary btn-link btn-underline">Shop
-                                        Now</a>
+                            @foreach ($categories as $category)
+                                <div class="category category-classic category-absolute overlay-zoom br-xs">
+                                    <a href="{{ route('shop.index') }}" class="category-media">
+                                        <img src="{{ $category->image }}" alt="Category" width="130" height="130">
+                                    </a>
+                                    <div class="category-content">
+                                        <h4 class="category-name">{{ $category->name }}</h4>
+                                        <a href="{{ route('shop.index') }}"
+                                            class="btn btn-primary btn-link btn-underline">Shop
+                                            Now</a>
+                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                             {{-- <div class="category category-classic category-absolute overlay-zoom br-xs">
                                 <a href="{{ route('shop.index') }}" class="category-media">
