@@ -229,19 +229,23 @@
                             }
                         }
                     }">
+                    @foreach ($categories as $category)
+                        
+                    
                             <div class="category category-classic category-absolute overlay-zoom br-xs">
                                 <a href="{{ route('shop.index') }}" class="category-media">
-                                    <img src="{{ asset('front/assets/images/demos/demo1/categories/2-1.jpg') }}"
+                                    <img src="{{ $category->image }}"
                                         alt="Category" width="130" height="130">
                                 </a>
                                 <div class="category-content">
-                                    <h4 class="category-name">Fashion</h4>
+                                    <h4 class="category-name">{{ $category->name }}</h4>
                                     <a href="{{ route('shop.index') }}"
                                         class="btn btn-primary btn-link btn-underline">Shop
                                         Now</a>
                                 </div>
                             </div>
-                            <div class="category category-classic category-absolute overlay-zoom br-xs">
+                            @endforeach
+                            {{-- <div class="category category-classic category-absolute overlay-zoom br-xs">
                                 <a href="{{ route('shop.index') }}" class="category-media">
                                     <img src="{{ asset('front/assets/images/demos/demo1/categories/2-2.jpg') }}"
                                         alt="Category" width="130" height="130">
@@ -300,7 +304,7 @@
                                         class="btn btn-primary btn-link btn-underline">Shop
                                         Now</a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>

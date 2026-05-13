@@ -10,4 +10,7 @@ class ElementsController extends Controller
     public function index(){
         return view('front.elements.index');
     }
+    public function product(){
+        return view('front.elements.product');
+    }
 }

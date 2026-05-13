@@ -29,10 +29,12 @@ use App\Http\Controllers\SizeController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\SupportMessageController;
 use App\Http\Controllers\UnitController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $categories = Category::all();
+    return view('welcome',compact('categories'));
 })->name('home');
 
 
@@ -91,6 +93,7 @@ Route::prefix('myaccount')->name('myaccount.')->group(function () {
 //Elements Routes
 Route::prefix('elements')->name('elements.')->group(function () {
     Route::get('', [ElementsController::class, 'index'])->name('index');
+    Route::get('product', [ElementsController::class, 'product'])->name('product');
 });
 
 //For Login

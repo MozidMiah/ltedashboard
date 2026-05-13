@@ -975,7 +975,7 @@
                                     <li><a href="element-icon-boxes.html">Icon Boxes</a></li>
                                     <li><a href="element-instagrams.html">Instagrams</a></li>
                                     <li><a href="element-categories.html">Product Category</a></li>
-                                    <li><a href="element-products.html">Products</a></li>
+                                    <li><a href="{{ route('elements.product') }}">Products</a></li>
                                     <li><a href="element-tabs.html">Tabs</a></li>
                                     <li><a href="element-testimonials.html">Testimonials</a></li>
                                     <li><a href="element-titles.html">Titles</a></li>
