@@ -3138,7 +3138,7 @@
                     <div class="post-wrapper appear-animate mb-4">
                         <div class="title-link-wrapper pb-1 mb-4">
                             <h2 class="title ls-normal mb-0">From Our Blog</h2>
-                            <a href="{{ route('blog,index') }}" class="font-weight-bold font-size-normal">View All
+                            <a href="{{ route('blog.index') }}" class="font-weight-bold font-size-normal">View All
                                 Articles</a>
                         </div>
                         <div class="owl-carousel owl-theme row cols-lg-4 cols-md-3 cols-sm-2 cols-1"
@@ -3548,14 +3548,14 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('aboutus.index') }}">Pages</a>
+                                    <a href="{{ route('about-us.index') }}">Pages</a>
                                     <ul>
 
-                                        <li><a href="{{ route('aboutus.index') }}">About Us</a></li>
+                                        <li><a href="{{ route('about-us.index') }}">About Us</a></li>
                                         {{-- <li><a href="become-a-vendor.html">Become A Vendor</a></li> --}}
                                         <li><a href="{{ route('contact-us.index') }}">Contact Us</a></li>
                                         <li><a href="{{ route('myaccount.login') }}">Login</a></li>
-                                        <li><a href="{{ route('FAQs.index') }}">FAQs</a></li>
+                                        <li><a href="{{ route('faqs.index') }}">FAQs</a></li>
                                         <li><a href="{{ route('error.index') }}">Error 404</a></li>
                                         <li><a href="{{ route('comingsoon.index') }}">Coming Soon</a></li>
                                         <li><a href="{{ route('wishlist.index') }}">Wishlist</a></li>
