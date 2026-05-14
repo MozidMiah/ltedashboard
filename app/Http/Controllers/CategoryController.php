@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         if ($request->ajax()) {
 
-            $categories = Category::latest();
+            $categories = Category::latest(1);
 
             return DataTables::of($categories)
 

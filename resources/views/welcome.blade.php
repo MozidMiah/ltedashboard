@@ -430,17 +430,13 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi
-                                                    Funtional
-                                                    Apple
-                                                    iPhone</a></h4>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi Funtional Apple iPhone</a></h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(5
-                                                    reviews)</a>
+                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(5 reviews)</a>
                                             </div>
                                             <div class="product-price">
                                                 <ins class="new-price">136.26</ins>
@@ -472,8 +468,7 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Fashion Blue
-                                                    Towel</a>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Fashion Blue Towel</a>
                                             </h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
@@ -513,16 +508,14 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Apple Super
-                                                    Notecom</a>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Apple Super Notecom</a>
                                             </h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(4
-                                                    reviews)</a>
+                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(4 reviews)</a>
                                             </div>
                                             <div class="product-price">
                                                 <ins class="new-price">$243.30</ins>
@@ -554,16 +547,14 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Women’s
-                                                    Comforter</a>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Women’s Comforter</a>
                                             </h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(10
-                                                    reviews)</a>
+                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(10 reviews)</a>
                                             </div>
                                             <div class="product-price">
                                                 <ins class="new-price">$32.00 - $33.26</ins>
@@ -592,16 +583,14 @@
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi-colorful
-                                                    Music</a>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Multi-colorful Music</a>
                                             </h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 60%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(3
-                                                    reviews)</a>
+                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(3 reviews)</a>
                                             </div>
                                             <div class="product-price">
                                                 <ins class="new-price">$260.59 - $297.83</ins>
@@ -619,27 +608,25 @@
                                                     alt="Product" width="300" height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
-                                                <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
+                                                <a href="{{ route('wishlist.index') }}" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Add to wishlist"></a>
                                                 <a href="#" class="btn-product-icon btn-quickview w-icon-search"
                                                     title="Quickview"></a>
-                                                <a href="#" class="btn-product-icon btn-compare w-icon-compare"
+                                                <a href="{{ route('compare.index') }}" class="btn-product-icon btn-compare w-icon-compare"
                                                     title="Add to Compare"></a>
                                             </div>
                                         </figure>
                                         <div class="product-details">
-                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Comfortable
-                                                    Backpack</a>
+                                            <h4 class="product-name"><a href="{{ route('shop.product') }}">Comfortable Backpack</a>
                                             </h4>
                                             <div class="ratings-container">
                                                 <div class="ratings-full">
                                                     <span class="ratings" style="width: 100%;"></span>
                                                     <span class="tooltiptext tooltip-top"></span>
                                                 </div>
-                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(6
-                                                    reviews)</a>
+                                                <a href="{{ route('shop.product') }}" class="rating-reviews">(6 reviews)</a>
                                             </div>
                                             <div class="product-price">
                                                 <ins class="new-price">$45.90</ins>
@@ -655,7 +642,7 @@
                                                     alt="Product" width="300" height="338" />
                                             </a>
                                             <div class="product-action-vertical">
-                                                <a href="#" class="btn-product-icon btn-cart w-icon-cart"
+                                                <a href="{{ route('cart.index') }}" class="btn-product-icon btn-cart w-icon-cart"
                                                     title="Add to cart"></a>
                                                 <a href="#" class="btn-product-icon btn-wishlist w-icon-heart"
                                                     title="Add to wishlist"></a>
@@ -1917,8 +1904,7 @@
                         <div class="title-link-wrapper pb-1 mb-4">
                             <h2 class="title ls-normal mb-0">Clothing & Apparel</h2>
                             <a href="{{ route('shop.index') }}"
-                                class="font-size-normal font-weight-bold ls-25 mb-0">More
-                                Products<i class="w-icon-long-arrow-right"></i></a>
+                                class="font-size-normal font-weight-bold ls-25 mb-0">More Products<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-4 mb-4">
@@ -1928,8 +1914,7 @@
                                     <div class="banner-content content-top">
                                         <h5 class="banner-subtitle font-weight-normal mb-2">Weekend Sale</h5>
                                         <hr class="banner-divider bg-dark mb-2">
-                                        <h3 class="banner-title font-weight-bolder ls-25 text-uppercase">
-                                            New Arrivals<br> <span
+                                        <h3 class="banner-title font-weight-bolder ls-25 text-uppercase"> New Arrivals<br> <span
                                                 class="font-weight-normal text-capitalize">Collection</span>
                                         </h3>
                                         <a href="{{ route('shop.index') }}"
@@ -2284,8 +2269,7 @@
                         <div class="title-link-wrapper pb-1 mb-4">
                             <h2 class="title ls-normal mb-0">Consumer Electric</h2>
                             <a href="{{ route('shop.index') }}"
-                                class="font-size-normal font-weight-bold ls-25 mb-0">More
-                                Products<i class="w-icon-long-arrow-right"></i></a>
+                                class="font-size-normal font-weight-bold ls-25 mb-0">More Products<i class="w-icon-long-arrow-right"></i></a>
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-sm-4 mb-4">
